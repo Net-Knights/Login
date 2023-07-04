@@ -71,5 +71,17 @@ namespace Login
         {
 
         }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Registrarse_Click(object sender, EventArgs e)
+        {
+            Registro registro = new Registro();
+            registro.Show(this);
+            Hide();
+        }
     }
 }

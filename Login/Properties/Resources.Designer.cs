@@ -103,6 +103,26 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap login_icon_176905 {
+            get {
+                object obj = ResourceManager.GetObject("login_icon_176905", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login_icon_1769051 {
+            get {
+                object obj = ResourceManager.GetObject("login_icon_1769051", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_1 {
             get {
                 object obj = ResourceManager.GetObject("logo 1", resourceCulture);
