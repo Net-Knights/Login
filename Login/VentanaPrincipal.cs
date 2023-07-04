@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logica;
+
 
 namespace Login
 {
@@ -32,25 +34,37 @@ namespace Login
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-
-            if (username == "Root" && password == "1234")
+            if (string.IsNullOrEmpty(txtUsername.Text) && string.IsNullOrEmpty(txtPassword.Text))
             {
-                MessageBox.Show("Inicio de sesión exitoso.");
-
-
-                FormularioInicioSesion formularioInicioSesion = new FormularioInicioSesion();
-                formularioInicioSesion.Show(this);
-                Hide();
-
-
+                msgError("Ingrese su nombre de usuario y contraseña");
+            }
+            else if (string.IsNullOrEmpty(txtUsername.Text))
+            {
+                msgError("Ingrese su nombre de usuario");
+            }
+            else if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                msgError("Ingrese su contraseña");
             }
             else
             {
-                MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
+                MenuPrincipal menuPrincipal = new MenuPrincipal();
+                menuPrincipal.Show(this);
+                Hide();
+
             }
+
         }
+        
+        
+        
+        private void msgError(string msg)
+        {
+            lblErrorMesagge.Text = "     " + msg;
+            lblErrorMesagge.Visible = true;
+
+        }
+
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
@@ -60,16 +74,6 @@ namespace Login
         private void Closebtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
@@ -85,3 +89,4 @@ namespace Login
         }
     }
 }
+ 

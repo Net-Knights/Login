@@ -39,6 +39,7 @@
             label3 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            lblErrorMesagge = new Label();
             Btn_Registrarse = new Button();
             label1 = new Label();
             label7 = new Label();
@@ -82,7 +83,7 @@
             Btn_Login.FlatStyle = FlatStyle.Flat;
             Btn_Login.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             Btn_Login.ForeColor = Color.White;
-            Btn_Login.Location = new Point(77, 236);
+            Btn_Login.Location = new Point(72, 253);
             Btn_Login.Name = "Btn_Login";
             Btn_Login.Size = new Size(263, 33);
             Btn_Login.TabIndex = 4;
@@ -169,6 +170,7 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(lblErrorMesagge);
             panel2.Controls.Add(Btn_Registrarse);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label7);
@@ -181,6 +183,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(450, 530);
             panel2.TabIndex = 5;
+            // 
+            // lblErrorMesagge
+            // 
+            lblErrorMesagge.AutoSize = true;
+            lblErrorMesagge.Location = new Point(16, 227);
+            lblErrorMesagge.Name = "lblErrorMesagge";
+            lblErrorMesagge.Size = new Size(32, 15);
+            lblErrorMesagge.TabIndex = 11;
+            lblErrorMesagge.Text = "Error";
+            lblErrorMesagge.Visible = false;
             // 
             // Btn_Registrarse
             // 
@@ -216,7 +228,6 @@
             label7.Size = new Size(212, 24);
             label7.TabIndex = 8;
             label7.Text = "Ingrese a su cuenta";
-            label7.Click += label7_Click;
             // 
             // panel4
             // 
@@ -255,7 +266,6 @@
             pictureBox3.Size = new Size(30, 31);
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
             // 
             // Closebtn
             // 
@@ -317,5 +327,6 @@
         private PictureBox pictureBox3;
         private Label label1;
         private Button Btn_Registrarse;
+        private Label lblErrorMesagge;
     }
 }
