@@ -34,6 +34,8 @@
             label4 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            comboBox1 = new ComboBox();
+            Btn_Aceptar = new Button();
             Closebtn = new Button();
             label7 = new Label();
             panel4 = new Panel();
@@ -42,7 +44,7 @@
             panel3 = new Panel();
             pictureBox3 = new PictureBox();
             txtUsername = new TextBox();
-            Btn_Aceptar = new Button();
+            mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -107,6 +109,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(Btn_Aceptar);
             panel2.Controls.Add(Closebtn);
             panel2.Controls.Add(label7);
@@ -117,6 +120,29 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(337, 415);
             panel2.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Cliente Comun", "Cliente Empresa", "" });
+            comboBox1.Location = new Point(30, 86);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 13;
+            // 
+            // Btn_Aceptar
+            // 
+            Btn_Aceptar.BackColor = Color.FromArgb(41, 128, 185);
+            Btn_Aceptar.FlatStyle = FlatStyle.Flat;
+            Btn_Aceptar.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Btn_Aceptar.ForeColor = Color.White;
+            Btn_Aceptar.Location = new Point(45, 229);
+            Btn_Aceptar.Name = "Btn_Aceptar";
+            Btn_Aceptar.Size = new Size(204, 30);
+            Btn_Aceptar.TabIndex = 12;
+            Btn_Aceptar.Text = "Aceptar";
+            Btn_Aceptar.UseVisualStyleBackColor = false;
+            Btn_Aceptar.Click += Btn_Aceptar_Click;
             // 
             // Closebtn
             // 
@@ -137,7 +163,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(41, 128, 185);
-            label7.Location = new Point(75, 52);
+            label7.Location = new Point(30, 34);
             label7.Name = "label7";
             label7.Size = new Size(182, 24);
             label7.TabIndex = 10;
@@ -149,7 +175,7 @@
             panel4.BackColor = Color.White;
             panel4.Controls.Add(pictureBox4);
             panel4.Controls.Add(txtPassword);
-            panel4.Location = new Point(0, 193);
+            panel4.Location = new Point(6, 385);
             panel4.Name = "panel4";
             panel4.Size = new Size(334, 32);
             panel4.TabIndex = 9;
@@ -177,7 +203,7 @@
             panel3.BackColor = Color.White;
             panel3.Controls.Add(pictureBox3);
             panel3.Controls.Add(txtUsername);
-            panel3.Location = new Point(0, 117);
+            panel3.Location = new Point(6, 309);
             panel3.Name = "panel3";
             panel3.Size = new Size(337, 34);
             panel3.TabIndex = 8;
@@ -194,24 +220,17 @@
             // txtUsername
             // 
             txtUsername.BorderStyle = BorderStyle.None;
-            txtUsername.Location = new Point(33, 10);
+            txtUsername.Location = new Point(39, 3);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(300, 16);
             txtUsername.TabIndex = 2;
             // 
-            // Btn_Aceptar
+            // mySqlCommand1
             // 
-            Btn_Aceptar.BackColor = Color.FromArgb(41, 128, 185);
-            Btn_Aceptar.FlatStyle = FlatStyle.Flat;
-            Btn_Aceptar.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            Btn_Aceptar.ForeColor = Color.White;
-            Btn_Aceptar.Location = new Point(75, 273);
-            Btn_Aceptar.Name = "Btn_Aceptar";
-            Btn_Aceptar.Size = new Size(204, 30);
-            Btn_Aceptar.TabIndex = 12;
-            Btn_Aceptar.Text = "Aceptar";
-            Btn_Aceptar.UseVisualStyleBackColor = false;
-            Btn_Aceptar.Click += Btn_Aceptar_Click;
+            mySqlCommand1.CacheAge = 0;
+            mySqlCommand1.Connection = null;
+            mySqlCommand1.EnableCaching = false;
+            mySqlCommand1.Transaction = null;
             // 
             // Registro
             // 
@@ -256,5 +275,7 @@
         private Label label7;
         private Button Closebtn;
         private Button Btn_Aceptar;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private ComboBox comboBox1;
     }
 }
