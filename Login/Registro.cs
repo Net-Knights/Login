@@ -17,26 +17,11 @@ namespace Login
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Closebtn_Click(object sender, EventArgs e)
         {
             VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
-            ventanaPrincipal.Show();
-            this.Close();
-        }
-
-        private void Btn_Aceptar_Click(object sender, EventArgs e)
-        {
-
+            ventanaPrincipal.Show(this);
+            Hide();
         }
     }
 }
