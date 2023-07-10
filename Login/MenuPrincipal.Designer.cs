@@ -36,14 +36,14 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(489, 435);
+            panel1.Size = new Size(709, 402);
             panel1.TabIndex = 0;
             // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(489, 435);
+            ClientSize = new Size(709, 402);
             Controls.Add(panel1);
             Name = "MenuPrincipal";
             Text = "MenuPrincipal";

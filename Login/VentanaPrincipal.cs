@@ -55,9 +55,9 @@ namespace Login
             }
 
         }
-        
-        
-        
+
+
+
         private void msgError(string msg)
         {
             lblErrorMesagge.Text = "     " + msg;
@@ -89,4 +89,3 @@ namespace Login
         }
     }
 }
- 
