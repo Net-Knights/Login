@@ -1,4 +1,13 @@
-﻿namespace RegistroUsuarios.Entities
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RegistroUsuarios.Entities
 {
     public class Usuario
     {
@@ -8,9 +17,9 @@
 
         public Usuario(string nombreUsuario, string contraseña, string correoElectronico)
         {
-            NombreUsuario = nombreUsuario;
-            Contraseña = contraseña;
-            CorreoElectronico = correoElectronico;
+            this.NombreUsuario = nombreUsuario;
+            this.Contraseña = contraseña;
+            this.CorreoElectronico = correoElectronico;
         }
     }
 
@@ -23,9 +32,9 @@
         public ClienteComun(string nombreUsuario, string contraseña, string direccion, string ci, string correoElectronico, string telefono)
             : base(nombreUsuario, contraseña, correoElectronico)
         {
-            Direccion = direccion;
-            CI = ci;
-            Telefono = telefono;
+            this.Direccion = direccion;
+            this.CI = ci;
+            this.Telefono = telefono;
         }
     }
 
@@ -39,10 +48,10 @@
         public ClienteEmpresa(string nombreUsuario, string contraseña, string nombreEmpresa, string rut, string direccionEmpresa, string correoElectronico, string telefonoEmpresa)
             : base(nombreUsuario, contraseña, correoElectronico)
         {
-            NombreEmpresa = nombreEmpresa;
-            RUT = rut;
-            DireccionEmpresa = direccionEmpresa;
-            TelefonoEmpresa = telefonoEmpresa;
+            this.NombreEmpresa = nombreEmpresa;
+            this.RUT = rut;
+            this.DireccionEmpresa = direccionEmpresa;
+            this.TelefonoEmpresa = telefonoEmpresa;
         }
     }
 

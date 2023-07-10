@@ -24,7 +24,7 @@ namespace Logica
 
     public class RegistroBLL
     {
-        private readonly RegistroDAL registroDAL;
+        private  RegistroDAL registroDAL;
 
         public RegistroBLL()
         {

@@ -34,31 +34,31 @@
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
-            label8 = new Label();
-            label6 = new Label();
-            label3 = new Label();
-            label2 = new Label();
+            txtTelefonoEmpresa = new TextBox();
+            txtDireccionEmpresa = new TextBox();
+            txtRUT = new TextBox();
+            txtNombreEmpresa = new TextBox();
+            txtDireccion = new TextBox();
+            lblTelefono = new Label();
+            lblTelefonoEmpresa = new Label();
+            lblDireccionEmpresa = new Label();
+            lblRUT = new Label();
+            lblNombreEmpresa = new Label();
+            txtTelefono = new TextBox();
+            lblDireccion = new Label();
+            btnRegistrar = new Button();
+            lblCorreoElectronico = new Label();
+            lblCI = new Label();
+            lblContraseña = new Label();
+            lblNombreUsuario = new Label();
             txtContraseña = new TextBox();
             txtCorreoElectronico = new TextBox();
             txtCI = new TextBox();
             txtNombreUsuario = new TextBox();
-            label1 = new Label();
+            lblIngrese = new Label();
             label7 = new Label();
             cmbTipoUsuario = new ComboBox();
             Closebtn = new Button();
-            btnRegistrar = new Button();
-            label9 = new Label();
-            txtTelefono = new TextBox();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            txtDireccion = new TextBox();
-            txtNombreEmpresa = new TextBox();
-            txtRUT = new TextBox();
-            txtDireccionEmpresa = new TextBox();
-            txtTelefonoEmpresa = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -124,23 +124,23 @@
             panel2.Controls.Add(txtRUT);
             panel2.Controls.Add(txtNombreEmpresa);
             panel2.Controls.Add(txtDireccion);
-            panel2.Controls.Add(label14);
-            panel2.Controls.Add(label13);
-            panel2.Controls.Add(label12);
-            panel2.Controls.Add(label11);
-            panel2.Controls.Add(label10);
+            panel2.Controls.Add(lblTelefono);
+            panel2.Controls.Add(lblTelefonoEmpresa);
+            panel2.Controls.Add(lblDireccionEmpresa);
+            panel2.Controls.Add(lblRUT);
+            panel2.Controls.Add(lblNombreEmpresa);
             panel2.Controls.Add(txtTelefono);
-            panel2.Controls.Add(label9);
+            panel2.Controls.Add(lblDireccion);
             panel2.Controls.Add(btnRegistrar);
-            panel2.Controls.Add(label8);
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
+            panel2.Controls.Add(lblCorreoElectronico);
+            panel2.Controls.Add(lblCI);
+            panel2.Controls.Add(lblContraseña);
+            panel2.Controls.Add(lblNombreUsuario);
             panel2.Controls.Add(txtContraseña);
             panel2.Controls.Add(txtCorreoElectronico);
             panel2.Controls.Add(txtCI);
             panel2.Controls.Add(txtNombreUsuario);
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(lblIngrese);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(cmbTipoUsuario);
             panel2.Controls.Add(Closebtn);
@@ -150,49 +150,167 @@
             panel2.Size = new Size(472, 617);
             panel2.TabIndex = 13;
             // 
-            // label8
+            // txtTelefonoEmpresa
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.FromArgb(41, 128, 185);
-            label8.Location = new Point(3, 259);
-            label8.Name = "label8";
-            label8.Size = new Size(207, 24);
-            label8.TabIndex = 18;
-            label8.Text = "Correo Electronico:";
+            txtTelefonoEmpresa.Location = new Point(214, 496);
+            txtTelefonoEmpresa.Name = "txtTelefonoEmpresa";
+            txtTelefonoEmpresa.Size = new Size(100, 23);
+            txtTelefonoEmpresa.TabIndex = 31;
             // 
-            // label6
+            // txtDireccionEmpresa
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.ForeColor = Color.FromArgb(41, 128, 185);
-            label6.Location = new Point(6, 225);
-            label6.Name = "label6";
-            label6.Size = new Size(37, 24);
-            label6.TabIndex = 17;
-            label6.Text = "CI:";
+            txtDireccionEmpresa.Location = new Point(214, 452);
+            txtDireccionEmpresa.Name = "txtDireccionEmpresa";
+            txtDireccionEmpresa.Size = new Size(100, 23);
+            txtDireccionEmpresa.TabIndex = 30;
             // 
-            // label3
+            // txtRUT
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(41, 128, 185);
-            label3.Location = new Point(6, 187);
-            label3.Name = "label3";
-            label3.Size = new Size(135, 24);
-            label3.TabIndex = 16;
-            label3.Text = "Contraseña:";
+            txtRUT.Location = new Point(214, 418);
+            txtRUT.Name = "txtRUT";
+            txtRUT.Size = new Size(100, 23);
+            txtRUT.TabIndex = 29;
             // 
-            // label2
+            // txtNombreEmpresa
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(41, 128, 185);
-            label2.Location = new Point(6, 154);
-            label2.Name = "label2";
-            label2.Size = new Size(177, 24);
-            label2.TabIndex = 15;
-            label2.Text = "Nombre Usuario:";
+            txtNombreEmpresa.Location = new Point(214, 384);
+            txtNombreEmpresa.Name = "txtNombreEmpresa";
+            txtNombreEmpresa.Size = new Size(100, 23);
+            txtNombreEmpresa.TabIndex = 28;
+            // 
+            // txtDireccion
+            // 
+            txtDireccion.Location = new Point(214, 337);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(100, 23);
+            txtDireccion.TabIndex = 27;
+            // 
+            // lblTelefono
+            // 
+            lblTelefono.AutoSize = true;
+            lblTelefono.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTelefono.ForeColor = Color.FromArgb(41, 128, 185);
+            lblTelefono.Location = new Point(6, 294);
+            lblTelefono.Name = "lblTelefono";
+            lblTelefono.Size = new Size(104, 24);
+            lblTelefono.TabIndex = 26;
+            lblTelefono.Text = "Telefono:";
+            // 
+            // lblTelefonoEmpresa
+            // 
+            lblTelefonoEmpresa.AutoSize = true;
+            lblTelefonoEmpresa.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTelefonoEmpresa.ForeColor = Color.FromArgb(41, 128, 185);
+            lblTelefonoEmpresa.Location = new Point(6, 496);
+            lblTelefonoEmpresa.Name = "lblTelefonoEmpresa";
+            lblTelefonoEmpresa.Size = new Size(198, 24);
+            lblTelefonoEmpresa.TabIndex = 25;
+            lblTelefonoEmpresa.Text = "Telefono Empresa:";
+            // 
+            // lblDireccionEmpresa
+            // 
+            lblDireccionEmpresa.AutoSize = true;
+            lblDireccionEmpresa.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDireccionEmpresa.ForeColor = Color.FromArgb(41, 128, 185);
+            lblDireccionEmpresa.Location = new Point(6, 451);
+            lblDireccionEmpresa.Name = "lblDireccionEmpresa";
+            lblDireccionEmpresa.Size = new Size(206, 24);
+            lblDireccionEmpresa.TabIndex = 24;
+            lblDireccionEmpresa.Text = "Direccion Empresa:";
+            // 
+            // lblRUT
+            // 
+            lblRUT.AutoSize = true;
+            lblRUT.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRUT.ForeColor = Color.FromArgb(41, 128, 185);
+            lblRUT.Location = new Point(6, 417);
+            lblRUT.Name = "lblRUT";
+            lblRUT.Size = new Size(49, 24);
+            lblRUT.TabIndex = 23;
+            lblRUT.Text = "RUT:";
+            // 
+            // lblNombreEmpresa
+            // 
+            lblNombreEmpresa.AutoSize = true;
+            lblNombreEmpresa.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombreEmpresa.ForeColor = Color.FromArgb(41, 128, 185);
+            lblNombreEmpresa.Location = new Point(6, 379);
+            lblNombreEmpresa.Name = "lblNombreEmpresa";
+            lblNombreEmpresa.Size = new Size(194, 24);
+            lblNombreEmpresa.TabIndex = 22;
+            lblNombreEmpresa.Text = "Nombre Empresa:";
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(214, 299);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(100, 23);
+            txtTelefono.TabIndex = 21;
+            // 
+            // lblDireccion
+            // 
+            lblDireccion.AutoSize = true;
+            lblDireccion.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDireccion.ForeColor = Color.FromArgb(41, 128, 185);
+            lblDireccion.Location = new Point(6, 336);
+            lblDireccion.Name = "lblDireccion";
+            lblDireccion.Size = new Size(112, 24);
+            lblDireccion.TabIndex = 20;
+            lblDireccion.Text = "Direccion:";
+            // 
+            // btnRegistrar
+            // 
+            btnRegistrar.Location = new Point(346, 568);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(114, 37);
+            btnRegistrar.TabIndex = 19;
+            btnRegistrar.Text = "Registrar";
+            btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
+            // 
+            // lblCorreoElectronico
+            // 
+            lblCorreoElectronico.AutoSize = true;
+            lblCorreoElectronico.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCorreoElectronico.ForeColor = Color.FromArgb(41, 128, 185);
+            lblCorreoElectronico.Location = new Point(3, 259);
+            lblCorreoElectronico.Name = "lblCorreoElectronico";
+            lblCorreoElectronico.Size = new Size(207, 24);
+            lblCorreoElectronico.TabIndex = 18;
+            lblCorreoElectronico.Text = "Correo Electronico:";
+            // 
+            // lblCI
+            // 
+            lblCI.AutoSize = true;
+            lblCI.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCI.ForeColor = Color.FromArgb(41, 128, 185);
+            lblCI.Location = new Point(6, 225);
+            lblCI.Name = "lblCI";
+            lblCI.Size = new Size(37, 24);
+            lblCI.TabIndex = 17;
+            lblCI.Text = "CI:";
+            // 
+            // lblContraseña
+            // 
+            lblContraseña.AutoSize = true;
+            lblContraseña.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblContraseña.ForeColor = Color.FromArgb(41, 128, 185);
+            lblContraseña.Location = new Point(6, 187);
+            lblContraseña.Name = "lblContraseña";
+            lblContraseña.Size = new Size(135, 24);
+            lblContraseña.TabIndex = 16;
+            lblContraseña.Text = "Contraseña:";
+            // 
+            // lblNombreUsuario
+            // 
+            lblNombreUsuario.AutoSize = true;
+            lblNombreUsuario.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombreUsuario.ForeColor = Color.FromArgb(41, 128, 185);
+            lblNombreUsuario.Location = new Point(6, 154);
+            lblNombreUsuario.Name = "lblNombreUsuario";
+            lblNombreUsuario.Size = new Size(177, 24);
+            lblNombreUsuario.TabIndex = 15;
+            lblNombreUsuario.Text = "Nombre Usuario:";
             // 
             // txtContraseña
             // 
@@ -222,23 +340,23 @@
             txtNombreUsuario.Size = new Size(100, 23);
             txtNombreUsuario.TabIndex = 11;
             // 
-            // label1
+            // lblIngrese
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(41, 128, 185);
-            label1.Location = new Point(70, 99);
-            label1.Name = "label1";
-            label1.Size = new Size(182, 24);
-            label1.TabIndex = 10;
-            label1.Text = "Ingrese sus datos";
+            lblIngrese.AutoSize = true;
+            lblIngrese.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblIngrese.ForeColor = Color.FromArgb(41, 128, 185);
+            lblIngrese.Location = new Point(120, 99);
+            lblIngrese.Name = "lblIngrese";
+            lblIngrese.Size = new Size(182, 24);
+            lblIngrese.TabIndex = 10;
+            lblIngrese.Text = "Ingrese sus datos";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(41, 128, 185);
-            label7.Location = new Point(6, 27);
+            label7.Location = new Point(70, 27);
             label7.Name = "label7";
             label7.Size = new Size(280, 24);
             label7.TabIndex = 9;
@@ -247,11 +365,12 @@
             // cmbTipoUsuario
             // 
             cmbTipoUsuario.FormattingEnabled = true;
-            cmbTipoUsuario.Items.AddRange(new object[] { "Cliente Comun\t", "Cliente Empresa", "Usuario del sistema" });
-            cmbTipoUsuario.Location = new Point(6, 54);
+            cmbTipoUsuario.Items.AddRange(new object[] { "Cliente Comun", "Cliente Empresa", "Usuario Sistema" });
+            cmbTipoUsuario.Location = new Point(57, 54);
             cmbTipoUsuario.Name = "cmbTipoUsuario";
             cmbTipoUsuario.Size = new Size(293, 23);
             cmbTipoUsuario.TabIndex = 7;
+            cmbTipoUsuario.SelectedIndexChanged += cmbTipoUsuario_SelectedIndexChanged;
             // 
             // Closebtn
             // 
@@ -266,124 +385,6 @@
             Closebtn.Text = "X";
             Closebtn.UseVisualStyleBackColor = true;
             Closebtn.Click += Closebtn_Click;
-            // 
-            // btnRegistrar
-            // 
-            btnRegistrar.Location = new Point(346, 568);
-            btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(114, 37);
-            btnRegistrar.TabIndex = 19;
-            btnRegistrar.Text = "Registrar";
-            btnRegistrar.UseVisualStyleBackColor = true;
-            btnRegistrar.Click += btnRegistrar_Click;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.ForeColor = Color.FromArgb(41, 128, 185);
-            label9.Location = new Point(6, 336);
-            label9.Name = "label9";
-            label9.Size = new Size(112, 24);
-            label9.TabIndex = 20;
-            label9.Text = "Direccion:";
-            // 
-            // txtTelefono
-            // 
-            txtTelefono.Location = new Point(214, 299);
-            txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(100, 23);
-            txtTelefono.TabIndex = 21;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.ForeColor = Color.FromArgb(41, 128, 185);
-            label10.Location = new Point(6, 379);
-            label10.Name = "label10";
-            label10.Size = new Size(194, 24);
-            label10.TabIndex = 22;
-            label10.Text = "Nombre Empresa:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.ForeColor = Color.FromArgb(41, 128, 185);
-            label11.Location = new Point(6, 417);
-            label11.Name = "label11";
-            label11.Size = new Size(49, 24);
-            label11.TabIndex = 23;
-            label11.Text = "RUT:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.ForeColor = Color.FromArgb(41, 128, 185);
-            label12.Location = new Point(6, 451);
-            label12.Name = "label12";
-            label12.Size = new Size(206, 24);
-            label12.TabIndex = 24;
-            label12.Text = "Direccion Empresa:";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.ForeColor = Color.FromArgb(41, 128, 185);
-            label13.Location = new Point(6, 496);
-            label13.Name = "label13";
-            label13.Size = new Size(198, 24);
-            label13.TabIndex = 25;
-            label13.Text = "Telefono Empresa:";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.ForeColor = Color.FromArgb(41, 128, 185);
-            label14.Location = new Point(6, 294);
-            label14.Name = "label14";
-            label14.Size = new Size(104, 24);
-            label14.TabIndex = 26;
-            label14.Text = "Telefono:";
-            // 
-            // txtDireccion
-            // 
-            txtDireccion.Location = new Point(214, 337);
-            txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(100, 23);
-            txtDireccion.TabIndex = 27;
-            // 
-            // txtNombreEmpresa
-            // 
-            txtNombreEmpresa.Location = new Point(214, 384);
-            txtNombreEmpresa.Name = "txtNombreEmpresa";
-            txtNombreEmpresa.Size = new Size(100, 23);
-            txtNombreEmpresa.TabIndex = 28;
-            // 
-            // txtRUT
-            // 
-            txtRUT.Location = new Point(214, 418);
-            txtRUT.Name = "txtRUT";
-            txtRUT.Size = new Size(100, 23);
-            txtRUT.TabIndex = 29;
-            // 
-            // txtDireccionEmpresa
-            // 
-            txtDireccionEmpresa.Location = new Point(214, 452);
-            txtDireccionEmpresa.Name = "txtDireccionEmpresa";
-            txtDireccionEmpresa.Size = new Size(100, 23);
-            txtDireccionEmpresa.TabIndex = 30;
-            // 
-            // txtTelefonoEmpresa
-            // 
-            txtTelefonoEmpresa.Location = new Point(214, 496);
-            txtTelefonoEmpresa.Name = "txtTelefonoEmpresa";
-            txtTelefonoEmpresa.Size = new Size(100, 23);
-            txtTelefonoEmpresa.TabIndex = 31;
             // 
             // Registro
             // 
@@ -418,19 +419,19 @@
         private TextBox txtCorreoElectronico;
         private TextBox txtCI;
         private TextBox txtNombreUsuario;
-        private Label label1;
+        private Label lblIngrese;
         private Label label7;
-        private Label label2;
-        private Label label8;
-        private Label label6;
-        private Label label3;
+        private Label lblNombreUsuario;
+        private Label lblCorreoElectronico;
+        private Label lblCI;
+        private Label lblContraseña;
         private Button btnRegistrar;
-        private Label label9;
-        private Label label14;
-        private Label label13;
-        private Label label12;
-        private Label label11;
-        private Label label10;
+        private Label lblDireccion;
+        private Label lblTelefono;
+        private Label lblTelefonoEmpresa;
+        private Label lblDireccionEmpresa;
+        private Label lblRUT;
+        private Label lblNombreEmpresa;
         private TextBox txtTelefono;
         private TextBox txtTelefonoEmpresa;
         private TextBox txtDireccionEmpresa;

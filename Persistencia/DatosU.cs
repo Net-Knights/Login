@@ -35,14 +35,7 @@ namespace Persistencia
                     {
 
                         return false;
-                    }
-               
-
-
-
-
-
-
+                    }   
 
                 }
 
@@ -54,20 +47,20 @@ namespace Persistencia
 
  public class RegistroDAL: ConeccionSql
     {
-    
+
 
         public bool GuardarUsuario(Usuario usuario)
         {
             try
             {
-                using (var connection = GetSqlConnection())
+                using (MySqlConnection connection = GetSqlConnection())
                 {
                     string query = "";
                     MySqlCommand command = null;
 
                     if (usuario is ClienteComun clienteComun)
                     {
-                        query = "INSERT INTO cliente_comun (NombreUsuario, Contraseña, Direccion, CI, CorreoElectronico, Telefono) VALUES (@NombreUsuario, @Contraseña, @Direccion, @CI, @CorreoElectronico, @Telefono)";
+                        query = "INSERT INTO clientecomun (NombreUsuario, Contraseña, Direccion, CI, CorreoElectronico, Telefono) VALUES (@NombreUsuario, @Contraseña, @Direccion, @CI, @CorreoElectronico, @Telefono)";
 
                         command = new MySqlCommand(query, connection);
                         command.Parameters.AddWithValue("@NombreUsuario", clienteComun.NombreUsuario);
@@ -79,7 +72,7 @@ namespace Persistencia
                     }
                     else if (usuario is ClienteEmpresa clienteEmpresa)
                     {
-                        query = "INSERT INTO cliente_empresa (NombreUsuario, Contraseña, NombreEmpresa, RUT, DireccionEmpresa, CorreoElectronico, TelefonoEmpresa) VALUES (@NombreUsuario, @Contraseña, @NombreEmpresa, @RUT, @DireccionEmpresa, @CorreoElectronico, @TelefonoEmpresa)";
+                        query = "INSERT INTO clienteempresa (NombreUsuario, Contraseña, NombreEmpresa, RUT, DireccionEmpresa, CorreoElectronico, TelefonoEmpresa) VALUES (@NombreUsuario, @Contraseña, @NombreEmpresa, @RUT, @DireccionEmpresa, @CorreoElectronico, @TelefonoEmpresa)";
 
                         command = new MySqlCommand(query, connection);
                         command.Parameters.AddWithValue("@NombreUsuario", clienteEmpresa.NombreUsuario);
@@ -92,7 +85,7 @@ namespace Persistencia
                     }
                     else if (usuario is UsuarioSistema usuarioSistema)
                     {
-                        query = "INSERT INTO usuario_sistema (NombreUsuario, Contraseña, CorreoElectronico) VALUES (@NombreUsuario, @Contraseña, @CorreoElectronico)";
+                        query = "INSERT INTO usuariosistema (NombreUsuario, Contraseña, CorreoElectronico) VALUES (@NombreUsuario, @Contraseña, @CorreoElectronico)";
 
                         command = new MySqlCommand(query, connection);
                         command.Parameters.AddWithValue("@NombreUsuario", usuarioSistema.NombreUsuario);
@@ -103,8 +96,8 @@ namespace Persistencia
                     if (command != null)
                     {
                         connection.Open();
-                        command.ExecuteNonQuery();
-                        return true;
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;  // Retorna true si se afectó al menos una fila
                     }
                 }
             }
