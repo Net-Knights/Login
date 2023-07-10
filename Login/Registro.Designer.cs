@@ -38,14 +38,27 @@
             label6 = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtContraseña = new TextBox();
+            txtCorreoElectronico = new TextBox();
+            txtCI = new TextBox();
+            txtNombreUsuario = new TextBox();
             label1 = new Label();
             label7 = new Label();
-            comboBox1 = new ComboBox();
+            cmbTipoUsuario = new ComboBox();
             Closebtn = new Button();
+            btnRegistrar = new Button();
+            label9 = new Label();
+            txtTelefono = new TextBox();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            label14 = new Label();
+            txtDireccion = new TextBox();
+            txtNombreEmpresa = new TextBox();
+            txtRUT = new TextBox();
+            txtDireccionEmpresa = new TextBox();
+            txtTelefonoEmpresa = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -106,17 +119,30 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(txtTelefonoEmpresa);
+            panel2.Controls.Add(txtDireccionEmpresa);
+            panel2.Controls.Add(txtRUT);
+            panel2.Controls.Add(txtNombreEmpresa);
+            panel2.Controls.Add(txtDireccion);
+            panel2.Controls.Add(label14);
+            panel2.Controls.Add(label13);
+            panel2.Controls.Add(label12);
+            panel2.Controls.Add(label11);
+            panel2.Controls.Add(label10);
+            panel2.Controls.Add(txtTelefono);
+            panel2.Controls.Add(label9);
+            panel2.Controls.Add(btnRegistrar);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(textBox4);
-            panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(txtContraseña);
+            panel2.Controls.Add(txtCorreoElectronico);
+            panel2.Controls.Add(txtCI);
+            panel2.Controls.Add(txtNombreUsuario);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(cmbTipoUsuario);
             panel2.Controls.Add(Closebtn);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(256, 0);
@@ -129,11 +155,11 @@
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(41, 128, 185);
-            label8.Location = new Point(6, 259);
+            label8.Location = new Point(3, 259);
             label8.Name = "label8";
-            label8.Size = new Size(71, 24);
+            label8.Size = new Size(207, 24);
             label8.TabIndex = 18;
-            label8.Text = "E-mail";
+            label8.Text = "Correo Electronico:";
             // 
             // label6
             // 
@@ -142,9 +168,9 @@
             label6.ForeColor = Color.FromArgb(41, 128, 185);
             label6.Location = new Point(6, 225);
             label6.Name = "label6";
-            label6.Size = new Size(32, 24);
+            label6.Size = new Size(37, 24);
             label6.TabIndex = 17;
-            label6.Text = "CI";
+            label6.Text = "CI:";
             // 
             // label3
             // 
@@ -153,9 +179,9 @@
             label3.ForeColor = Color.FromArgb(41, 128, 185);
             label3.Location = new Point(6, 187);
             label3.Name = "label3";
-            label3.Size = new Size(130, 24);
+            label3.Size = new Size(135, 24);
             label3.TabIndex = 16;
-            label3.Text = "Contraseña";
+            label3.Text = "Contraseña:";
             // 
             // label2
             // 
@@ -164,44 +190,44 @@
             label2.ForeColor = Color.FromArgb(41, 128, 185);
             label2.Location = new Point(6, 154);
             label2.Name = "label2";
-            label2.Size = new Size(95, 24);
+            label2.Size = new Size(177, 24);
             label2.TabIndex = 15;
-            label2.Text = "Nombre";
+            label2.Text = "Nombre Usuario:";
             // 
-            // textBox4
+            // txtContraseña
             // 
-            textBox4.Location = new Point(142, 192);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 14;
+            txtContraseña.Location = new Point(214, 192);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.Size = new Size(100, 23);
+            txtContraseña.TabIndex = 14;
             // 
-            // textBox3
+            // txtCorreoElectronico
             // 
-            textBox3.Location = new Point(142, 259);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 13;
+            txtCorreoElectronico.Location = new Point(214, 264);
+            txtCorreoElectronico.Name = "txtCorreoElectronico";
+            txtCorreoElectronico.Size = new Size(100, 23);
+            txtCorreoElectronico.TabIndex = 13;
             // 
-            // textBox2
+            // txtCI
             // 
-            textBox2.Location = new Point(142, 230);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 12;
+            txtCI.Location = new Point(214, 225);
+            txtCI.Name = "txtCI";
+            txtCI.Size = new Size(100, 23);
+            txtCI.TabIndex = 12;
             // 
-            // textBox1
+            // txtNombreUsuario
             // 
-            textBox1.Location = new Point(142, 155);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 11;
+            txtNombreUsuario.Location = new Point(214, 155);
+            txtNombreUsuario.Name = "txtNombreUsuario";
+            txtNombreUsuario.Size = new Size(100, 23);
+            txtNombreUsuario.TabIndex = 11;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(41, 128, 185);
-            label1.Location = new Point(19, 99);
+            label1.Location = new Point(70, 99);
             label1.Name = "label1";
             label1.Size = new Size(182, 24);
             label1.TabIndex = 10;
@@ -218,14 +244,14 @@
             label7.TabIndex = 9;
             label7.Text = "Seleccione tipo de usuario";
             // 
-            // comboBox1
+            // cmbTipoUsuario
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Cliente Comun\t", "Cliente Empresa", "Usuario del sistema(Trabajador de la empresa)" });
-            comboBox1.Location = new Point(6, 54);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(293, 23);
-            comboBox1.TabIndex = 7;
+            cmbTipoUsuario.FormattingEnabled = true;
+            cmbTipoUsuario.Items.AddRange(new object[] { "Cliente Comun\t", "Cliente Empresa", "Usuario del sistema" });
+            cmbTipoUsuario.Location = new Point(6, 54);
+            cmbTipoUsuario.Name = "cmbTipoUsuario";
+            cmbTipoUsuario.Size = new Size(293, 23);
+            cmbTipoUsuario.TabIndex = 7;
             // 
             // Closebtn
             // 
@@ -240,6 +266,124 @@
             Closebtn.Text = "X";
             Closebtn.UseVisualStyleBackColor = true;
             Closebtn.Click += Closebtn_Click;
+            // 
+            // btnRegistrar
+            // 
+            btnRegistrar.Location = new Point(346, 568);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(114, 37);
+            btnRegistrar.TabIndex = 19;
+            btnRegistrar.Text = "Registrar";
+            btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = Color.FromArgb(41, 128, 185);
+            label9.Location = new Point(6, 336);
+            label9.Name = "label9";
+            label9.Size = new Size(112, 24);
+            label9.TabIndex = 20;
+            label9.Text = "Direccion:";
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(214, 299);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(100, 23);
+            txtTelefono.TabIndex = 21;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = Color.FromArgb(41, 128, 185);
+            label10.Location = new Point(6, 379);
+            label10.Name = "label10";
+            label10.Size = new Size(194, 24);
+            label10.TabIndex = 22;
+            label10.Text = "Nombre Empresa:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.ForeColor = Color.FromArgb(41, 128, 185);
+            label11.Location = new Point(6, 417);
+            label11.Name = "label11";
+            label11.Size = new Size(49, 24);
+            label11.TabIndex = 23;
+            label11.Text = "RUT:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.ForeColor = Color.FromArgb(41, 128, 185);
+            label12.Location = new Point(6, 451);
+            label12.Name = "label12";
+            label12.Size = new Size(206, 24);
+            label12.TabIndex = 24;
+            label12.Text = "Direccion Empresa:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.ForeColor = Color.FromArgb(41, 128, 185);
+            label13.Location = new Point(6, 496);
+            label13.Name = "label13";
+            label13.Size = new Size(198, 24);
+            label13.TabIndex = 25;
+            label13.Text = "Telefono Empresa:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.ForeColor = Color.FromArgb(41, 128, 185);
+            label14.Location = new Point(6, 294);
+            label14.Name = "label14";
+            label14.Size = new Size(104, 24);
+            label14.TabIndex = 26;
+            label14.Text = "Telefono:";
+            // 
+            // txtDireccion
+            // 
+            txtDireccion.Location = new Point(214, 337);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(100, 23);
+            txtDireccion.TabIndex = 27;
+            // 
+            // txtNombreEmpresa
+            // 
+            txtNombreEmpresa.Location = new Point(214, 384);
+            txtNombreEmpresa.Name = "txtNombreEmpresa";
+            txtNombreEmpresa.Size = new Size(100, 23);
+            txtNombreEmpresa.TabIndex = 28;
+            // 
+            // txtRUT
+            // 
+            txtRUT.Location = new Point(214, 418);
+            txtRUT.Name = "txtRUT";
+            txtRUT.Size = new Size(100, 23);
+            txtRUT.TabIndex = 29;
+            // 
+            // txtDireccionEmpresa
+            // 
+            txtDireccionEmpresa.Location = new Point(214, 452);
+            txtDireccionEmpresa.Name = "txtDireccionEmpresa";
+            txtDireccionEmpresa.Size = new Size(100, 23);
+            txtDireccionEmpresa.TabIndex = 30;
+            // 
+            // txtTelefonoEmpresa
+            // 
+            txtTelefonoEmpresa.Location = new Point(214, 496);
+            txtTelefonoEmpresa.Name = "txtTelefonoEmpresa";
+            txtTelefonoEmpresa.Size = new Size(100, 23);
+            txtTelefonoEmpresa.TabIndex = 31;
             // 
             // Registro
             // 
@@ -269,16 +413,29 @@
         private Panel panel1;
         private Panel panel2;
         private Button Closebtn;
-        private ComboBox comboBox1;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private ComboBox cmbTipoUsuario;
+        private TextBox txtContraseña;
+        private TextBox txtCorreoElectronico;
+        private TextBox txtCI;
+        private TextBox txtNombreUsuario;
         private Label label1;
         private Label label7;
         private Label label2;
         private Label label8;
         private Label label6;
         private Label label3;
+        private Button btnRegistrar;
+        private Label label9;
+        private Label label14;
+        private Label label13;
+        private Label label12;
+        private Label label11;
+        private Label label10;
+        private TextBox txtTelefono;
+        private TextBox txtTelefonoEmpresa;
+        private TextBox txtDireccionEmpresa;
+        private TextBox txtRUT;
+        private TextBox txtNombreEmpresa;
+        private TextBox txtDireccion;
     }
 }

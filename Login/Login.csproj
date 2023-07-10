@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Logica\Logica.csproj" />
+    <ProjectReference Include="..\RegistroUsuarios.Entities\RegistroUsuarios.Entities.csproj" />
   </ItemGroup>
 
 </Project>
