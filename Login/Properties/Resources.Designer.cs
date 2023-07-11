@@ -63,9 +63,59 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1492790846_9cancel_84247 {
+            get {
+                object obj = ResourceManager.GetObject("1492790846-9cancel_84247", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1496676725_rounded_high_ultra_colour02_maps_84627 {
+            get {
+                object obj = ResourceManager.GetObject("1496676725-rounded-high-ultra-colour02-maps_84627", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1904666_calculate_close_delete_hide_minimize_minus_remove_122516 {
+            get {
+                object obj = ResourceManager.GetObject("1904666-calculate-close-delete-hide-minimize-minus-remove_122516", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _meal_89750 {
+            get {
+                object obj = ResourceManager.GetObject("-meal_89750", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap account_login_log_in_icon_250759 {
             get {
                 object obj = ResourceManager.GetObject("account_login_log_in_icon_250759", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checkbox_103909 {
+            get {
+                object obj = ResourceManager.GetObject("checkbox_103909", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,6 +153,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap log_out_icon_icons_com_50106 {
+            get {
+                object obj = ResourceManager.GetObject("log-out_icon-icons.com_50106", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login_icon_176905 {
             get {
                 object obj = ResourceManager.GetObject("login_icon_176905", resourceCulture);
@@ -126,6 +186,66 @@ namespace Login.Properties {
         internal static System.Drawing.Bitmap logo_1 {
             get {
                 object obj = ResourceManager.GetObject("logo 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap store_icon_icons_com_54371 {
+            get {
+                object obj = ResourceManager.GetObject("store_icon-icons.com_54371", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Truck_Yellow_icon_icons_com_54884 {
+            get {
+                object obj = ResourceManager.GetObject("Truck_Yellow_icon-icons.com_54884", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Why_Us_80_icon_icons_com_57240 {
+            get {
+                object obj = ResourceManager.GetObject("Why_Us-80_icon-icons.com_57240", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap window_maximize_icon_181228 {
+            get {
+                object obj = ResourceManager.GetObject("window_maximize_icon_181228", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap window_maximize_icon_1812281 {
+            get {
+                object obj = ResourceManager.GetObject("window_maximize_icon_1812281", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap window_restore_icon_144027 {
+            get {
+                object obj = ResourceManager.GetObject("window_restore_icon_144027", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

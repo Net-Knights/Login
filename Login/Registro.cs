@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
+using Persistencia;
 using RegistroUsuarios.Entities;
 
 
@@ -17,18 +18,19 @@ namespace Login
     public partial class Registro : Form
     {
 
-        private  RegistroBLL registroBLL;
+        private DatosU datosU;
+        private UserModel userModel;
         public Registro()
         {
             InitializeComponent();
-            
+
             OcultarCamposClienteEmpresa();
-            
+
             OcultarCamposClienteComun();
-            registroBLL = new RegistroBLL();
+            userModel = new UserModel();
         }
 
-       
+
         private void Closebtn_Click(object sender, EventArgs e)
         {
             VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
@@ -77,7 +79,7 @@ namespace Login
             }
 
             // Registrar usuario
-            bool registroExitoso = registroBLL.RegistrarUsuario(usuario);
+            bool registroExitoso = userModel.RegistrarUsuario(usuario);
 
             if (registroExitoso)
             {
@@ -150,13 +152,13 @@ namespace Login
             {
                 MostrarCamposClienteComun();
                 OcultarCamposClienteEmpresa();
-                
+
             }
             else if (tipoUsuario == "Cliente Empresa")
             {
                 OcultarCamposClienteComun();
                 MostrarCamposClienteEmpresa();
-                
+
             }
             else if (tipoUsuario == "Usuario Sistema")
             {
@@ -228,7 +230,7 @@ namespace Login
             txtCorreoElectronico.Visible = true;
         }
 
-       
+
     }
 }
 

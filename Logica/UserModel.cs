@@ -20,19 +20,9 @@ namespace Logica
 
         }
 
-    }
-
-    public class RegistroBLL
-    {
-        private  RegistroDAL registroDAL;
-
-        public RegistroBLL()
-        {
-            registroDAL = new RegistroDAL();
-        }
-
         public bool RegistrarUsuario(Usuario usuario)
         {
+            DatosU datosU = new DatosU();
             // Validar usuario
             if (!ValidarUsuario(usuario))
             {
@@ -40,7 +30,7 @@ namespace Logica
             }
 
             // Guardar usuario en la base de datos
-            bool exito = registroDAL.GuardarUsuario(usuario);
+            bool exito = datosU.GuardarUsuario(usuario);
 
             return exito;
         }
@@ -67,6 +57,9 @@ namespace Logica
 
             return true;
         }
+
     }
 
-}
+    
+    }
+

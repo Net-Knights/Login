@@ -42,17 +42,11 @@ namespace Persistencia
             }
           
         }
-    }
-
-
- public class RegistroDAL: ConeccionSql
-    {
-
 
         public bool GuardarUsuario(Usuario usuario)
         {
             try
-            {
+           {
                 using (MySqlConnection connection = GetSqlConnection())
                 {
                     string query = "";
@@ -69,6 +63,17 @@ namespace Persistencia
                         command.Parameters.AddWithValue("@CI", clienteComun.CI);
                         command.Parameters.AddWithValue("@CorreoElectronico", clienteComun.CorreoElectronico);
                         command.Parameters.AddWithValue("@Telefono", clienteComun.Telefono);
+                        MySqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            return true;
+
+                        }
+                        else
+                        {
+
+                            return false;
+                        }
                     }
                     else if (usuario is ClienteEmpresa clienteEmpresa)
                     {
@@ -82,6 +87,17 @@ namespace Persistencia
                         command.Parameters.AddWithValue("@DireccionEmpresa", clienteEmpresa.DireccionEmpresa);
                         command.Parameters.AddWithValue("@CorreoElectronico", clienteEmpresa.CorreoElectronico);
                         command.Parameters.AddWithValue("@TelefonoEmpresa", clienteEmpresa.TelefonoEmpresa);
+                        MySqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            return true;
+
+                        }
+                        else
+                        {
+
+                            return false;
+                        }
                     }
                     else if (usuario is UsuarioSistema usuarioSistema)
                     {
@@ -91,6 +107,17 @@ namespace Persistencia
                         command.Parameters.AddWithValue("@NombreUsuario", usuarioSistema.NombreUsuario);
                         command.Parameters.AddWithValue("@Contraseña", usuarioSistema.Contraseña);
                         command.Parameters.AddWithValue("@CorreoElectronico", usuarioSistema.CorreoElectronico);
+                        MySqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            return true;
+
+                        }
+                        else
+                        {
+
+                            return false;
+                        }
                     }
 
                     if (command != null)
@@ -109,12 +136,20 @@ namespace Persistencia
 
             return false;
         }
+
+
+
+
+    }
+
+
+  
     }
 
 
 
 
-}
+
 
         
      

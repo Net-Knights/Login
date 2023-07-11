@@ -32,6 +32,7 @@
             txtPassword = new TextBox();
             Btn_Login = new Button();
             panel1 = new Panel();
+            panel5 = new Panel();
             label6 = new Label();
             pictureBox2 = new PictureBox();
             label5 = new Label();
@@ -49,6 +50,7 @@
             pictureBox3 = new PictureBox();
             Closebtn = new Button();
             panel1.SuspendLayout();
+            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -61,6 +63,7 @@
             // txtUsername
             // 
             txtUsername.BorderStyle = BorderStyle.None;
+            txtUsername.Cursor = Cursors.IBeam;
             txtUsername.Location = new Point(33, 10);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(405, 16);
@@ -70,6 +73,7 @@
             // txtPassword
             // 
             txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Cursor = Cursors.IBeam;
             txtPassword.Location = new Point(33, 10);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(405, 16);
@@ -80,6 +84,7 @@
             // Btn_Login
             // 
             Btn_Login.BackColor = Color.FromArgb(41, 128, 185);
+            Btn_Login.Cursor = Cursors.Hand;
             Btn_Login.FlatStyle = FlatStyle.Flat;
             Btn_Login.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             Btn_Login.ForeColor = Color.White;
@@ -103,15 +108,24 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(300, 530);
+            panel1.Size = new Size(257, 530);
             panel1.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(Closebtn);
+            panel5.Location = new Point(0, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(493, 36);
+            panel5.TabIndex = 12;
+            panel5.MouseDown += panel5_MouseDown;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(65, 192);
+            label6.Location = new Point(57, 192);
             label6.Name = "label6";
             label6.Size = new Size(147, 24);
             label6.TabIndex = 5;
@@ -120,7 +134,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.logo_1;
-            pictureBox2.Location = new Point(215, 434);
+            pictureBox2.Location = new Point(178, 431);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(79, 96);
             pictureBox2.TabIndex = 4;
@@ -152,7 +166,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(28, 168);
+            label3.Location = new Point(12, 168);
             label3.Name = "label3";
             label3.Size = new Size(229, 24);
             label3.TabIndex = 1;
@@ -161,7 +175,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.account_login_log_in_icon_250759;
-            pictureBox1.Location = new Point(95, 40);
+            pictureBox1.Location = new Point(85, 39);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(96, 96);
             pictureBox1.TabIndex = 0;
@@ -170,18 +184,18 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(panel5);
             panel2.Controls.Add(lblErrorMesagge);
             panel2.Controls.Add(Btn_Registrarse);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(panel3);
-            panel2.Controls.Add(Closebtn);
             panel2.Controls.Add(Btn_Login);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(300, 0);
+            panel2.Location = new Point(257, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(450, 530);
+            panel2.Size = new Size(493, 530);
             panel2.TabIndex = 5;
             // 
             // lblErrorMesagge
@@ -197,6 +211,7 @@
             // Btn_Registrarse
             // 
             Btn_Registrarse.BackColor = Color.FromArgb(41, 128, 185);
+            Btn_Registrarse.Cursor = Cursors.Hand;
             Btn_Registrarse.FlatAppearance.BorderColor = Color.FromArgb(41, 128, 185);
             Btn_Registrarse.FlatAppearance.BorderSize = 0;
             Btn_Registrarse.FlatStyle = FlatStyle.Flat;
@@ -269,13 +284,14 @@
             // 
             // Closebtn
             // 
+            Closebtn.Cursor = Cursors.Hand;
             Closebtn.FlatAppearance.BorderSize = 0;
             Closebtn.FlatStyle = FlatStyle.Flat;
             Closebtn.Font = new Font("Verdana", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             Closebtn.ForeColor = Color.FromArgb(41, 128, 185);
-            Closebtn.Location = new Point(410, 0);
+            Closebtn.Location = new Point(453, 0);
             Closebtn.Name = "Closebtn";
-            Closebtn.Size = new Size(40, 40);
+            Closebtn.Size = new Size(40, 36);
             Closebtn.TabIndex = 5;
             Closebtn.Text = "X";
             Closebtn.UseVisualStyleBackColor = true;
@@ -291,10 +307,11 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "VentanaPrincipal";
-            StartPosition = FormStartPosition.Manual;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "VentanaPrincipal";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
@@ -329,5 +346,6 @@
         private Label label1;
         private Button Btn_Registrarse;
         private Label lblErrorMesagge;
+        private Panel panel5;
     }
 }

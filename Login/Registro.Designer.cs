@@ -152,6 +152,7 @@
             // 
             // txtTelefonoEmpresa
             // 
+            txtTelefonoEmpresa.Cursor = Cursors.IBeam;
             txtTelefonoEmpresa.Location = new Point(214, 496);
             txtTelefonoEmpresa.Name = "txtTelefonoEmpresa";
             txtTelefonoEmpresa.Size = new Size(100, 23);
@@ -159,6 +160,7 @@
             // 
             // txtDireccionEmpresa
             // 
+            txtDireccionEmpresa.Cursor = Cursors.IBeam;
             txtDireccionEmpresa.Location = new Point(214, 452);
             txtDireccionEmpresa.Name = "txtDireccionEmpresa";
             txtDireccionEmpresa.Size = new Size(100, 23);
@@ -166,6 +168,7 @@
             // 
             // txtRUT
             // 
+            txtRUT.Cursor = Cursors.IBeam;
             txtRUT.Location = new Point(214, 418);
             txtRUT.Name = "txtRUT";
             txtRUT.Size = new Size(100, 23);
@@ -173,6 +176,7 @@
             // 
             // txtNombreEmpresa
             // 
+            txtNombreEmpresa.Cursor = Cursors.IBeam;
             txtNombreEmpresa.Location = new Point(214, 384);
             txtNombreEmpresa.Name = "txtNombreEmpresa";
             txtNombreEmpresa.Size = new Size(100, 23);
@@ -180,6 +184,7 @@
             // 
             // txtDireccion
             // 
+            txtDireccion.Cursor = Cursors.IBeam;
             txtDireccion.Location = new Point(214, 337);
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(100, 23);
@@ -242,6 +247,7 @@
             // 
             // txtTelefono
             // 
+            txtTelefono.Cursor = Cursors.IBeam;
             txtTelefono.Location = new Point(214, 299);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(100, 23);
@@ -260,6 +266,7 @@
             // 
             // btnRegistrar
             // 
+            btnRegistrar.Cursor = Cursors.Hand;
             btnRegistrar.Location = new Point(346, 568);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(114, 37);
@@ -273,7 +280,7 @@
             lblCorreoElectronico.AutoSize = true;
             lblCorreoElectronico.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblCorreoElectronico.ForeColor = Color.FromArgb(41, 128, 185);
-            lblCorreoElectronico.Location = new Point(3, 259);
+            lblCorreoElectronico.Location = new Point(1, 220);
             lblCorreoElectronico.Name = "lblCorreoElectronico";
             lblCorreoElectronico.Size = new Size(207, 24);
             lblCorreoElectronico.TabIndex = 18;
@@ -284,7 +291,7 @@
             lblCI.AutoSize = true;
             lblCI.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblCI.ForeColor = Color.FromArgb(41, 128, 185);
-            lblCI.Location = new Point(6, 225);
+            lblCI.Location = new Point(6, 259);
             lblCI.Name = "lblCI";
             lblCI.Size = new Size(37, 24);
             lblCI.TabIndex = 17;
@@ -314,6 +321,7 @@
             // 
             // txtContraseña
             // 
+            txtContraseña.Cursor = Cursors.IBeam;
             txtContraseña.Location = new Point(214, 192);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(100, 23);
@@ -321,20 +329,23 @@
             // 
             // txtCorreoElectronico
             // 
-            txtCorreoElectronico.Location = new Point(214, 264);
+            txtCorreoElectronico.Cursor = Cursors.IBeam;
+            txtCorreoElectronico.Location = new Point(214, 225);
             txtCorreoElectronico.Name = "txtCorreoElectronico";
             txtCorreoElectronico.Size = new Size(100, 23);
             txtCorreoElectronico.TabIndex = 13;
             // 
             // txtCI
             // 
-            txtCI.Location = new Point(214, 225);
+            txtCI.Cursor = Cursors.IBeam;
+            txtCI.Location = new Point(214, 264);
             txtCI.Name = "txtCI";
             txtCI.Size = new Size(100, 23);
             txtCI.TabIndex = 12;
             // 
             // txtNombreUsuario
             // 
+            txtNombreUsuario.Cursor = Cursors.IBeam;
             txtNombreUsuario.Location = new Point(214, 155);
             txtNombreUsuario.Name = "txtNombreUsuario";
             txtNombreUsuario.Size = new Size(100, 23);
@@ -404,6 +415,11 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
+        }
+
+        private void BtnRegistrar_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

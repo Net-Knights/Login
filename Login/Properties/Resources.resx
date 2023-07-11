@@ -118,25 +118,61 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="internet_locked_padlock_password_secure_security_unlock_icon_1270831" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\internet_locked_padlock_password_secure_security_unlock_icon_1270831.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Why_Us-80_icon-icons.com_57240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Why_Us-80_icon-icons.com_57240.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="internet_locked_padlock_password_secure_security_unlock_icon_127083" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\internet_locked_padlock_password_secure_security_unlock_icon_127083.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="-meal_89750" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\-meal_89750.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="login_icon_176905" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login_icon_176905.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="window_maximize_icon_181228" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\window_maximize_icon_181228.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Truck_Yellow_icon-icons.com_54884" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Truck_Yellow_icon-icons.com_54884.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="account_login_log_in_icon_250759" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account_login_log_in_icon_250759.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1904666-calculate-close-delete-hide-minimize-minus-remove_122516" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1904666-calculate-close-delete-hide-minimize-minus-remove_122516.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login_icon_1769051" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login_icon_1769051.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="customer_person_people_man_user_client_1629" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customer_person_people_man_user_client_1629.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="login_icon_1769051" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login_icon_1769051.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="store_icon-icons.com_54371" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\store_icon-icons.com_54371.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="internet_locked_padlock_password_secure_security_unlock_icon_1270831" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\internet_locked_padlock_password_secure_security_unlock_icon_1270831.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkbox_103909" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkbox_103909.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login_icon_176905" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login_icon_176905.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1492790846-9cancel_84247" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1492790846-9cancel_84247.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="window_restore_icon_144027" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\window_restore_icon_144027.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="window_maximize_icon_1812281" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\window_maximize_icon_1812281.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="internet_locked_padlock_password_secure_security_unlock_icon_127083" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\internet_locked_padlock_password_secure_security_unlock_icon_127083.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1496676725-rounded-high-ultra-colour02-maps_84627" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496676725-rounded-high-ultra-colour02-maps_84627.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account_login_log_in_icon_250759" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account_login_log_in_icon_250759.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="log-out_icon-icons.com_50106" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\log-out_icon-icons.com_50106.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
