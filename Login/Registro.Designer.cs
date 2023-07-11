@@ -57,7 +57,7 @@
             txtNombreUsuario = new TextBox();
             lblIngrese = new Label();
             label7 = new Label();
-            cmbTipoUsuario = new ComboBox();
+            cmbTipoCliente = new ComboBox();
             Closebtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -142,7 +142,7 @@
             panel2.Controls.Add(txtNombreUsuario);
             panel2.Controls.Add(lblIngrese);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(cmbTipoUsuario);
+            panel2.Controls.Add(cmbTipoCliente);
             panel2.Controls.Add(Closebtn);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(256, 0);
@@ -273,7 +273,7 @@
             btnRegistrar.TabIndex = 19;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
-            btnRegistrar.Click += btnRegistrar_Click;
+            btnRegistrar.Click += btnRegistrar_Click_1;
             // 
             // lblCorreoElectronico
             // 
@@ -373,15 +373,15 @@
             label7.TabIndex = 9;
             label7.Text = "Seleccione tipo de usuario";
             // 
-            // cmbTipoUsuario
+            // cmbTipoCliente
             // 
-            cmbTipoUsuario.FormattingEnabled = true;
-            cmbTipoUsuario.Items.AddRange(new object[] { "Cliente Comun", "Cliente Empresa", "Usuario Sistema" });
-            cmbTipoUsuario.Location = new Point(57, 54);
-            cmbTipoUsuario.Name = "cmbTipoUsuario";
-            cmbTipoUsuario.Size = new Size(293, 23);
-            cmbTipoUsuario.TabIndex = 7;
-            cmbTipoUsuario.SelectedIndexChanged += cmbTipoUsuario_SelectedIndexChanged;
+            cmbTipoCliente.FormattingEnabled = true;
+            cmbTipoCliente.Items.AddRange(new object[] { "Cliente Comun", "Cliente Empresa", "Usuario Sistema" });
+            cmbTipoCliente.Location = new Point(57, 54);
+            cmbTipoCliente.Name = "cmbTipoCliente";
+            cmbTipoCliente.Size = new Size(293, 23);
+            cmbTipoCliente.TabIndex = 7;
+            cmbTipoCliente.SelectionChangeCommitted += cmbTipoCliente_SelectionChangeCommitted;
             // 
             // Closebtn
             // 
@@ -430,7 +430,7 @@
         private Panel panel1;
         private Panel panel2;
         private Button Closebtn;
-        private ComboBox cmbTipoUsuario;
+        private ComboBox cmbTipoCliente;
         private TextBox txtContraseña;
         private TextBox txtCorreoElectronico;
         private TextBox txtCI;

@@ -43,98 +43,116 @@ namespace Persistencia
           
         }
 
-        public bool GuardarUsuario(Usuario usuario)
+       
+
+
+
+
+    }
+
+
+
+
+    public class DataAccessLayer
+    {
+        private string connectionString = "Server=localhost;Database=mybd;Uid=root;Pwd=auditoredash3;";
+
+        public void InsertarClienteComun(ClienteComun cliente)
         {
-            try
-           {
-                using (MySqlConnection connection = GetSqlConnection())
-                {
-                    string query = "";
-                    MySqlCommand command = null;
-
-                    if (usuario is ClienteComun clienteComun)
-                    {
-                        query = "INSERT INTO clientecomun (NombreUsuario, Contraseña, Direccion, CI, CorreoElectronico, Telefono) VALUES (@NombreUsuario, @Contraseña, @Direccion, @CI, @CorreoElectronico, @Telefono)";
-
-                        command = new MySqlCommand(query, connection);
-                        command.Parameters.AddWithValue("@NombreUsuario", clienteComun.NombreUsuario);
-                        command.Parameters.AddWithValue("@Contraseña", clienteComun.Contraseña);
-                        command.Parameters.AddWithValue("@Direccion", clienteComun.Direccion);
-                        command.Parameters.AddWithValue("@CI", clienteComun.CI);
-                        command.Parameters.AddWithValue("@CorreoElectronico", clienteComun.CorreoElectronico);
-                        command.Parameters.AddWithValue("@Telefono", clienteComun.Telefono);
-                        MySqlDataReader reader = command.ExecuteReader();
-                        if (reader.HasRows)
-                        {
-                            return true;
-
-                        }
-                        else
-                        {
-
-                            return false;
-                        }
-                    }
-                    else if (usuario is ClienteEmpresa clienteEmpresa)
-                    {
-                        query = "INSERT INTO clienteempresa (NombreUsuario, Contraseña, NombreEmpresa, RUT, DireccionEmpresa, CorreoElectronico, TelefonoEmpresa) VALUES (@NombreUsuario, @Contraseña, @NombreEmpresa, @RUT, @DireccionEmpresa, @CorreoElectronico, @TelefonoEmpresa)";
-
-                        command = new MySqlCommand(query, connection);
-                        command.Parameters.AddWithValue("@NombreUsuario", clienteEmpresa.NombreUsuario);
-                        command.Parameters.AddWithValue("@Contraseña", clienteEmpresa.Contraseña);
-                        command.Parameters.AddWithValue("@NombreEmpresa", clienteEmpresa.NombreEmpresa);
-                        command.Parameters.AddWithValue("@RUT", clienteEmpresa.RUT);
-                        command.Parameters.AddWithValue("@DireccionEmpresa", clienteEmpresa.DireccionEmpresa);
-                        command.Parameters.AddWithValue("@CorreoElectronico", clienteEmpresa.CorreoElectronico);
-                        command.Parameters.AddWithValue("@TelefonoEmpresa", clienteEmpresa.TelefonoEmpresa);
-                        MySqlDataReader reader = command.ExecuteReader();
-                        if (reader.HasRows)
-                        {
-                            return true;
-
-                        }
-                        else
-                        {
-
-                            return false;
-                        }
-                    }
-                    else if (usuario is UsuarioSistema usuarioSistema)
-                    {
-                        query = "INSERT INTO usuariosistema (NombreUsuario, Contraseña, CorreoElectronico) VALUES (@NombreUsuario, @Contraseña, @CorreoElectronico)";
-
-                        command = new MySqlCommand(query, connection);
-                        command.Parameters.AddWithValue("@NombreUsuario", usuarioSistema.NombreUsuario);
-                        command.Parameters.AddWithValue("@Contraseña", usuarioSistema.Contraseña);
-                        command.Parameters.AddWithValue("@CorreoElectronico", usuarioSistema.CorreoElectronico);
-                        MySqlDataReader reader = command.ExecuteReader();
-                        if (reader.HasRows)
-                        {
-                            return true;
-
-                        }
-                        else
-                        {
-
-                            return false;
-                        }
-                    }
-
-                    if (command != null)
-                    {
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
-                        return rowsAffected > 0;  // Retorna true si se afectó al menos una fila
-                    }
-                }
-            }
-            catch (Exception ex)
+            using (var connection = new MySqlConnection(connectionString))
             {
-                // Manejar excepciones y realizar un registro de errores si es necesario
-                return false;
+                connection.Open();
+                var query = "INSERT INTO ClienteComun (NombreUsuario, Contraseña, CorreoElectronico, CI, Telefono, Direccion) " +
+                            "VALUES (@NombreUsuario, @Contraseña, @CorreoElectronico, @CI, @Telefono, @Direccion)";
+                var command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NombreUsuario", cliente.NombreUsuario);
+                command.Parameters.AddWithValue("@Contraseña", cliente.Contraseña);
+                command.Parameters.AddWithValue("@CorreoElectronico", cliente.CorreoElectronico);
+                command.Parameters.AddWithValue("@CI", cliente.CI);
+                command.Parameters.AddWithValue("@Telefono", cliente.Telefono);
+                command.Parameters.AddWithValue("@Direccion", cliente.Direccion);
+                command.ExecuteNonQuery();
             }
+        }
 
-            return false;
+        public void InsertarClienteEmpresa(ClienteEmpresa cliente)
+        {
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                var query = "INSERT INTO ClienteEmpresa (NombreUsuario, Contraseña, Rut, NombreEmpresa, TelefonoEmpresa, CorreoElectronico, DireccionEmpresa) " +
+                            "VALUES (@NombreUsuario, @Contraseña, @Rut, @NombreEmpresa, @TelefonoEmpresa, @CorreoElectronico, @DireccionEmpresa)";
+                var command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NombreUsuario", cliente.NombreUsuario);
+                command.Parameters.AddWithValue("@Contraseña", cliente.Contraseña);
+                command.Parameters.AddWithValue("@Rut", cliente.RUT);
+                command.Parameters.AddWithValue("@NombreEmpresa", cliente.NombreEmpresa);
+                command.Parameters.AddWithValue("@TelefonoEmpresa", cliente.TelefonoEmpresa);
+                command.Parameters.AddWithValue("@CorreoElectronico", cliente.CorreoElectronico);
+                command.Parameters.AddWithValue("@DireccionEmpresa", cliente.DireccionEmpresa);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void InsertarUsuarioSistema(UsuarioSistema usuario)
+        {
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                var query = "INSERT INTO UsuarioSistema (NombreUsuario, Contraseña, CorreoElectronico) " +
+                            "VALUES (@NombreUsuario, @Contraseña, @CorreoElectronico)";
+                var command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NombreUsuario", usuario.NombreUsuario);
+                command.Parameters.AddWithValue("@Contraseña", usuario.Contraseña);
+                command.Parameters.AddWithValue("@CorreoElectronico", usuario.CorreoElectronico);
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+
+        public string VerificarCredenciales(string nombreUsuario, string contraseña)
+        {
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Verificar en la tabla de ClienteComun
+                var queryClienteComun = "SELECT COUNT(*) FROM ClienteComun WHERE NombreUsuario = @NombreUsuario AND Contraseña = @Contraseña";
+                var commandClienteComun = new MySqlCommand(queryClienteComun, connection);
+                commandClienteComun.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+                commandClienteComun.Parameters.AddWithValue("@Contraseña", contraseña);
+                var resultClienteComun = (long)commandClienteComun.ExecuteScalar();
+                if (resultClienteComun > 0)
+                {
+                    return "Cliente Común";
+                }
+
+                // Verificar en la tabla de ClienteEmpresa
+                var queryClienteEmpresa = "SELECT COUNT(*) FROM ClienteEmpresa WHERE NombreUsuario = @NombreUsuario AND Contraseña = @Contraseña";
+                var commandClienteEmpresa = new MySqlCommand(queryClienteEmpresa, connection);
+                commandClienteEmpresa.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+                commandClienteEmpresa.Parameters.AddWithValue("@Contraseña", contraseña);
+                var resultClienteEmpresa = (long)commandClienteEmpresa.ExecuteScalar();
+                if (resultClienteEmpresa > 0)
+                {
+                    return "Cliente Empresa";
+                }
+
+                // Verificar en la tabla de UsuarioSistema
+                var queryUsuarioSistema = "SELECT COUNT(*) FROM UsuarioSistema WHERE NombreUsuario = @NombreUsuario AND Contraseña = @Contraseña";
+                var commandUsuarioSistema = new MySqlCommand(queryUsuarioSistema, connection);
+                commandUsuarioSistema.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+                commandUsuarioSistema.Parameters.AddWithValue("@Contraseña", contraseña);
+                var resultUsuarioSistema = (long)commandUsuarioSistema.ExecuteScalar();
+                if (resultUsuarioSistema > 0)
+                {
+                    return "Usuario del Sistema";
+                }
+
+                // Si no se encuentra en ninguna tabla, retornar null
+                return null;
+            }
         }
 
 
@@ -143,8 +161,12 @@ namespace Persistencia
     }
 
 
-  
-    }
+
+
+
+
+
+}
 
 
 
