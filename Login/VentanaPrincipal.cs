@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
+using Persistencia;
 
 
 namespace Login
@@ -38,51 +39,51 @@ namespace Login
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtUsername.Text) && string.IsNullOrEmpty(txtPassword.Text))
+            var nombreUsuario = txtUsername.Text;
+            var contraseña = txtPassword.Text;
+
+            if (string.IsNullOrWhiteSpace(nombreUsuario) || string.IsNullOrWhiteSpace(contraseña))
             {
-                msgError("Ingrese su nombre de usuario y contraseña");
+                MessageBox.Show("Ingresa el nombre de usuario y la contraseña.");
+                return;
             }
-            else if (string.IsNullOrEmpty(txtUsername.Text))
+
+            try
             {
-                msgError("Ingrese su nombre de usuario");
+                var dataAccessLayer = new DataAccessLayer();
+                var tipoUsuario = dataAccessLayer.VerificarCredenciales(nombreUsuario, contraseña);
+
+                if (!string.IsNullOrEmpty(tipoUsuario))
+                {
+                    MessageBox.Show("Inicio de sesión exitoso como " + tipoUsuario);
+                    this.Hide();
+
+                    MenuPrincipal menuPrincipal = new MenuPrincipal();
+                    menuPrincipal.Show(this);
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
+                }
             }
-            else if (string.IsNullOrEmpty(txtPassword.Text))
+            catch (Exception ex)
             {
-                msgError("Ingrese su contraseña");
-            }
-            else
-            {
-                MenuPrincipal menuPrincipal = new MenuPrincipal();
-                menuPrincipal.Show(this);
-                Hide();
+                MessageBox.Show("Error al iniciar sesión: " + ex.Message);
 
             }
+
+
+
+
 
         }
 
 
-
-        private void msgError(string msg)
-        {
-            lblErrorMesagge.Text = "     " + msg;
-            lblErrorMesagge.Visible = true;
-
-        }
-
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void Closebtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Btn_Registrarse_Click(object sender, EventArgs e)
@@ -99,3 +100,4 @@ namespace Login
         }
     }
 }
+

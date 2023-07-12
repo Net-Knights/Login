@@ -32,15 +32,15 @@
             txtPassword = new TextBox();
             Btn_Login = new Button();
             panel1 = new Panel();
-            panel5 = new Panel();
             label6 = new Label();
             pictureBox2 = new PictureBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             pictureBox1 = new PictureBox();
+            panel5 = new Panel();
+            Closebtn = new Button();
             panel2 = new Panel();
-            lblErrorMesagge = new Label();
             Btn_Registrarse = new Button();
             label1 = new Label();
             label7 = new Label();
@@ -48,11 +48,10 @@
             pictureBox4 = new PictureBox();
             panel3 = new Panel();
             pictureBox3 = new PictureBox();
-            Closebtn = new Button();
             panel1.SuspendLayout();
-            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel5.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -68,7 +67,6 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(405, 16);
             txtUsername.TabIndex = 2;
-            txtUsername.TextChanged += txtUsername_TextChanged;
             // 
             // txtPassword
             // 
@@ -79,7 +77,6 @@
             txtPassword.Size = new Size(405, 16);
             txtPassword.TabIndex = 3;
             txtPassword.UseSystemPasswordChar = true;
-            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // Btn_Login
             // 
@@ -110,15 +107,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(257, 530);
             panel1.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(Closebtn);
-            panel5.Location = new Point(0, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(493, 36);
-            panel5.TabIndex = 12;
-            panel5.MouseDown += panel5_MouseDown;
             // 
             // label6
             // 
@@ -181,11 +169,34 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // panel5
+            // 
+            panel5.Controls.Add(Closebtn);
+            panel5.Location = new Point(0, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(493, 36);
+            panel5.TabIndex = 12;
+            panel5.MouseDown += panel5_MouseDown;
+            // 
+            // Closebtn
+            // 
+            Closebtn.Cursor = Cursors.Hand;
+            Closebtn.FlatAppearance.BorderSize = 0;
+            Closebtn.FlatStyle = FlatStyle.Flat;
+            Closebtn.Font = new Font("Verdana", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Closebtn.ForeColor = Color.FromArgb(41, 128, 185);
+            Closebtn.Location = new Point(453, 0);
+            Closebtn.Name = "Closebtn";
+            Closebtn.Size = new Size(40, 36);
+            Closebtn.TabIndex = 5;
+            Closebtn.Text = "X";
+            Closebtn.UseVisualStyleBackColor = true;
+            Closebtn.Click += Closebtn_Click;
+            // 
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
             panel2.Controls.Add(panel5);
-            panel2.Controls.Add(lblErrorMesagge);
             panel2.Controls.Add(Btn_Registrarse);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label7);
@@ -197,16 +208,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(493, 530);
             panel2.TabIndex = 5;
-            // 
-            // lblErrorMesagge
-            // 
-            lblErrorMesagge.AutoSize = true;
-            lblErrorMesagge.Location = new Point(16, 227);
-            lblErrorMesagge.Name = "lblErrorMesagge";
-            lblErrorMesagge.Size = new Size(32, 15);
-            lblErrorMesagge.TabIndex = 11;
-            lblErrorMesagge.Text = "Error";
-            lblErrorMesagge.Visible = false;
             // 
             // Btn_Registrarse
             // 
@@ -282,21 +283,6 @@
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
             // 
-            // Closebtn
-            // 
-            Closebtn.Cursor = Cursors.Hand;
-            Closebtn.FlatAppearance.BorderSize = 0;
-            Closebtn.FlatStyle = FlatStyle.Flat;
-            Closebtn.Font = new Font("Verdana", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Closebtn.ForeColor = Color.FromArgb(41, 128, 185);
-            Closebtn.Location = new Point(453, 0);
-            Closebtn.Name = "Closebtn";
-            Closebtn.Size = new Size(40, 36);
-            Closebtn.TabIndex = 5;
-            Closebtn.Text = "X";
-            Closebtn.UseVisualStyleBackColor = true;
-            Closebtn.Click += Closebtn_Click;
-            // 
             // VentanaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -311,9 +297,9 @@
             Text = "VentanaPrincipal";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel5.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel4.ResumeLayout(false);
@@ -345,7 +331,6 @@
         private PictureBox pictureBox3;
         private Label label1;
         private Button Btn_Registrarse;
-        private Label lblErrorMesagge;
         private Panel panel5;
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             BarraTitulo = new Panel();
+            label1 = new Label();
             BtnRestaurar = new PictureBox();
             BtnMin = new PictureBox();
             BtnMax = new PictureBox();
@@ -62,7 +63,8 @@
             // 
             // BarraTitulo
             // 
-            BarraTitulo.BackColor = SystemColors.MenuHighlight;
+            BarraTitulo.BackColor = Color.FromArgb(49, 66, 82);
+            BarraTitulo.Controls.Add(label1);
             BarraTitulo.Controls.Add(BtnRestaurar);
             BarraTitulo.Controls.Add(BtnMin);
             BarraTitulo.Controls.Add(BtnMax);
@@ -73,6 +75,18 @@
             BarraTitulo.Size = new Size(815, 33);
             BarraTitulo.TabIndex = 0;
             BarraTitulo.MouseDown += BarraTitulo_MouseDown;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.FlatStyle = FlatStyle.Flat;
+            label1.Font = new Font("Ink Free", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(336, 7);
+            label1.Name = "label1";
+            label1.Size = new Size(124, 23);
+            label1.TabIndex = 4;
+            label1.Text = "Menu Principal";
             // 
             // BtnRestaurar
             // 
@@ -162,14 +176,16 @@
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             button7.Image = Properties.Resources.log_out_icon_icons_com_50106;
             button7.ImageAlign = ContentAlignment.MiddleLeft;
             button7.Location = new Point(6, 412);
             button7.Name = "button7";
             button7.Size = new Size(157, 34);
             button7.TabIndex = 13;
-            button7.Text = "LogOut";
+            button7.Text = "Cerrar Sesion";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // panel6
             // 
@@ -321,7 +337,7 @@
             // 
             // panelContenedor
             // 
-            panelContenedor.BackColor = Color.FromArgb(49, 66, 82);
+            panelContenedor.BackColor = Color.FromArgb(224, 224, 224);
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(169, 33);
             panelContenedor.Name = "panelContenedor";
@@ -341,6 +357,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MenuPrincipal";
             BarraTitulo.ResumeLayout(false);
+            BarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)BtnRestaurar).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnMin).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnMax).EndInit();
@@ -374,5 +391,6 @@
         private Button button3;
         private Panel panel2;
         private Button button2;
+        private Label label1;
     }
 }

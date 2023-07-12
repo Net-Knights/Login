@@ -13,9 +13,16 @@ namespace Login
 {
     public partial class MenuPrincipal : Form
     {
+        private string tipoUsuario;
+
         public MenuPrincipal()
         {
             InitializeComponent();
+        }
+
+        public MenuPrincipal(string tipoUsuario)
+        {
+            this.tipoUsuario = tipoUsuario;
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -52,6 +59,13 @@ namespace Login
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+            ventanaPrincipal.Show(this);
+            Hide();
         }
     }
 }
