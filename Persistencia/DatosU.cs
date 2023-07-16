@@ -55,7 +55,7 @@ namespace Persistencia
 
     public class DataAccessLayer
     {
-        private string connectionString = "Server=192.168.56.1;Database=mybd;Uid=Entrega;Pwd=12345;";
+        private string connectionString = "Server=192.168.0.132;Database=mybd;Uid=root;Pwd=auditoredash3;";
 
         public void InsertarClienteComun(ClienteComun cliente)
         {

@@ -13,7 +13,7 @@ namespace Persistencia
     {
         private readonly string connectionString;
         public ConeccionSql() { 
-        connectionString = "server=localhost;database= mybd; integrated security= true";
+        connectionString = "server=192.168.0.132;database= mybd; integrated security= true";
         
         
         }

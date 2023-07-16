@@ -41,4 +41,10 @@ namespace RegistroUsuarios.Entities
     {
        
     }
+
+    public class UsuarioPrueba
+    {
+        public string NombreUsuario { get; set; }
+        public string Contraseña { get; set; }
+    }
 }

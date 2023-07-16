@@ -23,5 +23,10 @@ namespace Login
             ventanaPrincipal.Show(this);
             Hide();
         }
+
+        private void Closebtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -16,7 +17,7 @@ namespace Login
 {
     public partial class VentanaPrincipal : Form
     {
-
+        private LogicaUsuarios logicaUsuarios;
         [STAThread]
         static void Main()
         {
@@ -30,6 +31,7 @@ namespace Login
         public VentanaPrincipal()
         {
             InitializeComponent();
+            logicaUsuarios = new LogicaUsuarios();
         }
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -48,12 +50,29 @@ namespace Login
                 return;
             }
 
+
+
+
+
             try
             {
+                var usuario = logicaUsuarios.ObtenerUsuario(nombreUsuario, contraseña);
                 var dataAccessLayer = new DataAccessLayer();
                 var tipoUsuario = dataAccessLayer.VerificarCredenciales(nombreUsuario, contraseña);
 
-                if (!string.IsNullOrEmpty(tipoUsuario))
+                if (usuario != null)
+                {
+                    MessageBox.Show("Inicio de sesión exitoso como usuario de prueba");
+
+                    MenuPrincipal menuPrincipal = new MenuPrincipal();
+                    menuPrincipal.Show(this);
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
+
+                    if (!string.IsNullOrEmpty(tipoUsuario))
                 {
                     MessageBox.Show("Inicio de sesión exitoso como " + tipoUsuario);
 
@@ -70,7 +89,7 @@ namespace Login
                             Hide();
                             break;
                         case "Usuario del Sistema":
-                            MenuPrincipal menuPrincipal= new MenuPrincipal();
+                            MenuPrincipal menuPrincipal = new MenuPrincipal();
                             menuPrincipal.Show(this);
                             Hide();
                             break;
@@ -85,6 +104,7 @@ namespace Login
                 {
                     MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
                 }
+            }
             }
             catch (Exception ex)
             {

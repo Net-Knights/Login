@@ -63,6 +63,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1_iX30968IvZXQt_WNfIwS7w {
+            get {
+                object obj = ResourceManager.GetObject("1_iX30968IvZXQt_WNfIwS7w", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1492790846_9cancel_84247 {
             get {
                 object obj = ResourceManager.GetObject("1492790846-9cancel_84247", resourceCulture);
@@ -153,6 +163,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap isotiupo {
+            get {
+                object obj = ResourceManager.GetObject("isotiupo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap log_out_icon_icons_com_50106 {
             get {
                 object obj = ResourceManager.GetObject("log-out_icon-icons.com_50106", resourceCulture);
@@ -186,6 +206,36 @@ namespace Login.Properties {
         internal static System.Drawing.Bitmap logo_1 {
             get {
                 object obj = ResourceManager.GetObject("logo 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_11 {
+            get {
+                object obj = ResourceManager.GetObject("logo 11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maestro_0ogway_2_League_of_Legends {
+            get {
+                object obj = ResourceManager.GetObject("maestro-0ogway_2-League of Legends", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maestro_0ogway_2_League_of_Legends1 {
+            get {
+                object obj = ResourceManager.GetObject("maestro-0ogway_2-League of Legends1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -41,6 +41,7 @@
             button2 = new Button();
             button1 = new Button();
             pictureBox1 = new PictureBox();
+            Closebtn = new Button();
             BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnMin).BeginInit();
@@ -53,6 +54,7 @@
             // BarraTitulo
             // 
             BarraTitulo.BackColor = Color.FromArgb(49, 66, 82);
+            BarraTitulo.Controls.Add(Closebtn);
             BarraTitulo.Controls.Add(label1);
             BarraTitulo.Controls.Add(BtnRestaurar);
             BarraTitulo.Controls.Add(BtnMin);
@@ -208,6 +210,21 @@
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
             // 
+            // Closebtn
+            // 
+            Closebtn.Cursor = Cursors.Hand;
+            Closebtn.FlatAppearance.BorderSize = 0;
+            Closebtn.FlatStyle = FlatStyle.Flat;
+            Closebtn.Font = new Font("Verdana", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Closebtn.ForeColor = Color.FromArgb(41, 128, 185);
+            Closebtn.Location = new Point(775, 0);
+            Closebtn.Name = "Closebtn";
+            Closebtn.Size = new Size(40, 36);
+            Closebtn.TabIndex = 6;
+            Closebtn.Text = "X";
+            Closebtn.UseVisualStyleBackColor = true;
+            Closebtn.Click += Closebtn_Click;
+            // 
             // FormularioClienteComun
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -243,5 +260,6 @@
         private Button button2;
         private Button button1;
         private PictureBox pictureBox1;
+        private Button Closebtn;
     }
 }

@@ -23,7 +23,28 @@ namespace Logica
        
         }
 
+    public class LogicaUsuarios
+    {
+        private List<UsuarioPrueba> usuariosPrueba;
+
+        public LogicaUsuarios()
+        {
+            usuariosPrueba = new List<UsuarioPrueba>
+        {
+            new UsuarioPrueba { NombreUsuario = "Prueba", Contraseña = "prueba" },
+            new UsuarioPrueba { NombreUsuario = "usuario1", Contraseña = "contraseña1" },
+            new UsuarioPrueba { NombreUsuario = "usuario2", Contraseña = "contraseña2" }
+            // Agrega más usuarios de prueba si es necesario
+        };
+        }
+
+        public UsuarioPrueba ObtenerUsuario(string nombreUsuario, string contraseña)
+        {
+            return usuariosPrueba.FirstOrDefault(u => u.NombreUsuario == nombreUsuario && u.Contraseña == contraseña);
+        }
     }
+
+}
 
     
     

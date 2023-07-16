@@ -36,11 +36,12 @@
             BtnMax = new PictureBox();
             BtnClose = new PictureBox();
             panel1 = new Panel();
+            button7 = new Button();
             button6 = new Button();
             button2 = new Button();
             button1 = new Button();
             pictureBox1 = new PictureBox();
-            button7 = new Button();
+            Closebtn = new Button();
             BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnMin).BeginInit();
@@ -53,6 +54,7 @@
             // BarraTitulo
             // 
             BarraTitulo.BackColor = Color.FromArgb(49, 66, 82);
+            BarraTitulo.Controls.Add(Closebtn);
             BarraTitulo.Controls.Add(label1);
             BarraTitulo.Controls.Add(BtnRestaurar);
             BarraTitulo.Controls.Add(BtnMin);
@@ -136,6 +138,22 @@
             panel1.Size = new Size(169, 417);
             panel1.TabIndex = 3;
             // 
+            // button7
+            // 
+            button7.Cursor = Cursors.Hand;
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button7.Image = Properties.Resources.log_out_icon_icons_com_50106;
+            button7.ImageAlign = ContentAlignment.MiddleLeft;
+            button7.Location = new Point(12, 380);
+            button7.Name = "button7";
+            button7.Size = new Size(157, 34);
+            button7.TabIndex = 22;
+            button7.Text = "Cerrar Sesion";
+            button7.UseVisualStyleBackColor = true;
+            // 
             // button6
             // 
             button6.Cursor = Cursors.Hand;
@@ -191,21 +209,20 @@
             pictureBox1.TabIndex = 18;
             pictureBox1.TabStop = false;
             // 
-            // button7
+            // Closebtn
             // 
-            button7.Cursor = Cursors.Hand;
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button7.Image = Properties.Resources.log_out_icon_icons_com_50106;
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(12, 380);
-            button7.Name = "button7";
-            button7.Size = new Size(157, 34);
-            button7.TabIndex = 22;
-            button7.Text = "Cerrar Sesion";
-            button7.UseVisualStyleBackColor = true;
+            Closebtn.Cursor = Cursors.Hand;
+            Closebtn.FlatAppearance.BorderSize = 0;
+            Closebtn.FlatStyle = FlatStyle.Flat;
+            Closebtn.Font = new Font("Verdana", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Closebtn.ForeColor = Color.FromArgb(41, 128, 185);
+            Closebtn.Location = new Point(760, 0);
+            Closebtn.Name = "Closebtn";
+            Closebtn.Size = new Size(40, 36);
+            Closebtn.TabIndex = 6;
+            Closebtn.Text = "X";
+            Closebtn.UseVisualStyleBackColor = true;
+            Closebtn.Click += Closebtn_Click;
             // 
             // FormularioClienteEmpresa
             // 
@@ -242,5 +259,6 @@
         private Button button1;
         private PictureBox pictureBox1;
         private Button button7;
+        private Button Closebtn;
     }
 }
