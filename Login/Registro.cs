@@ -59,7 +59,7 @@ namespace Login
 
             try
             {
-                if (tipoCliente == "Cliente Común")
+                if (tipoCliente == "Cliente Comun")
                 {
                     var clienteComun = new ClienteComun
                     {

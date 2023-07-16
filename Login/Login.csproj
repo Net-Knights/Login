@@ -6,7 +6,21 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>logo 3.ico</ApplicationIcon>
+    <SignAssembly>False</SignAssembly>
+    <Company>Net Knitghts</Company>
+    <Authors>Sisviansa</Authors>
+    <Title></Title>
+    <Version>1.0.0</Version>
+    <Description>Aplicacion de controls empresarial</Description>
+    <Copyright>Copyright © 2023 </Copyright>
+    <Product>Aplicacion empresarial</Product>
+    <AssemblyName>Sisviansa</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\logo 3.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">

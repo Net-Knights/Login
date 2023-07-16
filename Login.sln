@@ -17,7 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logicaa", "Logicaa", "{5368
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Usuarioentidades", "Usuarioentidades", "{9EE8F6F6-4E2D-4D88-A3E9-4C24596A8E0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistroUsuarios.Entities", "RegistroUsuarios.Entities\RegistroUsuarios.Entities.csproj", "{41194AA0-794D-4CC3-B600-318DB109143E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistroUsuarios.Entities", "RegistroUsuarios.Entities\RegistroUsuarios.Entities.csproj", "{41194AA0-794D-4CC3-B600-318DB109143E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{94CA99DD-D2D9-4D9C-96AE-DDB5D5AD20CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,8 @@ Global
 		{41194AA0-794D-4CC3-B600-318DB109143E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41194AA0-794D-4CC3-B600-318DB109143E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41194AA0-794D-4CC3-B600-318DB109143E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94CA99DD-D2D9-4D9C-96AE-DDB5D5AD20CD}.Debug|Any CPU.ActiveCfg = Debug
+		{94CA99DD-D2D9-4D9C-96AE-DDB5D5AD20CD}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
