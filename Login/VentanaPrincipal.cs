@@ -56,11 +56,30 @@ namespace Login
                 if (!string.IsNullOrEmpty(tipoUsuario))
                 {
                     MessageBox.Show("Inicio de sesión exitoso como " + tipoUsuario);
-                    this.Hide();
 
-                    MenuPrincipal menuPrincipal = new MenuPrincipal();
-                    menuPrincipal.Show(this);
-                    Hide();
+                    switch (tipoUsuario)
+                    {
+                        case "Cliente Comun":
+                            FormularioClienteComun formularioClienteComun = new FormularioClienteComun();
+                            formularioClienteComun.Show(this);
+                            Hide();
+                            break;
+                        case "Cliente Empresa":
+                            FormularioClienteEmpresa formularioClienteEmpresa = new FormularioClienteEmpresa();
+                            formularioClienteEmpresa.Show(this);
+                            Hide();
+                            break;
+                        case "Usuario del Sistema":
+                            MenuPrincipal menuPrincipal= new MenuPrincipal();
+                            menuPrincipal.Show(this);
+                            Hide();
+                            break;
+                        default:
+                            MessageBox.Show("Tipo de usuario no reconocido");
+                            break;
+                    }
+
+                    this.Hide();
                 }
                 else
                 {
@@ -70,13 +89,7 @@ namespace Login
             catch (Exception ex)
             {
                 MessageBox.Show("Error al iniciar sesión: " + ex.Message);
-
             }
-
-
-
-
-
         }
 
 

@@ -19,7 +19,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Resources\logo 3.ico" />
+    <Content Include="logo 3.ico" />
   </ItemGroup>
 
   <ItemGroup>

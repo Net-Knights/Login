@@ -125,7 +125,7 @@ namespace Persistencia
                 var resultClienteComun = (long)commandClienteComun.ExecuteScalar();
                 if (resultClienteComun > 0)
                 {
-                    return "Cliente Común";
+                    return "Cliente Comun";
                 }
 
                 // Verificar en la tabla de ClienteEmpresa

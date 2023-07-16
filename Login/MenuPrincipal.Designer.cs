@@ -52,6 +52,7 @@
             button1 = new Button();
             pictureBox1 = new PictureBox();
             panelContenedor = new Panel();
+            BtnUsuarios = new Button();
             BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnMin).BeginInit();
@@ -141,6 +142,7 @@
             // MenuVertical
             // 
             MenuVertical.BackColor = Color.FromArgb(41, 128, 185);
+            MenuVertical.Controls.Add(BtnUsuarios);
             MenuVertical.Controls.Add(panel7);
             MenuVertical.Controls.Add(button7);
             MenuVertical.Controls.Add(panel6);
@@ -190,7 +192,7 @@
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(49, 66, 82);
-            panel6.Location = new Point(-3, 326);
+            panel6.Location = new Point(0, 360);
             panel6.Name = "panel6";
             panel6.Size = new Size(10, 23);
             panel6.TabIndex = 12;
@@ -203,7 +205,7 @@
             button6.FlatStyle = FlatStyle.Flat;
             button6.Image = Properties.Resources.Why_Us_80_icon_icons_com_57240;
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(0, 326);
+            button6.Location = new Point(9, 360);
             button6.Name = "button6";
             button6.Size = new Size(157, 23);
             button6.TabIndex = 11;
@@ -213,7 +215,7 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(49, 66, 82);
-            panel5.Location = new Point(0, 281);
+            panel5.Location = new Point(0, 318);
             panel5.Name = "panel5";
             panel5.Size = new Size(10, 23);
             panel5.TabIndex = 10;
@@ -226,7 +228,7 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Image = Properties.Resources.checkbox_103909;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(3, 281);
+            button5.Location = new Point(3, 318);
             button5.Name = "button5";
             button5.Size = new Size(157, 23);
             button5.TabIndex = 9;
@@ -236,7 +238,7 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(49, 66, 82);
-            panel4.Location = new Point(0, 227);
+            panel4.Location = new Point(0, 264);
             panel4.Name = "panel4";
             panel4.Size = new Size(10, 23);
             panel4.TabIndex = 8;
@@ -249,7 +251,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Image = Properties.Resources.store_icon_icons_com_54371;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(6, 227);
+            button4.Location = new Point(6, 264);
             button4.Name = "button4";
             button4.Size = new Size(157, 23);
             button4.TabIndex = 7;
@@ -259,7 +261,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(49, 66, 82);
-            panel3.Location = new Point(3, 160);
+            panel3.Location = new Point(0, 197);
             panel3.Name = "panel3";
             panel3.Size = new Size(10, 42);
             panel3.TabIndex = 6;
@@ -272,7 +274,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Image = Properties.Resources.Truck_Yellow_icon_icons_com_54884;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(9, 159);
+            button3.Location = new Point(6, 196);
             button3.Name = "button3";
             button3.Size = new Size(157, 42);
             button3.TabIndex = 5;
@@ -295,7 +297,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Image = Properties.Resources._1496676725_rounded_high_ultra_colour02_maps_84627;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(12, 120);
+            button2.Location = new Point(5, 159);
             button2.Name = "button2";
             button2.Size = new Size(157, 23);
             button2.TabIndex = 3;
@@ -343,6 +345,21 @@
             panelContenedor.Name = "panelContenedor";
             panelContenedor.Size = new Size(646, 458);
             panelContenedor.TabIndex = 2;
+            // 
+            // BtnUsuarios
+            // 
+            BtnUsuarios.Cursor = Cursors.Hand;
+            BtnUsuarios.FlatAppearance.BorderSize = 0;
+            BtnUsuarios.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            BtnUsuarios.FlatStyle = FlatStyle.Flat;
+            BtnUsuarios.Image = Properties.Resources.Why_Us_80_icon_icons_com_57240;
+            BtnUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnUsuarios.Location = new Point(9, 120);
+            BtnUsuarios.Name = "BtnUsuarios";
+            BtnUsuarios.Size = new Size(157, 23);
+            BtnUsuarios.TabIndex = 15;
+            BtnUsuarios.Text = "Usuarios";
+            BtnUsuarios.UseVisualStyleBackColor = true;
             // 
             // MenuPrincipal
             // 
@@ -392,5 +409,6 @@
         private Panel panel2;
         private Button button2;
         private Label label1;
+        private Button BtnUsuarios;
     }
 }
