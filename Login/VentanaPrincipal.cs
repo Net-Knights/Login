@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
-using Persistencia;
+//using Persistencia;
 
 
 namespace Login
@@ -57,8 +57,8 @@ namespace Login
             try
             {
                 var usuario = logicaUsuarios.ObtenerUsuario(nombreUsuario, contraseña);
-                var dataAccessLayer = new DataAccessLayer();
-                var tipoUsuario = dataAccessLayer.VerificarCredenciales(nombreUsuario, contraseña);
+                //var dataAccessLayer = new DataAccessLayer();
+                //var tipoUsuario = dataAccessLayer.VerificarCredenciales(nombreUsuario, contraseña);
 
                 if (usuario != null)
                 {
@@ -72,39 +72,38 @@ namespace Login
                 {
                     MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
 
-                    if (!string.IsNullOrEmpty(tipoUsuario))
-                {
-                    MessageBox.Show("Inicio de sesión exitoso como " + tipoUsuario);
+                //    if (!string.IsNullOrEmpty(tipoUsuario))
+                //{
+                //    MessageBox.Show("Inicio de sesión exitoso como " + tipoUsuario);
 
-                    switch (tipoUsuario)
-                    {
-                        case "Cliente Comun":
-                            FormularioClienteComun formularioClienteComun = new FormularioClienteComun();
-                            formularioClienteComun.Show(this);
-                            Hide();
-                            break;
-                        case "Cliente Empresa":
-                            FormularioClienteEmpresa formularioClienteEmpresa = new FormularioClienteEmpresa();
-                            formularioClienteEmpresa.Show(this);
-                            Hide();
-                            break;
-                        case "Usuario del Sistema":
-                            MenuPrincipal menuPrincipal = new MenuPrincipal();
-                            menuPrincipal.Show(this);
-                            Hide();
-                            break;
-                        default:
-                            MessageBox.Show("Tipo de usuario no reconocido");
-                            break;
-                    }
+                //    switch (tipoUsuario)
+                //    {
+                //        case "Cliente Comun":
+                //            FormularioClienteComun formularioClienteComun = new FormularioClienteComun();
+                //            formularioClienteComun.Show(this);
+                //            Hide();
+                //            break;
+                //        case "Cliente Empresa":
+                //            FormularioClienteEmpresa formularioClienteEmpresa = new FormularioClienteEmpresa();
+                //            formularioClienteEmpresa.Show(this);
+                //            Hide();
+                //            break;
+                //        case "Usuario del Sistema":
+                //            MenuPrincipal menuPrincipal = new MenuPrincipal();
+                //            menuPrincipal.Show(this);
+                //            Hide();
+                //            break;
+                //        default:
+                //            MessageBox.Show("Tipo de usuario no reconocido");
+                //            break;
+                //    }
 
-                    this.Hide();
+                    //this.Hide();
                 }
-                else
-                {
-                    MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
-                }
-            }
+                //else
+                //{
+                //    MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
+                //}
             }
             catch (Exception ex)
             {

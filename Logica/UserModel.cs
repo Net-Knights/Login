@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using System.Data;
-using Persistencia;
+//using Persistencia;
 using RegistroUsuarios.Entities;
 
 namespace Logica
 {
-    public class UserModel
-    {
-        DatosU datosU = new DatosU();
-        public bool LoginUser(string user, string pass)
-        {
-           return datosU.login(user, pass);
+    //public class UserModel
+    //{
+    //    DatosU datosU = new DatosU();
+    //    public bool LoginUser(string user, string pass)
+    //    {
+    //       return datosU.login(user, pass);
 
-        }
+    //    }
 
        
-        }
+    //    }
 
     public class LogicaUsuarios
     {

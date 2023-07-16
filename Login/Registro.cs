@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
-using Persistencia;
+//using Persistencia;
 using RegistroUsuarios.Entities;
 
 
@@ -17,12 +17,12 @@ namespace Login
 {
     public partial class Registro : Form
     {
-        private DataAccessLayer dataAccessLayer;
+        //private DataAccessLayer dataAccessLayer;
 
         public Registro()
         {
             InitializeComponent();
-            dataAccessLayer = new DataAccessLayer();
+            //dataAccessLayer = new DataAccessLayer();
             OcultarCampos();
 
         }
@@ -71,7 +71,7 @@ namespace Login
                         Direccion = txtDireccion.Text
                     };
 
-                    dataAccessLayer.InsertarClienteComun(clienteComun);
+                    //dataAccessLayer.InsertarClienteComun(clienteComun);
                 }
                 else if (tipoCliente == "Cliente Empresa")
                 {
@@ -93,7 +93,7 @@ namespace Login
                         DireccionEmpresa = txtDireccionEmpresa.Text
                     };
 
-                    dataAccessLayer.InsertarClienteEmpresa(clienteEmpresa);
+                    //dataAccessLayer.InsertarClienteEmpresa(clienteEmpresa);
                 }
                 else if (tipoCliente == "Usuario Sistema")
                 {
@@ -104,7 +104,7 @@ namespace Login
                         CorreoElectronico = txtCorreoElectronico.Text
                     };
 
-                    dataAccessLayer.InsertarUsuarioSistema(usuarioSistema);
+                    //dataAccessLayer.InsertarUsuarioSistema(usuarioSistema);
                 }
 
                 MessageBox.Show("Registro exitoso");

@@ -9,18 +9,18 @@ using MySql.Data.MySqlClient;
 
 namespace Persistencia
 {
-    public abstract class ConeccionSql
-    {
-        private readonly string connectionString;
-        public ConeccionSql() { 
-        connectionString = "server=192.168.0.132;database= mybd; integrated security= true";
+    //public abstract class ConeccionSql
+    //{
+    //    private readonly string connectionString;
+    //    public ConeccionSql() { 
+    //    connectionString = "server=192.168.0.132;database= mybd; integrated security= true";
         
         
-        }
-        protected MySqlConnection GetSqlConnection()
-        {
+    //    }
+    //    protected MySqlConnection GetSqlConnection()
+    //    {
 
-            return new MySqlConnection(connectionString);
-        }
-    }
+    //        return new MySqlConnection(connectionString);
+    //    }
+    //}
 }
