@@ -29,17 +29,23 @@ namespace Login
         {
             Application.Exit();
         }
-
+        int LX, LY;
         private void BtnMax_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
+            LX = this.Location.X;
+            LY = this.Location.Y;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             BtnMax.Visible = false;
             BtnRestaurar.Visible = true;
         }
 
         private void BtnRestaurar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            //this.WindowState = FormWindowState.Normal;
+            this.Size = new Size(815, 491);
+            this.Location = new Point(LX, LY);
             BtnRestaurar.Visible = false;
             BtnMax.Visible = true;
         }
@@ -67,5 +73,27 @@ namespace Login
             ventanaPrincipal.Show(this);
             Hide();
         }
+        private void AbrirFormEnPanel(object Formhijo)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            Form fh = Formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(fh);
+            this.panelContenedor.Tag = fh;
+            fh.Show();
+        }
+        private void BtnPedidos_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new MenudePedidos());
+        }
+
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new AbmUsuarios());
+        }
+
+
     }
 }

@@ -93,9 +93,39 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1496676725_rounded_high_ultra_colour02_maps_846271 {
+            get {
+                object obj = ResourceManager.GetObject("1496676725-rounded-high-ultra-colour02-maps_846271", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1904666_calculate_close_delete_hide_minimize_minus_remove_122516 {
             get {
                 object obj = ResourceManager.GetObject("1904666-calculate-close-delete-hide-minimize-minus-remove_122516", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3741756_bussiness_ecommerce_marketplace_onlinestore_store_user_108907 {
+            get {
+                object obj = ResourceManager.GetObject("3741756-bussiness-ecommerce-marketplace-onlinestore-store-user_108907", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3792033_broom_halloween_magic_witch_109010 {
+            get {
+                object obj = ResourceManager.GetObject("3792033-broom-halloween-magic-witch_109010", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +203,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap log_out_icon_234084 {
+            get {
+                object obj = ResourceManager.GetObject("log_out_icon_234084", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap log_out_icon_icons_com_50106 {
             get {
                 object obj = ResourceManager.GetObject("log-out_icon-icons.com_50106", resourceCulture);
@@ -243,9 +283,59 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Menus {
+            get {
+                object obj = ResourceManager.GetObject("Menus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap savetheapplication_guardar_2958 {
+            get {
+                object obj = ResourceManager.GetObject("savetheapplication_guardar_2958", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seo_social_web_network_internet_262_icon_icons_com_61518 {
+            get {
+                object obj = ResourceManager.GetObject("seo-social-web-network-internet_262_icon-icons.com_61518", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seo_social_web_network_internet_340_icon_icons_com_61497 {
+            get {
+                object obj = ResourceManager.GetObject("seo-social-web-network-internet_340_icon-icons.com_61497", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap store_icon_icons_com_54371 {
             get {
                 object obj = ResourceManager.GetObject("store_icon-icons.com_54371", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap store_icon_icons1 {
+            get {
+                object obj = ResourceManager.GetObject("store_icon-icons1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +353,29 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Truck_Yellow_icon_icons1 {
+            get {
+                object obj = ResourceManager.GetObject("Truck_Yellow_icon-icons1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Why_Us_80_icon_icons_com_57240 {
             get {
                 object obj = ResourceManager.GetObject("Why_Us-80_icon-icons.com_57240", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Why_Us_80_icon_icons1 {
+            get {
+                object obj = ResourceManager.GetObject("Why_Us-80_icon-icons1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
