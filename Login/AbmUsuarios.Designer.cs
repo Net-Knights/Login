@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             BtnLimpiar = new Button();
             BtnEliminar = new Button();
@@ -50,6 +51,7 @@
             label7 = new Label();
             textBox5 = new TextBox();
             BtnBuscar = new Button();
+            guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -225,9 +227,9 @@
             label6.AutoSize = true;
             label6.Location = new Point(249, 35);
             label6.Name = "label6";
-            label6.Size = new Size(92, 15);
+            label6.Size = new Size(95, 15);
             label6.TabIndex = 2;
-            label6.Text = "Lista de Clientes";
+            label6.Text = "Lista de Usuarios";
             // 
             // label7
             // 
@@ -255,6 +257,12 @@
             BtnBuscar.Size = new Size(35, 38);
             BtnBuscar.TabIndex = 5;
             BtnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // guna2BorderlessForm1
+            // 
+            guna2BorderlessForm1.ContainerControl = this;
+            guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // AbmUsuarios
             // 
@@ -301,5 +309,6 @@
         private Label label7;
         private TextBox textBox5;
         private Button BtnBuscar;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

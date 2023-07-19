@@ -43,8 +43,6 @@
             button7 = new Button();
             panel6 = new Panel();
             BtnClientes = new Button();
-            panel4 = new Panel();
-            BtnSucursales = new Button();
             panel3 = new Panel();
             BtnTransporte = new Button();
             panel2 = new Panel();
@@ -52,6 +50,8 @@
             panel1 = new Panel();
             BtnPedidos = new Button();
             panelContenedor = new Panel();
+            panel4 = new Panel();
+            button1 = new Button();
             BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnMin).BeginInit();
@@ -141,6 +141,8 @@
             // MenuVertical
             // 
             MenuVertical.BackColor = Color.FromArgb(41, 128, 185);
+            MenuVertical.Controls.Add(panel4);
+            MenuVertical.Controls.Add(button1);
             MenuVertical.Controls.Add(pictureBox1);
             MenuVertical.Controls.Add(panel8);
             MenuVertical.Controls.Add(BtnUsuarios);
@@ -148,8 +150,6 @@
             MenuVertical.Controls.Add(button7);
             MenuVertical.Controls.Add(panel6);
             MenuVertical.Controls.Add(BtnClientes);
-            MenuVertical.Controls.Add(panel4);
-            MenuVertical.Controls.Add(BtnSucursales);
             MenuVertical.Controls.Add(panel3);
             MenuVertical.Controls.Add(BtnTransporte);
             MenuVertical.Controls.Add(panel2);
@@ -226,7 +226,7 @@
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(49, 66, 82);
-            panel6.Location = new Point(3, 315);
+            panel6.Location = new Point(3, 268);
             panel6.Name = "panel6";
             panel6.Size = new Size(10, 32);
             panel6.TabIndex = 12;
@@ -239,35 +239,12 @@
             BtnClientes.FlatStyle = FlatStyle.Flat;
             BtnClientes.Image = Properties.Resources._3741756_bussiness_ecommerce_marketplace_onlinestore_store_user_108907;
             BtnClientes.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnClientes.Location = new Point(12, 315);
+            BtnClientes.Location = new Point(12, 268);
             BtnClientes.Name = "BtnClientes";
             BtnClientes.Size = new Size(157, 32);
             BtnClientes.TabIndex = 11;
             BtnClientes.Text = "Clientes";
             BtnClientes.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(49, 66, 82);
-            panel4.Location = new Point(3, 264);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(10, 35);
-            panel4.TabIndex = 8;
-            // 
-            // BtnSucursales
-            // 
-            BtnSucursales.Cursor = Cursors.Hand;
-            BtnSucursales.FlatAppearance.BorderSize = 0;
-            BtnSucursales.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            BtnSucursales.FlatStyle = FlatStyle.Flat;
-            BtnSucursales.Image = Properties.Resources.store_icon_icons1;
-            BtnSucursales.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnSucursales.Location = new Point(12, 264);
-            BtnSucursales.Name = "BtnSucursales";
-            BtnSucursales.Size = new Size(157, 35);
-            BtnSucursales.TabIndex = 7;
-            BtnSucursales.Text = "Sucursales";
-            BtnSucursales.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -348,6 +325,29 @@
             panelContenedor.Size = new Size(756, 458);
             panelContenedor.TabIndex = 2;
             // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(49, 66, 82);
+            panel4.Location = new Point(3, 315);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(10, 32);
+            panel4.TabIndex = 18;
+            // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = Properties.Resources._3741756_bussiness_ecommerce_marketplace_onlinestore_store_user_108907;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(12, 315);
+            button1.Name = "button1";
+            button1.Size = new Size(157, 32);
+            button1.TabIndex = 17;
+            button1.Text = "Facturacion";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -387,8 +387,6 @@
         private Button button7;
         private Panel panel6;
         private Button BtnClientes;
-        private Panel panel4;
-        private Button BtnSucursales;
         private Panel panel3;
         private Button BtnTransporte;
         private Panel panel2;
@@ -396,5 +394,7 @@
         private Label label1;
         private Button BtnUsuarios;
         private Panel panel8;
+        private Panel panel4;
+        private Button button1;
     }
 }
