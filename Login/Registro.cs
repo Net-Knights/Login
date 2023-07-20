@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Logica;
 //using Persistencia;
 using RegistroUsuarios.Entities;
@@ -18,6 +19,7 @@ namespace Login
     public partial class Registro : Form
     {
         //private DataAccessLayer dataAccessLayer;
+        //private Validaciondedatos validaciondedatos = new Validaciondedatos();
 
         public Registro()
         {
@@ -225,6 +227,16 @@ namespace Login
             VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
             ventanaPrincipal.Show(this);
             Hide();
+        }
+
+        private void txtNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

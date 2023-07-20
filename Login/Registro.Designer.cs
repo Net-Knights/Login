@@ -350,6 +350,7 @@
             txtNombreUsuario.Name = "txtNombreUsuario";
             txtNombreUsuario.Size = new Size(100, 23);
             txtNombreUsuario.TabIndex = 11;
+            txtNombreUsuario.KeyPress += txtNombreUsuario_KeyPress;
             // 
             // lblIngrese
             // 

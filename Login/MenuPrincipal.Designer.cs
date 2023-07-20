@@ -36,6 +36,8 @@
             BtnMax = new PictureBox();
             BtnClose = new PictureBox();
             MenuVertical = new Panel();
+            panel4 = new Panel();
+            button1 = new Button();
             pictureBox1 = new PictureBox();
             panel8 = new Panel();
             BtnUsuarios = new Button();
@@ -50,8 +52,6 @@
             panel1 = new Panel();
             BtnPedidos = new Button();
             panelContenedor = new Panel();
-            panel4 = new Panel();
-            button1 = new Button();
             BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnMin).BeginInit();
@@ -72,7 +72,7 @@
             BarraTitulo.Dock = DockStyle.Top;
             BarraTitulo.Location = new Point(0, 0);
             BarraTitulo.Name = "BarraTitulo";
-            BarraTitulo.Size = new Size(925, 33);
+            BarraTitulo.Size = new Size(1027, 33);
             BarraTitulo.TabIndex = 0;
             BarraTitulo.MouseDown += BarraTitulo_MouseDown;
             // 
@@ -92,7 +92,7 @@
             // 
             BtnRestaurar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnRestaurar.Image = Properties.Resources.window_restore_icon_144027;
-            BtnRestaurar.Location = new Point(840, -1);
+            BtnRestaurar.Location = new Point(942, -1);
             BtnRestaurar.Name = "BtnRestaurar";
             BtnRestaurar.Size = new Size(44, 33);
             BtnRestaurar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -105,7 +105,7 @@
             // 
             BtnMin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnMin.Image = Properties.Resources._1904666_calculate_close_delete_hide_minimize_minus_remove_122516;
-            BtnMin.Location = new Point(799, 0);
+            BtnMin.Location = new Point(901, 0);
             BtnMin.Name = "BtnMin";
             BtnMin.Size = new Size(44, 32);
             BtnMin.SizeMode = PictureBoxSizeMode.Zoom;
@@ -117,7 +117,7 @@
             // 
             BtnMax.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnMax.Image = Properties.Resources.window_maximize_icon_1812281;
-            BtnMax.Location = new Point(840, 0);
+            BtnMax.Location = new Point(942, 0);
             BtnMax.Name = "BtnMax";
             BtnMax.Size = new Size(44, 33);
             BtnMax.SizeMode = PictureBoxSizeMode.Zoom;
@@ -130,7 +130,7 @@
             BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnClose.Image = Properties.Resources._1492790846_9cancel_84247;
             BtnClose.InitialImage = (Image)resources.GetObject("BtnClose.InitialImage");
-            BtnClose.Location = new Point(881, 0);
+            BtnClose.Location = new Point(983, 0);
             BtnClose.Name = "BtnClose";
             BtnClose.Size = new Size(41, 33);
             BtnClose.SizeMode = PictureBoxSizeMode.Zoom;
@@ -159,8 +159,32 @@
             MenuVertical.Dock = DockStyle.Left;
             MenuVertical.Location = new Point(0, 33);
             MenuVertical.Name = "MenuVertical";
-            MenuVertical.Size = new Size(169, 458);
+            MenuVertical.Size = new Size(169, 502);
             MenuVertical.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(49, 66, 82);
+            panel4.Location = new Point(3, 315);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(10, 32);
+            panel4.TabIndex = 18;
+            // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = Properties.Resources._1486394965_12_bills_80559;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(12, 315);
+            button1.Name = "button1";
+            button1.Size = new Size(157, 32);
+            button1.TabIndex = 17;
+            button1.Text = "Facturacion";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // pictureBox1
             // 
@@ -200,7 +224,7 @@
             // 
             panel7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             panel7.BackColor = Color.FromArgb(49, 66, 82);
-            panel7.Location = new Point(3, 424);
+            panel7.Location = new Point(3, 468);
             panel7.Name = "panel7";
             panel7.Size = new Size(10, 31);
             panel7.TabIndex = 14;
@@ -215,7 +239,7 @@
             button7.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             button7.Image = Properties.Resources.log_out_icon_234084;
             button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(9, 424);
+            button7.Location = new Point(9, 468);
             button7.Name = "button7";
             button7.Size = new Size(139, 31);
             button7.TabIndex = 13;
@@ -245,6 +269,7 @@
             BtnClientes.TabIndex = 11;
             BtnClientes.Text = "Clientes";
             BtnClientes.UseVisualStyleBackColor = true;
+            BtnClientes.Click += BtnClientes_Click;
             // 
             // panel3
             // 
@@ -268,6 +293,7 @@
             BtnTransporte.TabIndex = 5;
             BtnTransporte.Text = "Transporte";
             BtnTransporte.UseVisualStyleBackColor = true;
+            BtnTransporte.Click += BtnTransporte_Click;
             // 
             // panel2
             // 
@@ -291,6 +317,7 @@
             BtnZonas.TabIndex = 3;
             BtnZonas.Text = "Zonas";
             BtnZonas.UseVisualStyleBackColor = true;
+            BtnZonas.Click += BtnZonas_Click;
             // 
             // panel1
             // 
@@ -322,37 +349,14 @@
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(169, 33);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(756, 458);
+            panelContenedor.Size = new Size(858, 502);
             panelContenedor.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(49, 66, 82);
-            panel4.Location = new Point(3, 315);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(10, 32);
-            panel4.TabIndex = 18;
-            // 
-            // button1
-            // 
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Image = Properties.Resources._3741756_bussiness_ecommerce_marketplace_onlinestore_store_user_108907;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(12, 315);
-            button1.Name = "button1";
-            button1.Size = new Size(157, 32);
-            button1.TabIndex = 17;
-            button1.Text = "Facturacion";
-            button1.UseVisualStyleBackColor = true;
             // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(925, 491);
+            ClientSize = new Size(1027, 535);
             Controls.Add(panelContenedor);
             Controls.Add(MenuVertical);
             Controls.Add(BarraTitulo);

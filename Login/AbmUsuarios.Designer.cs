@@ -58,6 +58,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(BtnLimpiar);
             panel1.Controls.Add(BtnEliminar);
             panel1.Controls.Add(BtnGuardar);
@@ -97,9 +98,9 @@
             BtnEliminar.FlatStyle = FlatStyle.Flat;
             BtnEliminar.Image = Properties.Resources.seo_social_web_network_internet_262_icon_icons_com_61518;
             BtnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnEliminar.Location = new Point(25, 386);
+            BtnEliminar.Location = new Point(25, 371);
             BtnEliminar.Name = "BtnEliminar";
-            BtnEliminar.Size = new Size(149, 32);
+            BtnEliminar.Size = new Size(149, 28);
             BtnEliminar.TabIndex = 10;
             BtnEliminar.Text = "Eliminar";
             BtnEliminar.UseVisualStyleBackColor = false;
@@ -111,9 +112,9 @@
             BtnGuardar.FlatStyle = FlatStyle.Flat;
             BtnGuardar.Image = Properties.Resources.savetheapplication_guardar_2958;
             BtnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnGuardar.Location = new Point(25, 280);
+            BtnGuardar.Location = new Point(25, 301);
             BtnGuardar.Name = "BtnGuardar";
-            BtnGuardar.Size = new Size(149, 36);
+            BtnGuardar.Size = new Size(149, 27);
             BtnGuardar.TabIndex = 9;
             BtnGuardar.Text = "Guardar";
             BtnGuardar.UseVisualStyleBackColor = false;
@@ -160,6 +161,7 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(193, 23);
             textBox4.TabIndex = 4;
+            textBox4.KeyPress += textBox4_KeyPress;
             // 
             // textBox3
             // 
@@ -174,6 +176,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(193, 23);
             textBox2.TabIndex = 2;
+            textBox2.KeyPress += textBox2_KeyPress;
             // 
             // textBox1
             // 
@@ -181,6 +184,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(193, 23);
             textBox1.TabIndex = 1;
+            textBox1.KeyPress += textBox1_KeyPress;
             // 
             // label1
             // 
@@ -199,7 +203,7 @@
             dataGridView1.Location = new Point(249, 91);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(445, 274);
+            dataGridView1.Size = new Size(445, 321);
             dataGridView1.TabIndex = 1;
             // 
             // Nombre
@@ -252,9 +256,9 @@
             BtnBuscar.FlatAppearance.BorderSize = 0;
             BtnBuscar.FlatStyle = FlatStyle.Flat;
             BtnBuscar.Image = Properties.Resources.seo_social_web_network_internet_340_icon_icons_com_61497;
-            BtnBuscar.Location = new Point(670, 23);
+            BtnBuscar.Location = new Point(661, 25);
             BtnBuscar.Name = "BtnBuscar";
-            BtnBuscar.Size = new Size(35, 38);
+            BtnBuscar.Size = new Size(35, 29);
             BtnBuscar.TabIndex = 5;
             BtnBuscar.UseVisualStyleBackColor = true;
             // 

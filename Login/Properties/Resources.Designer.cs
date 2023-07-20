@@ -73,6 +73,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1486394965_12_bills_80559 {
+            get {
+                object obj = ResourceManager.GetObject("1486394965-12-bills_80559", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1492790846_9cancel_84247 {
             get {
                 object obj = ResourceManager.GetObject("1492790846-9cancel_84247", resourceCulture);
@@ -316,6 +326,16 @@ namespace Login.Properties {
         internal static System.Drawing.Bitmap seo_social_web_network_internet_340_icon_icons_com_61497 {
             get {
                 object obj = ResourceManager.GetObject("seo-social-web-network-internet_340_icon-icons.com_61497", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shopping_cart_add_button_icon_icons_com_56132 {
+            get {
+                object obj = ResourceManager.GetObject("shopping-cart-add-button_icon-icons.com_56132", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

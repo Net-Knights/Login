@@ -8,10 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Login
 {
     public partial class FormZonas : Form
     {
+
+
+
+
+
         public FormZonas()
         {
             InitializeComponent();

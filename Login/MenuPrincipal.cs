@@ -44,7 +44,7 @@ namespace Login
         private void BtnRestaurar_Click(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Normal;
-            this.Size = new Size(815, 491);
+            this.Size = new Size(1027, 535);
             this.Location = new Point(LX, LY);
             BtnRestaurar.Visible = false;
             BtnMax.Visible = true;
@@ -94,6 +94,24 @@ namespace Login
             AbrirFormEnPanel(new AbmUsuarios());
         }
 
+        private void BtnZonas_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new FormZonas());
+        }
 
+        private void BtnTransporte_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new FormTransoporte());
+        }
+
+        private void BtnClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new AbmCliente());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new FormFacturas());
+        }
     }
 }

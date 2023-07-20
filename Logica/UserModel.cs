@@ -8,6 +8,7 @@ using MySql.Data.MySqlClient;
 using System.Data;
 //using Persistencia;
 using RegistroUsuarios.Entities;
+using System.Text.RegularExpressions;
 
 namespace Logica
 {
@@ -43,6 +44,8 @@ namespace Logica
             return usuariosPrueba.FirstOrDefault(u => u.NombreUsuario == nombreUsuario && u.Contraseña == contraseña);
         }
     }
+
+   
 
 }
 
