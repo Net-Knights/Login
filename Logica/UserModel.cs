@@ -9,6 +9,7 @@ using System.Data;
 //using Persistencia;
 using RegistroUsuarios.Entities;
 using System.Text.RegularExpressions;
+using Persistencia;
 
 namespace Logica
 {
@@ -44,8 +45,28 @@ namespace Logica
             return usuariosPrueba.FirstOrDefault(u => u.NombreUsuario == nombreUsuario && u.Contraseña == contraseña);
         }
     }
+     public class NegocioCliente
+    {
+        private DataAccessLayer dataAccessLayer;
 
-   
+        public NegocioCliente()
+        {
+            dataAccessLayer = new DataAccessLayer();
+        }
+
+        public int GenerarNumeroCliente()
+        {
+            Random random = new Random();
+            return random.Next(1000, 9999); // Números aleatorios de 4 dígitos
+        }
+
+        public bool RegistrarCliente(string nombreUsuario, string contraseña, string ci, string direccion, string email, string nombre, string apellido)
+        {
+            int numeroCliente = GenerarNumeroCliente();
+            return dataAccessLayer.RegistrarCliente(numeroCliente, nombreUsuario, contraseña, ci, direccion, email, nombre, apellido);
+        }
+    }
+
 
 }
 

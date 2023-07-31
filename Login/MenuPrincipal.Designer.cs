@@ -92,7 +92,7 @@
             // 
             BtnRestaurar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnRestaurar.Image = Properties.Resources.window_restore_icon_144027;
-            BtnRestaurar.Location = new Point(942, -1);
+            BtnRestaurar.Location = new Point(942, 0);
             BtnRestaurar.Name = "BtnRestaurar";
             BtnRestaurar.Size = new Size(44, 33);
             BtnRestaurar.SizeMode = PictureBoxSizeMode.Zoom;

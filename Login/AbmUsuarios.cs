@@ -46,5 +46,10 @@ namespace Login
                 return;
             }
         }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -84,11 +84,11 @@
             BtnLimpiar.FlatStyle = FlatStyle.Flat;
             BtnLimpiar.Image = Properties.Resources._3792033_broom_halloween_magic_witch_109010;
             BtnLimpiar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnLimpiar.Location = new Point(25, 334);
+            BtnLimpiar.Location = new Point(25, 363);
             BtnLimpiar.Name = "BtnLimpiar";
             BtnLimpiar.Size = new Size(149, 31);
             BtnLimpiar.TabIndex = 11;
-            BtnLimpiar.Text = "Limpiar";
+            BtnLimpiar.Text = "Modificar";
             BtnLimpiar.UseVisualStyleBackColor = false;
             // 
             // BtnEliminar
@@ -98,7 +98,7 @@
             BtnEliminar.FlatStyle = FlatStyle.Flat;
             BtnEliminar.Image = Properties.Resources.seo_social_web_network_internet_262_icon_icons_com_61518;
             BtnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnEliminar.Location = new Point(25, 371);
+            BtnEliminar.Location = new Point(25, 400);
             BtnEliminar.Name = "BtnEliminar";
             BtnEliminar.Size = new Size(149, 28);
             BtnEliminar.TabIndex = 10;
@@ -112,12 +112,13 @@
             BtnGuardar.FlatStyle = FlatStyle.Flat;
             BtnGuardar.Image = Properties.Resources.savetheapplication_guardar_2958;
             BtnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnGuardar.Location = new Point(25, 301);
+            BtnGuardar.Location = new Point(25, 330);
             BtnGuardar.Name = "BtnGuardar";
             BtnGuardar.Size = new Size(149, 27);
             BtnGuardar.TabIndex = 9;
             BtnGuardar.Text = "Guardar";
             BtnGuardar.UseVisualStyleBackColor = false;
+            BtnGuardar.Click += BtnGuardar_Click;
             // 
             // label5
             // 
@@ -142,14 +143,14 @@
             label3.AutoSize = true;
             label3.Location = new Point(8, 102);
             label3.Name = "label3";
-            label3.Size = new Size(46, 15);
+            label3.Size = new Size(54, 15);
             label3.TabIndex = 6;
-            label3.Text = "Correo:";
+            label3.Text = "Apellido:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 47);
+            label2.Location = new Point(8, 39);
             label2.Name = "label2";
             label2.Size = new Size(54, 15);
             label2.TabIndex = 5;
@@ -180,7 +181,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(8, 65);
+            textBox1.Location = new Point(8, 57);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(193, 23);
             textBox1.TabIndex = 1;
@@ -189,7 +190,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(25, 20);
+            label1.Location = new Point(8, 9);
             label1.Name = "label1";
             label1.Size = new Size(105, 15);
             label1.TabIndex = 0;
@@ -200,10 +201,10 @@
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Correo, NroEmpleado, Cargo });
-            dataGridView1.Location = new Point(249, 91);
+            dataGridView1.Location = new Point(229, 60);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(445, 321);
+            dataGridView1.Size = new Size(465, 352);
             dataGridView1.TabIndex = 1;
             // 
             // Nombre
@@ -238,7 +239,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(476, 32);
+            label7.Location = new Point(476, 27);
             label7.Name = "label7";
             label7.Size = new Size(45, 15);
             label7.TabIndex = 3;
@@ -246,7 +247,7 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(527, 29);
+            textBox5.Location = new Point(538, 24);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(128, 23);
             textBox5.TabIndex = 4;
@@ -256,7 +257,7 @@
             BtnBuscar.FlatAppearance.BorderSize = 0;
             BtnBuscar.FlatStyle = FlatStyle.Flat;
             BtnBuscar.Image = Properties.Resources.seo_social_web_network_internet_340_icon_icons_com_61497;
-            BtnBuscar.Location = new Point(661, 25);
+            BtnBuscar.Location = new Point(672, 21);
             BtnBuscar.Name = "BtnBuscar";
             BtnBuscar.Size = new Size(35, 29);
             BtnBuscar.TabIndex = 5;

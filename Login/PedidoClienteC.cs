@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Login
 {
-    public partial class FormularioClienteEmpresa : Form
+    public partial class PedidoClienteC : Form
     {
-        public FormularioClienteEmpresa()
+        public PedidoClienteC()
         {
             InitializeComponent();
-        }
-
-        private void Closebtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
