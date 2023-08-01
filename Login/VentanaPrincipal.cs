@@ -17,7 +17,7 @@ namespace Login
 {
     public partial class VentanaPrincipal : Form
     {
-        private LogicaUsuarios logicaUsuarios;
+
         [STAThread]
         static void Main()
         {
@@ -31,7 +31,8 @@ namespace Login
         public VentanaPrincipal()
         {
             InitializeComponent();
-            logicaUsuarios = new LogicaUsuarios();
+            txtPassword.PasswordChar = '*';
+
         }
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -41,74 +42,10 @@ namespace Login
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            var nombreUsuario = txtUsername.Text;
-            var contraseña = txtPassword.Text;
-
-            if (string.IsNullOrWhiteSpace(nombreUsuario) || string.IsNullOrWhiteSpace(contraseña))
-            {
-                MessageBox.Show("Ingresa el nombre de usuario y la contraseña.");
-                return;
-            }
 
 
 
 
-
-            try
-            {
-                var usuario = logicaUsuarios.ObtenerUsuario(nombreUsuario, contraseña);
-                //var dataAccessLayer = new DataAccessLayer();
-                //var tipoUsuario = dataAccessLayer.VerificarCredenciales(nombreUsuario, contraseña);
-
-                if (usuario != null)
-                {
-                    MessageBox.Show("Inicio de sesión exitoso como usuario de prueba");
-
-                    MenuPrincipal menuPrincipal = new MenuPrincipal();
-                    menuPrincipal.Show(this);
-                    Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
-
-                //    if (!string.IsNullOrEmpty(tipoUsuario))
-                //{
-                //    MessageBox.Show("Inicio de sesión exitoso como " + tipoUsuario);
-
-                //    switch (tipoUsuario)
-                //    {
-                //        case "Cliente Comun":
-                //            FormularioClienteComun formularioClienteComun = new FormularioClienteComun();
-                //            formularioClienteComun.Show(this);
-                //            Hide();
-                //            break;
-                //        case "Cliente Empresa":
-                //            FormularioClienteEmpresa formularioClienteEmpresa = new FormularioClienteEmpresa();
-                //            formularioClienteEmpresa.Show(this);
-                //            Hide();
-                //            break;
-                //        case "Usuario del Sistema":
-                //            MenuPrincipal menuPrincipal = new MenuPrincipal();
-                //            menuPrincipal.Show(this);
-                //            Hide();
-                //            break;
-                //        default:
-                //            MessageBox.Show("Tipo de usuario no reconocido");
-                //            break;
-                //    }
-
-                    //this.Hide();
-                }
-                //else
-                //{
-                //    MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
-                //}
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al iniciar sesión: " + ex.Message);
-            }
         }
 
 
@@ -129,6 +66,18 @@ namespace Login
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pbMostrar_Click(object sender, EventArgs e)
+        {
+            pbOcultar.BringToFront();
+            txtPassword.PasswordChar = '\0';
+        }
+
+        private void pbOcultar_Click(object sender, EventArgs e)
+        {
+            pbMostrar.BringToFront();
+           txtPassword.PasswordChar = '*';
         }
     }
 }

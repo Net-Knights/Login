@@ -34,6 +34,8 @@
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
+            pbMostrar = new PictureBox();
+            pbOcultar = new PictureBox();
             btnVolver = new Button();
             txtApellido = new TextBox();
             txtNombre = new TextBox();
@@ -57,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbMostrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOcultar).BeginInit();
             SuspendLayout();
             // 
             // pictureBox2
@@ -113,6 +117,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(pbMostrar);
+            panel2.Controls.Add(pbOcultar);
             panel2.Controls.Add(btnVolver);
             panel2.Controls.Add(txtApellido);
             panel2.Controls.Add(txtNombre);
@@ -138,6 +144,28 @@
             panel2.Size = new Size(472, 617);
             panel2.TabIndex = 13;
             // 
+            // pbMostrar
+            // 
+            pbMostrar.Image = Properties.Resources._1490793853_user_interface15_82360;
+            pbMostrar.Location = new Point(320, 134);
+            pbMostrar.Name = "pbMostrar";
+            pbMostrar.Size = new Size(25, 25);
+            pbMostrar.SizeMode = PictureBoxSizeMode.Zoom;
+            pbMostrar.TabIndex = 34;
+            pbMostrar.TabStop = false;
+            pbMostrar.Click += pbMostrar_Click;
+            // 
+            // pbOcultar
+            // 
+            pbOcultar.Image = Properties.Resources._1490793864_user_interface16_82335;
+            pbOcultar.Location = new Point(320, 134);
+            pbOcultar.Name = "pbOcultar";
+            pbOcultar.Size = new Size(25, 25);
+            pbOcultar.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOcultar.TabIndex = 33;
+            pbOcultar.TabStop = false;
+            pbOcultar.Click += pbOcultar_Click;
+            // 
             // btnVolver
             // 
             btnVolver.Cursor = Cursors.Hand;
@@ -152,7 +180,7 @@
             // txtApellido
             // 
             txtApellido.Cursor = Cursors.IBeam;
-            txtApellido.Location = new Point(214, 129);
+            txtApellido.Location = new Point(214, 266);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(100, 23);
             txtApellido.TabIndex = 31;
@@ -160,7 +188,7 @@
             // txtNombre
             // 
             txtNombre.Cursor = Cursors.IBeam;
-            txtNombre.Location = new Point(214, 89);
+            txtNombre.Location = new Point(214, 222);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(100, 23);
             txtNombre.TabIndex = 30;
@@ -170,7 +198,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(41, 128, 185);
-            label1.Location = new Point(6, 127);
+            label1.Location = new Point(6, 266);
             label1.Name = "label1";
             label1.Size = new Size(99, 24);
             label1.TabIndex = 29;
@@ -181,7 +209,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(41, 128, 185);
-            label2.Location = new Point(6, 88);
+            label2.Location = new Point(6, 222);
             label2.Name = "label2";
             label2.Size = new Size(100, 24);
             label2.TabIndex = 28;
@@ -190,7 +218,7 @@
             // txtDireccion
             // 
             txtDireccion.Cursor = Cursors.IBeam;
-            txtDireccion.Location = new Point(214, 382);
+            txtDireccion.Location = new Point(214, 438);
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(100, 23);
             txtDireccion.TabIndex = 27;
@@ -200,7 +228,7 @@
             lblTelefono.AutoSize = true;
             lblTelefono.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblTelefono.ForeColor = Color.FromArgb(41, 128, 185);
-            lblTelefono.Location = new Point(3, 336);
+            lblTelefono.Location = new Point(6, 398);
             lblTelefono.Name = "lblTelefono";
             lblTelefono.Size = new Size(104, 24);
             lblTelefono.TabIndex = 26;
@@ -209,7 +237,7 @@
             // txtTelefono
             // 
             txtTelefono.Cursor = Cursors.IBeam;
-            txtTelefono.Location = new Point(214, 337);
+            txtTelefono.Location = new Point(214, 398);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(100, 23);
             txtTelefono.TabIndex = 21;
@@ -219,7 +247,7 @@
             lblDireccion.AutoSize = true;
             lblDireccion.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblDireccion.ForeColor = Color.FromArgb(41, 128, 185);
-            lblDireccion.Location = new Point(3, 377);
+            lblDireccion.Location = new Point(6, 438);
             lblDireccion.Name = "lblDireccion";
             lblDireccion.Size = new Size(112, 24);
             lblDireccion.TabIndex = 20;
@@ -241,7 +269,7 @@
             lblCorreoElectronico.AutoSize = true;
             lblCorreoElectronico.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblCorreoElectronico.ForeColor = Color.FromArgb(41, 128, 185);
-            lblCorreoElectronico.Location = new Point(3, 252);
+            lblCorreoElectronico.Location = new Point(6, 314);
             lblCorreoElectronico.Name = "lblCorreoElectronico";
             lblCorreoElectronico.Size = new Size(207, 24);
             lblCorreoElectronico.TabIndex = 18;
@@ -252,7 +280,7 @@
             lblCI.AutoSize = true;
             lblCI.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblCI.ForeColor = Color.FromArgb(41, 128, 185);
-            lblCI.Location = new Point(6, 295);
+            lblCI.Location = new Point(6, 358);
             lblCI.Name = "lblCI";
             lblCI.Size = new Size(37, 24);
             lblCI.TabIndex = 17;
@@ -263,7 +291,7 @@
             lblContraseña.AutoSize = true;
             lblContraseña.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblContraseña.ForeColor = Color.FromArgb(41, 128, 185);
-            lblContraseña.Location = new Point(6, 207);
+            lblContraseña.Location = new Point(6, 129);
             lblContraseña.Name = "lblContraseña";
             lblContraseña.Size = new Size(135, 24);
             lblContraseña.TabIndex = 16;
@@ -274,7 +302,7 @@
             lblNombreUsuario.AutoSize = true;
             lblNombreUsuario.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblNombreUsuario.ForeColor = Color.FromArgb(41, 128, 185);
-            lblNombreUsuario.Location = new Point(6, 168);
+            lblNombreUsuario.Location = new Point(6, 89);
             lblNombreUsuario.Name = "lblNombreUsuario";
             lblNombreUsuario.Size = new Size(177, 24);
             lblNombreUsuario.TabIndex = 15;
@@ -283,7 +311,7 @@
             // txtContraseña
             // 
             txtContraseña.Cursor = Cursors.IBeam;
-            txtContraseña.Location = new Point(214, 208);
+            txtContraseña.Location = new Point(214, 134);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(100, 23);
             txtContraseña.TabIndex = 14;
@@ -291,7 +319,7 @@
             // txtCorreoElectronico
             // 
             txtCorreoElectronico.Cursor = Cursors.IBeam;
-            txtCorreoElectronico.Location = new Point(214, 252);
+            txtCorreoElectronico.Location = new Point(214, 314);
             txtCorreoElectronico.Name = "txtCorreoElectronico";
             txtCorreoElectronico.Size = new Size(100, 23);
             txtCorreoElectronico.TabIndex = 13;
@@ -299,7 +327,7 @@
             // txtCI
             // 
             txtCI.Cursor = Cursors.IBeam;
-            txtCI.Location = new Point(214, 300);
+            txtCI.Location = new Point(214, 359);
             txtCI.Name = "txtCI";
             txtCI.Size = new Size(100, 23);
             txtCI.TabIndex = 12;
@@ -307,11 +335,10 @@
             // txtNombreUsuario
             // 
             txtNombreUsuario.Cursor = Cursors.IBeam;
-            txtNombreUsuario.Location = new Point(214, 168);
+            txtNombreUsuario.Location = new Point(214, 94);
             txtNombreUsuario.Name = "txtNombreUsuario";
             txtNombreUsuario.Size = new Size(100, 23);
             txtNombreUsuario.TabIndex = 11;
-            txtNombreUsuario.KeyPress += txtNombreUsuario_KeyPress;
             // 
             // lblIngrese
             // 
@@ -341,6 +368,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbMostrar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOcultar).EndInit();
             ResumeLayout(false);
         }
 
@@ -375,5 +404,7 @@
         private TextBox txtApellido;
         private TextBox txtNombre;
         private Button btnVolver;
+        private PictureBox pbMostrar;
+        private PictureBox pbOcultar;
     }
 }

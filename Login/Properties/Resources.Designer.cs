@@ -83,6 +83,26 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1490793853_user_interface15_82360 {
+            get {
+                object obj = ResourceManager.GetObject("1490793853-user-interface15_82360", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1490793864_user_interface16_82335 {
+            get {
+                object obj = ResourceManager.GetObject("1490793864-user-interface16_82335", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1492790846_9cancel_84247 {
             get {
                 object obj = ResourceManager.GetObject("1492790846-9cancel_84247", resourceCulture);

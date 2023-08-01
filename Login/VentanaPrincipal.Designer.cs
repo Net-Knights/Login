@@ -41,6 +41,8 @@
             panel5 = new Panel();
             Closebtn = new Button();
             panel2 = new Panel();
+            pbMostrar = new PictureBox();
+            pbOcultar = new PictureBox();
             Btn_Registrarse = new Button();
             label1 = new Label();
             label7 = new Label();
@@ -53,6 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel5.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbMostrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOcultar).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel3.SuspendLayout();
@@ -76,7 +80,6 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(405, 16);
             txtPassword.TabIndex = 3;
-            txtPassword.UseSystemPasswordChar = true;
             // 
             // Btn_Login
             // 
@@ -196,6 +199,8 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(pbMostrar);
+            panel2.Controls.Add(pbOcultar);
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(Btn_Registrarse);
             panel2.Controls.Add(label1);
@@ -208,6 +213,28 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(493, 530);
             panel2.TabIndex = 5;
+            // 
+            // pbMostrar
+            // 
+            pbMostrar.Image = Properties.Resources._1490793853_user_interface15_82360;
+            pbMostrar.Location = new Point(447, 176);
+            pbMostrar.Name = "pbMostrar";
+            pbMostrar.Size = new Size(28, 32);
+            pbMostrar.SizeMode = PictureBoxSizeMode.Zoom;
+            pbMostrar.TabIndex = 14;
+            pbMostrar.TabStop = false;
+            pbMostrar.Click += pbMostrar_Click;
+            // 
+            // pbOcultar
+            // 
+            pbOcultar.Image = Properties.Resources._1490793864_user_interface16_82335;
+            pbOcultar.Location = new Point(447, 176);
+            pbOcultar.Name = "pbOcultar";
+            pbOcultar.Size = new Size(28, 32);
+            pbOcultar.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOcultar.TabIndex = 13;
+            pbOcultar.TabStop = false;
+            pbOcultar.Click += pbOcultar_Click;
             // 
             // Btn_Registrarse
             // 
@@ -302,6 +329,8 @@
             panel5.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbMostrar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOcultar).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -332,5 +361,7 @@
         private Label label1;
         private Button Btn_Registrarse;
         private Panel panel5;
+        private PictureBox pbMostrar;
+        private PictureBox pbOcultar;
     }
 }

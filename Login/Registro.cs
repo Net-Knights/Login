@@ -19,15 +19,14 @@ namespace Login
 {
     public partial class Registro : Form
     {
-        private DataAccessLayer dataAccessLayer;
-        private NegocioCliente negocioCliente;
+
+        private UserModel userModel;
 
         public Registro()
         {
             InitializeComponent();
-            dataAccessLayer = new DataAccessLayer();
-            negocioCliente = new NegocioCliente();
-
+            userModel = new UserModel();
+            txtContraseña.PasswordChar = '*';
 
         }
 
@@ -38,33 +37,30 @@ namespace Login
         private void btnRegistrar_Click_1(object sender, EventArgs e)
 
         {
-
-            string nombreUsuario = txtNombreUsuario.Text;
-            string contraseña = txtContraseña.Text;
-            string ci = txtCI.Text;
-            string direccion = txtDireccion.Text;
-            string email = txtCorreoElectronico.Text;
-            string nombre = txtNombre.Text;
-            string apellido = txtApellido.Text;
-
-            bool resultado = negocioCliente.RegistrarCliente(nombreUsuario, contraseña, ci, direccion, email, nombre, apellido);
-
-            if (resultado)
+            try
             {
-                MessageBox.Show("Cliente registrado correctamente.");
+                string mail = txtCorreoElectronico.Text;
+                string telefono = txtTelefono.Text;
+                string direccion = txtDireccion.Text;
+                string ci = txtCI.Text;
+                string nombre = txtNombre.Text;
+                string apellido = txtApellido.Text;
+                string usuario = txtNombreUsuario.Text;
+                string contraseña = txtContraseña.Text;
+
+                userModel.RegistrarCliente(mail, telefono, direccion, ci, nombre, apellido, usuario, contraseña);
+
+                MessageBox.Show("Registro exitoso.");
                 LimpiarCampos();
-                // Puedes agregar aquí más acciones después de guardar, si es necesario.
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al registrar el cliente.");
+                MessageBox.Show("Error al registrar: " + ex.Message);
                 LimpiarCampos();
-
-
-
             }
-            
         }
+
+
 
         private void LimpiarCampos()
         {
@@ -82,36 +78,31 @@ namespace Login
 
 
 
-        private bool ValidarCorreoElectronico(string correo)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(correo);
-                return addr.Address == correo;
-            }
-            catch
-            {
-                return false;
-            }
-        }
 
-       
 
-        private void txtNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Solo letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
+
+
+
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
             ventanaPrincipal.Show(this);
             Hide();
+        }
+
+        private void pbMostrar_Click(object sender, EventArgs e)
+        {
+            pbOcultar.BringToFront();
+            txtContraseña.PasswordChar = '\0';
+
+
+        }
+
+        private void pbOcultar_Click(object sender, EventArgs e)
+        {
+            pbMostrar.BringToFront();
+            txtContraseña.PasswordChar = '*';
         }
     }
 }
