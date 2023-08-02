@@ -17,6 +17,33 @@ namespace Logica
     {
 
         private string connectionString = "Server=localhost;Database=sisviansa;Uid=root;Pwd=auditoredash3;";
+        private bool IsValidEmail(string email)
+        {
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            return Regex.IsMatch(email, emailPattern);
+        }
+
+        public string ValidarCampos(string mail, string telefono, string direccion, string ci, string nombre, string apellido, string usuario, string contraseña)
+        {
+            if (string.IsNullOrEmpty(mail) ||
+                string.IsNullOrEmpty(telefono) ||
+                string.IsNullOrEmpty(direccion) ||
+                string.IsNullOrEmpty(ci) ||
+                string.IsNullOrEmpty(nombre) ||
+                string.IsNullOrEmpty(apellido) ||
+                string.IsNullOrEmpty(usuario) ||
+                string.IsNullOrEmpty(contraseña))
+            {
+                return "Todos los campos son obligatorios. Por favor, ingrese todos los datos.";
+            }
+
+            if (!IsValidEmail(mail))
+            {
+                return "El email ingresado no es válido. Por favor, ingrese un email válido.";
+            }
+
+            return ""; // Si no hay errores, retorna una cadena vacía
+        }
 
         public void RegistrarCliente(string mail, string telefono, string direccion, string ci, string nombre, string apellido, string usuario, string contraseña)
         {
@@ -80,11 +107,37 @@ namespace Logica
                 }
             }
         }
+
+
+
+        public LoginGeneral IniciarSesion(string usuario, string contraseña)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT Usuario, Rol FROM login WHERE Usuario = @Usuario AND Contraseña = @Contraseña;";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Usuario", usuario);
+                command.Parameters.AddWithValue("@Contraseña", contraseña);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string nombreUsuario = reader.GetString("Usuario");
+                        string rol = reader.GetString("Rol");
+                        return new LoginGeneral { NombreUsuario = nombreUsuario, Rol = rol };
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+        }
     }
 }
-
-
-
 
 
 

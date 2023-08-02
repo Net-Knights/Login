@@ -184,6 +184,7 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(100, 23);
             txtApellido.TabIndex = 31;
+            txtApellido.KeyPress += txtApellido_KeyPress;
             // 
             // txtNombre
             // 
@@ -192,6 +193,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(100, 23);
             txtNombre.TabIndex = 30;
+            txtNombre.KeyPress += txtNombre_KeyPress;
             // 
             // label1
             // 
@@ -241,6 +243,7 @@
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(100, 23);
             txtTelefono.TabIndex = 21;
+            txtTelefono.KeyPress += txtTelefono_KeyPress;
             // 
             // lblDireccion
             // 
@@ -331,6 +334,7 @@
             txtCI.Name = "txtCI";
             txtCI.Size = new Size(100, 23);
             txtCI.TabIndex = 12;
+            txtCI.KeyPress += txtCI_KeyPress;
             // 
             // txtNombreUsuario
             // 

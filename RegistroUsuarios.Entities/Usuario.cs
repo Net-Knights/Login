@@ -37,14 +37,12 @@ namespace RegistroUsuarios.Entities
        
     }
 
-    public class UsuarioSistema : Usuario
-    {
-       
-    }
+    
 
-    public class UsuarioPrueba
+    public class LoginGeneral
     {
         public string NombreUsuario { get; set; }
         public string Contraseña { get; set; }
+        public string Rol { get; set; }
     }
 }

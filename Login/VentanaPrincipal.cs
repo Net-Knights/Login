@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
+using RegistroUsuarios.Entities;
 //using Persistencia;
 
 
@@ -17,6 +18,7 @@ namespace Login
 {
     public partial class VentanaPrincipal : Form
     {
+        private UserModel userModel;
 
         [STAThread]
         static void Main()
@@ -31,6 +33,7 @@ namespace Login
         public VentanaPrincipal()
         {
             InitializeComponent();
+            userModel = new UserModel();
             txtPassword.PasswordChar = '*';
 
         }
@@ -42,7 +45,53 @@ namespace Login
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string usuario = txtUsername.Text;
+                string contraseña = txtPassword.Text;
 
+                // Validar que los campos no estén vacíos
+                if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contraseña))
+                {
+                    MessageBox.Show("Por favor, ingrese el usuario y la contraseña.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+               LoginGeneral usuarioLogueado = userModel.IniciarSesion(usuario, contraseña);
+
+                if (usuarioLogueado != null)
+                {
+                    string mensaje = $"Bienvenido {usuarioLogueado.NombreUsuario} ({usuarioLogueado.Rol}).";
+                    MessageBox.Show(mensaje, "Inicio de Sesión Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Abrir formulario correspondiente según el rol del usuario
+                    switch (usuarioLogueado.Rol.ToLower())
+                    {
+                        case "administrador":
+                            MenuPrincipal menuPrincipal = new MenuPrincipal();
+                            menuPrincipal.Show();
+                            break;
+
+                        case "comun":
+                            FormularioClienteComun formularioClienteComun = new FormularioClienteComun();
+                            formularioClienteComun.Show();
+                            break;
+                        // Agregar más casos para otros roles si es necesario
+                        default:
+                            // Si el rol no coincide con ningún caso, mostrar un mensaje de error
+                            MessageBox.Show("Rol no reconocido. No se pudo abrir el formulario correspondiente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos. Por favor, verifique sus credenciales.", "Inicio de Sesión Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al iniciar sesión: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
 
