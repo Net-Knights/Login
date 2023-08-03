@@ -7,34 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logica;
 
 namespace Login
 {
     public partial class AbmCliente : Form
     {
+        private UserModel userModel;
         public AbmCliente()
         {
             InitializeComponent();
+            userModel = new UserModel();
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void AbmCliente_Load(object sender, EventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            // Cargar todos los datos de las tablas Cliente, Comun, Empresa y login en el DataGridView
+            DataTable datosClientesComunesEmpresas = userModel.ObtenerDatosClientesComunesEmpresas();
+            dgvClientes.DataSource = datosClientesComunesEmpresas;
+
+            // Ajustar el diseño del DataGridView, si es necesario
+            // Ejemplo:
+            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void pbBuscar_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtNroCliente.Text, out int nroCliente))
             {
-                MessageBox.Show("Solo letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
+                // Buscar cliente por NroCliente y mostrar resultados en el DataGridView
+                DataTable clienteEncontrado = userModel.BuscarClientePorNroCliente(nroCliente);
+                dgvClientes.DataSource = clienteEncontrado;
             }
-        }
-
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            else
             {
-                MessageBox.Show("Solo números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
+                MessageBox.Show("Ingrese un NroCliente válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 }
+

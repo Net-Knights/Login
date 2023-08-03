@@ -136,8 +136,84 @@ namespace Logica
                 }
             }
         }
+
+
+        public DataTable ObtenerDatosClientesComunesEmpresas()
+        {
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+                    SELECT 
+                        c.NroCliente,
+                        c.Autorizacion,
+                        c.Mail AS 'MailCliente',
+                        c.Telefono AS 'TelefonoCliente',
+                        c.Direccion AS 'DireccionCliente',
+                        co.Ci AS 'CiComun',
+                        co.Nombre AS 'NombreComun',
+                        co.Apellido AS 'ApellidoComun',
+                        e.RUT AS 'RutEmpresa',
+                        e.NombreEmpresa AS 'NombreEmpresa',
+                        (SELECT l.Rol FROM login l WHERE l.Usuario = c.NroCliente) AS 'Rol'
+                    FROM Cliente c
+                    LEFT JOIN Comun co ON c.NroCliente = co.NroCliente
+                    LEFT JOIN Empresa e ON c.NroCliente = e.NroCliente;";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+        }
+
+        // Método para buscar un cliente por NroCliente
+        public DataTable BuscarClientePorNroCliente(int nroCliente)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+                    SELECT 
+                        c.NroCliente,
+                        c.Autorizacion,
+                        c.Mail AS 'MailCliente',
+                        c.Telefono AS 'TelefonoCliente',
+                        c.Direccion AS 'DireccionCliente',
+                        co.Ci AS 'CiComun',
+                        co.Nombre AS 'NombreComun',
+                        co.Apellido AS 'ApellidoComun',
+                        e.RUT AS 'RutEmpresa',
+                        e.NombreEmpresa AS 'NombreEmpresa',
+                        (SELECT l.Rol FROM login l WHERE l.Usuario = c.NroCliente) AS 'Rol'
+                    FROM Cliente c
+                    LEFT JOIN Comun co ON c.NroCliente = co.NroCliente
+                    LEFT JOIN Empresa e ON c.NroCliente = e.NroCliente
+                    WHERE c.NroCliente = @NroCliente;";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NroCliente", nroCliente);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+        }
+
+
+
+
+
+
     }
 }
+
 
 
 
