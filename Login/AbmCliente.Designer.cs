@@ -54,6 +54,9 @@
             txtApellido = new TextBox();
             label1 = new Label();
             panel2 = new Panel();
+            label4 = new Label();
+            label3 = new Label();
+            dvgEmpresa = new DataGridView();
             dgvClientes = new DataGridView();
             pbBuscar = new PictureBox();
             txtNroCliente = new TextBox();
@@ -61,6 +64,7 @@
             label6 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dvgEmpresa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbBuscar).BeginInit();
             SuspendLayout();
@@ -95,7 +99,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 450);
+            panel1.Size = new Size(200, 500);
             panel1.TabIndex = 0;
             // 
             // lblDireccion
@@ -121,7 +125,7 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Image = Properties.Resources.savetheapplication_guardar_2958;
             btnModificar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnModificar.Location = new Point(12, 378);
+            btnModificar.Location = new Point(12, 409);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(149, 29);
             btnModificar.TabIndex = 33;
@@ -221,7 +225,6 @@
             // cbTipoCliente
             // 
             cbTipoCliente.FormattingEnabled = true;
-            cbTipoCliente.Items.AddRange(new object[] { "Comun", "Empresa" });
             cbTipoCliente.Location = new Point(3, 51);
             cbTipoCliente.Name = "cbTipoCliente";
             cbTipoCliente.Size = new Size(190, 23);
@@ -253,7 +256,7 @@
             BtnEliminar.FlatStyle = FlatStyle.Flat;
             BtnEliminar.Image = Properties.Resources.seo_social_web_network_internet_262_icon_icons_com_61518;
             BtnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnEliminar.Location = new Point(12, 413);
+            BtnEliminar.Location = new Point(12, 451);
             BtnEliminar.Name = "BtnEliminar";
             BtnEliminar.Size = new Size(149, 25);
             BtnEliminar.TabIndex = 19;
@@ -268,7 +271,7 @@
             BtnGuardar.FlatStyle = FlatStyle.Flat;
             BtnGuardar.Image = Properties.Resources.savetheapplication_guardar_2958;
             BtnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnGuardar.Location = new Point(12, 346);
+            BtnGuardar.Location = new Point(12, 365);
             BtnGuardar.Name = "BtnGuardar";
             BtnGuardar.Size = new Size(149, 26);
             BtnGuardar.TabIndex = 18;
@@ -317,6 +320,9 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(dvgEmpresa);
             panel2.Controls.Add(dgvClientes);
             panel2.Controls.Add(pbBuscar);
             panel2.Controls.Add(txtNroCliente);
@@ -325,8 +331,35 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(200, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(600, 450);
+            panel2.Size = new Size(765, 500);
             panel2.TabIndex = 1;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(423, 59);
+            label4.Name = "label4";
+            label4.Size = new Size(92, 15);
+            label4.TabIndex = 14;
+            label4.Text = "Cliente empresa";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(6, 59);
+            label3.Name = "label3";
+            label3.Size = new Size(85, 15);
+            label3.TabIndex = 13;
+            label3.Text = "Cliente comun";
+            // 
+            // dvgEmpresa
+            // 
+            dvgEmpresa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvgEmpresa.Location = new Point(423, 95);
+            dvgEmpresa.Name = "dvgEmpresa";
+            dvgEmpresa.RowTemplate.Height = 25;
+            dvgEmpresa.Size = new Size(339, 343);
+            dvgEmpresa.TabIndex = 12;
             // 
             // dgvClientes
             // 
@@ -337,7 +370,7 @@
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowTemplate.Height = 25;
-            dgvClientes.Size = new Size(555, 343);
+            dgvClientes.Size = new Size(411, 343);
             dgvClientes.TabIndex = 11;
             // 
             // pbBuscar
@@ -381,7 +414,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(965, 500);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -392,6 +425,7 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dvgEmpresa).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbBuscar).EndInit();
             ResumeLayout(false);
@@ -430,5 +464,8 @@
         private Button btnModificar;
         private Label lblDireccion;
         private TextBox txtDireccion;
+        private Label label4;
+        private Label label3;
+        private DataGridView dvgEmpresa;
     }
 }

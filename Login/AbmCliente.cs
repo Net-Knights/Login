@@ -26,9 +26,11 @@ namespace Login
             // Configuración inicial del ComboBox y DataGridView
             cbTipoCliente.Items.AddRange(new string[] { "Comun", "Empresa" });
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dvgEmpresa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             OcultarCampos();
 
-            CargarDatosClientes();
+            CargarDatosClientesComunes();
+            CargarDatosClientesEmpresa();
         }
         private void OcultarCampos()
         {
@@ -88,19 +90,25 @@ namespace Login
                 txtDireccionEmpresa.Visible = true;
             }
         }
-        private void CargarDatosClientes()
+        private void CargarDatosClientesComunes()
         {
-            dataTableClientes = userModel.ObtenerDatosClientesComunesEmpresas();
-            dgvClientes.DataSource = dataTableClientes;
+            DataTable clientesComunes = userModel.ObtenerDatosClientesComunes();
+            dgvClientes.DataSource = clientesComunes;
+        }
+
+        // Método para cargar los datos de clientes empresa en dgvEmpresa
+        private void CargarDatosClientesEmpresa()
+        {
+            DataTable clientesEmpresa = userModel.ObtenerDatosClientesEmpresa();
+            dvgEmpresa.DataSource = clientesEmpresa;
         }
 
 
         private void AbmCliente_Load(object sender, EventArgs e)
         {
             // Cargar todos los datos de las tablas Cliente, Comun, Empresa y login en el DataGridView
-            DataTable datosClientesComunesEmpresas = userModel.ObtenerDatosClientesComunesEmpresas();
-            dgvClientes.DataSource = datosClientesComunesEmpresas;
-
+            CargarDatosClientesComunes();
+            CargarDatosClientesEmpresa();
             // Ajustar el diseño del DataGridView, si es necesario
             // Ejemplo:
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -128,6 +136,12 @@ namespace Login
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+
+            if (cbTipoCliente.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, seleccione un tipo de cliente.", "Selección Requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             string tipoCliente = cbTipoCliente.SelectedItem.ToString();
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
@@ -144,85 +158,91 @@ namespace Login
             userModel.GuardarCliente(tipoCliente, nombre, apellido, correoElectronico, telefono, ci, direccion, rut, nombreEmpresa, direccionEmpresa);
 
             MessageBox.Show("Registro exitoso.");
-            CargarDatosClientes();
+            CargarDatosClientesComunes();
+            CargarDatosClientesEmpresa();
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvClientes.SelectedRows.Count > 0)
             {
-                // Obtener los datos del cliente seleccionado
                 int nroCliente = Convert.ToInt32(dgvClientes.SelectedRows[0].Cells["NroCliente"].Value);
-                string tipoCliente = dgvClientes.SelectedRows[0].Cells["TipoCliente"].Value.ToString();
-
-                // Mostrar los campos correspondientes al tipo de cliente seleccionado
-                cbTipoCliente.SelectedItem = tipoCliente;
-                MostrarCampos(tipoCliente);
-
-                // Asignar los valores del cliente seleccionado a los campos correspondientes
-                if (tipoCliente == "Común")
+                if (MessageBox.Show("¿Está seguro de que desea eliminar el cliente?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    txtNombre.Text = dgvClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
-                    txtApellido.Text = dgvClientes.SelectedRows[0].Cells["Apellido"].Value.ToString();
-                    txtCorreoElectronico.Text = dgvClientes.SelectedRows[0].Cells["CorreoElectronico"].Value.ToString();
-                    txtTelefono.Text = dgvClientes.SelectedRows[0].Cells["Telefono"].Value.ToString();
-                    txtCI.Text = dgvClientes.SelectedRows[0].Cells["CI"].Value.ToString();
-                    txtDireccion.Text = dgvClientes.SelectedRows[0].Cells["Direccion"].Value.ToString();
+                    userModel.EliminarCliente(nroCliente);
+                    MessageBox.Show("Cliente eliminado correctamente.");
+                    CargarDatosClientesComunes();
                 }
-                else if (tipoCliente == "Empresa")
+            }
+            else if (dvgEmpresa.SelectedRows.Count > 0)
+            {
+                int nroClienteEmpresa = Convert.ToInt32(dvgEmpresa.SelectedRows[0].Cells["NroClienteEmpresa"].Value);
+                if (MessageBox.Show("¿Está seguro de que desea eliminar el cliente?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    txtNombreEmpresa.Text = dgvClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
-                    txtCorreoElectronico.Text = dgvClientes.SelectedRows[0].Cells["CorreoElectronico"].Value.ToString();
-                    txtTelefono.Text = dgvClientes.SelectedRows[0].Cells["Telefono"].Value.ToString();
-                    txtCI.Text = dgvClientes.SelectedRows[0].Cells["CI"].Value.ToString();
-                    txtDireccionEmpresa.Text = dgvClientes.SelectedRows[0].Cells["Direccion"].Value.ToString();
-                    txtRUT.Text = dgvClientes.SelectedRows[0].Cells["RUT"].Value.ToString();
+                    userModel.EliminarCliente(nroClienteEmpresa);
+                    MessageBox.Show("Cliente eliminado correctamente.");
+                    CargarDatosClientesEmpresa();
                 }
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un cliente para modificar.", "Selección Requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, seleccione un cliente para eliminar.", "Selección Requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            try
+            if (dgvClientes.SelectedRows.Count > 0 || dvgEmpresa.SelectedRows.Count > 0)
             {
+                int nroCliente;
+                DataGridView selectedDgv;
+
                 if (dgvClientes.SelectedRows.Count > 0)
                 {
-                    int nroCliente = Convert.ToInt32(dgvClientes.SelectedRows[0].Cells["NroCliente"].Value);
-                    string tipoCliente = dgvClientes.SelectedRows[0].Cells["TipoCliente"].Value.ToString();
+                    selectedDgv = dgvClientes;
+                }
+                else
+                {
+                    selectedDgv = dvgEmpresa;
+                }
+
+                nroCliente = Convert.ToInt32(selectedDgv.SelectedRows[0].Cells["NroCliente"].Value);
+                string tipoCliente = selectedDgv.SelectedRows[0].Cells["TipoCliente"].Value.ToString();
+
+                if (tipoCliente == "Común")
+                {
                     string nombre = txtNombre.Text;
                     string apellido = txtApellido.Text;
                     string correoElectronico = txtCorreoElectronico.Text;
                     string telefono = txtTelefono.Text;
                     string ci = txtCI.Text;
                     string direccion = txtDireccion.Text;
+
+                    userModel.ModificarClienteComun(nroCliente, nombre, apellido, correoElectronico, telefono, ci, direccion);
+                }
+                else if (tipoCliente == "Empresa")
+                {
                     string rut = txtRUT.Text;
                     string nombreEmpresa = txtNombreEmpresa.Text;
+                    string correoElectronico = txtCorreoElectronico.Text;
+                    string telefono = txtTelefono.Text;
+                    string ci = txtCI.Text;
                     string direccionEmpresa = txtDireccionEmpresa.Text;
 
-                    userModel.ModificarCliente(nroCliente, tipoCliente, nombre, apellido, correoElectronico, telefono, ci, direccion, rut, nombreEmpresa, direccionEmpresa);
-
-                    // Actualizar los datos en el DataGridView
-                    dgvClientes.SelectedRows[0].Cells["CorreoElectronico"].Value = correoElectronico;
-                    // ... Actualizar otros campos según el tipo de cliente ...
-
-                    MessageBox.Show("Cliente modificado correctamente.");
+                    userModel.ModificarClienteEmpresa(nroCliente, rut, nombreEmpresa, correoElectronico, telefono, ci, direccionEmpresa);
                 }
-                else
-                {
-                    MessageBox.Show("Por favor, seleccione un cliente para modificar.", "Selección Requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+
+                MessageBox.Show("Cliente modificado correctamente.");
+                CargarDatosClientesComunes();
+                CargarDatosClientesEmpresa();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error al modificar el cliente: " + ex.Message);
+                MessageBox.Show("Por favor, seleccione un cliente para modificar.", "Selección Requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
-    }
+}
 
 
 

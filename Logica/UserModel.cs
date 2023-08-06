@@ -138,29 +138,54 @@ namespace Logica
         }
 
 
-        public DataTable ObtenerDatosClientesComunesEmpresas()
+        // Método para obtener los datos de clientes comunes
+        public DataTable ObtenerDatosClientesComunes()
         {
-
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
 
                 string query = @"
-                    SELECT 
-                        c.NroCliente,
-                        c.Autorizacion,
-                        c.Mail AS 'MailCliente',
-                        c.Telefono AS 'TelefonoCliente',
-                        c.Direccion AS 'DireccionCliente',
-                        co.Ci AS 'CiComun',
-                        co.Nombre AS 'NombreComun',
-                        co.Apellido AS 'ApellidoComun',
-                        e.RUT AS 'RutEmpresa',
-                        e.NombreEmpresa AS 'NombreEmpresa',
-                        (SELECT l.Rol FROM login l WHERE l.Usuario = c.NroCliente) AS 'Rol'
-                    FROM Cliente c
-                    LEFT JOIN Comun co ON c.NroCliente = co.NroCliente
-                    LEFT JOIN Empresa e ON c.NroCliente = e.NroCliente;";
+                SELECT 
+                    c.NroCliente,
+                    c.Autorizacion,
+                    c.Mail AS 'MailCliente',
+                    c.Telefono AS 'TelefonoCliente',
+                    c.Direccion AS 'DireccionCliente',
+                    co.Ci AS 'CiComun',
+                    co.Nombre AS 'NombreComun',
+                    co.Apellido AS 'ApellidoComun',
+                    (SELECT l.Rol FROM login l WHERE l.Usuario = c.NroCliente) AS 'Rol'
+                FROM Cliente c
+                LEFT JOIN Comun co ON c.NroCliente = co.NroCliente
+                ;";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+        }
+
+        // Método para obtener los datos de clientes empresa
+        public DataTable ObtenerDatosClientesEmpresa()
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+                SELECT 
+                    
+                    e.RUT AS 'RutEmpresa',
+                    e.NombreEmpresa AS 'NombreEmpresa',
+                    
+                    (SELECT l.Rol FROM login l WHERE l.Usuario = c.NroCliente) AS 'Rol'
+                FROM Cliente c
+                LEFT JOIN Empresa e ON c.NroCliente = e.NroCliente
+                ;";
 
                 MySqlCommand command = new MySqlCommand(query, connection);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(command);
@@ -258,60 +283,61 @@ namespace Logica
             return ci.Length == 8 && int.TryParse(ci, out _);
         }
 
-
-        public void ModificarCliente(int nroCliente, string tipoCliente, string nombre, string apellido, string correoElectronico, string telefono, string ci, string direccion, string rut, string nombreEmpresa, string direccionEmpresa)
+        public void EliminarCliente(int nroCliente)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
 
-                // Validaciones de datos
-              
-                if (tipoCliente == "Común")
-                {
-                    if (!IsValidName(nombre) || !IsValidName(apellido) || !IsValidEmail(correoElectronico) || !int.TryParse(telefono, out _) || !IsValidCI(ci))
-                    {
-                        throw new Exception("Por favor, ingrese datos válidos.");
-                    }
-                }
-                else if (tipoCliente == "Empresa")
-                {
-                    if (!IsValidName(nombreEmpresa) || !IsValidEmail(correoElectronico) || !int.TryParse(telefono, out _) || !IsValidCI(ci) || string.IsNullOrEmpty(rut))
-                    {
-                        throw new Exception("Por favor, ingrese datos válidos.");
-                    }
-                }
+                string query = "DELETE FROM Cliente WHERE NroCliente = @NroCliente";
 
-                // Actualizar en la tabla Cliente
-                string queryCliente = "UPDATE Cliente SET Mail = @Mail WHERE NroCliente = @NroCliente;";
-                MySqlCommand commandCliente = new MySqlCommand(queryCliente, connection);
-                commandCliente.Parameters.AddWithValue("@Mail", correoElectronico);
-                commandCliente.Parameters.AddWithValue("@NroCliente", nroCliente);
-                commandCliente.ExecuteNonQuery();
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NroCliente", nroCliente);
 
-                // Actualizar en las tablas correspondientes según el tipo de cliente
-                if (tipoCliente == "Común")
-                {
-                    string queryComun = "UPDATE Comun SET Nombre = @Nombre, Apellido = @Apellido, Telefono = @Telefono, CI = @CI, Direccion = @Direccion WHERE NroCliente = @NroCliente;";
-                    MySqlCommand commandComun = new MySqlCommand(queryComun, connection);
-                    commandComun.Parameters.AddWithValue("@Nombre", nombre);
-                    commandComun.Parameters.AddWithValue("@Apellido", apellido);
-                    commandComun.Parameters.AddWithValue("@Telefono", telefono);
-                    commandComun.Parameters.AddWithValue("@CI", ci);
-                    commandComun.Parameters.AddWithValue("@Direccion", direccion);
-                    commandComun.Parameters.AddWithValue("@NroCliente", nroCliente);
-                    commandComun.ExecuteNonQuery();
-                }
-                else if (tipoCliente == "Empresa")
-                {
-                    string queryEmpresa = "UPDATE Empresa SET RUT = @RUT, NombreEmpresa = @NombreEmpresa, DireccionEmpresa = @DireccionEmpresa WHERE NroCliente = @NroCliente;";
-                    MySqlCommand commandEmpresa = new MySqlCommand(queryEmpresa, connection);
-                    commandEmpresa.Parameters.AddWithValue("@RUT", rut);
-                    commandEmpresa.Parameters.AddWithValue("@NombreEmpresa", nombreEmpresa);
-                    commandEmpresa.Parameters.AddWithValue("@DireccionEmpresa", direccionEmpresa);
-                    commandEmpresa.Parameters.AddWithValue("@NroCliente", nroCliente);
-                    commandEmpresa.ExecuteNonQuery();
-                }
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void ModificarClienteComun(int nroCliente, string nombre, string apellido, string correoElectronico, string telefono, string ci, string direccion)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+                UPDATE Cliente
+                SET Nombre = @Nombre, Apellido = @Apellido, Mail = @Mail, Telefono = @Telefono, CI = @CI, Direccion = @Direccion
+                WHERE NroCliente = @NroCliente";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NroCliente", nroCliente);
+                command.Parameters.AddWithValue("@Nombre", nombre);
+                command.Parameters.AddWithValue("@Apellido", apellido);
+                command.Parameters.AddWithValue("@Mail", correoElectronico);
+                command.Parameters.AddWithValue("@Telefono", telefono);
+                command.Parameters.AddWithValue("@CI", ci);
+                command.Parameters.AddWithValue("@Direccion", direccion);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        public void ModificarClienteEmpresa(int nroCliente, string rut, string nombreEmpresa, string correoElectronico, string telefono, string ci, string direccionEmpresa)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+                UPDATE Cliente
+                SET RUT = @RUT, NombreEmpresa = @NombreEmpresa,
+                WHERE NroCliente = @NroCliente";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NroCliente", nroCliente);
+                command.Parameters.AddWithValue("@RUT", rut);
+                command.Parameters.AddWithValue("@NombreEmpresa", nombreEmpresa);
+                         
+                command.ExecuteNonQuery();
             }
         }
 
