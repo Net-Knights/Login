@@ -29,17 +29,26 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label9 = new Label();
+            lblDireccion = new Label();
+            txtDireccion = new TextBox();
+            btnModificar = new Button();
+            lblTelefono = new Label();
+            lblCi = new Label();
+            lblDireccionEmpresa = new Label();
+            txtDireccionEmpresa = new TextBox();
+            txtCI = new TextBox();
+            lblNombreEmpresa = new Label();
+            txtTelefono = new TextBox();
             txtNombreEmpresa = new TextBox();
-            label8 = new Label();
+            lblRUT = new Label();
             txtRUT = new TextBox();
-            label3 = new Label();
+            lblNombre = new Label();
             cbTipoCliente = new ComboBox();
             label2 = new Label();
-            label5 = new Label();
+            lblApellido = new Label();
             BtnEliminar = new Button();
             BtnGuardar = new Button();
-            label4 = new Label();
+            lblCorreoElectronico = new Label();
             txtNombre = new TextBox();
             txtCorreoElectronico = new TextBox();
             txtApellido = new TextBox();
@@ -59,17 +68,26 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(label9);
+            panel1.Controls.Add(lblDireccion);
+            panel1.Controls.Add(txtDireccion);
+            panel1.Controls.Add(btnModificar);
+            panel1.Controls.Add(lblTelefono);
+            panel1.Controls.Add(lblCi);
+            panel1.Controls.Add(lblDireccionEmpresa);
+            panel1.Controls.Add(txtDireccionEmpresa);
+            panel1.Controls.Add(txtCI);
+            panel1.Controls.Add(lblNombreEmpresa);
+            panel1.Controls.Add(txtTelefono);
             panel1.Controls.Add(txtNombreEmpresa);
-            panel1.Controls.Add(label8);
+            panel1.Controls.Add(lblRUT);
             panel1.Controls.Add(txtRUT);
-            panel1.Controls.Add(label3);
+            panel1.Controls.Add(lblNombre);
             panel1.Controls.Add(cbTipoCliente);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(label5);
+            panel1.Controls.Add(lblApellido);
             panel1.Controls.Add(BtnEliminar);
             panel1.Controls.Add(BtnGuardar);
-            panel1.Controls.Add(label4);
+            panel1.Controls.Add(lblCorreoElectronico);
             panel1.Controls.Add(txtNombre);
             panel1.Controls.Add(txtCorreoElectronico);
             panel1.Controls.Add(txtApellido);
@@ -80,46 +98,125 @@
             panel1.Size = new Size(200, 450);
             panel1.TabIndex = 0;
             // 
-            // label9
+            // lblDireccion
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(2, 258);
-            label9.Name = "label9";
-            label9.Size = new Size(127, 15);
-            label9.TabIndex = 28;
-            label9.Text = "Nombrede la Empresa:";
+            lblDireccion.AutoSize = true;
+            lblDireccion.Location = new Point(4, 297);
+            lblDireccion.Name = "lblDireccion";
+            lblDireccion.Size = new Size(60, 15);
+            lblDireccion.TabIndex = 35;
+            lblDireccion.Text = "Direccion:";
+            // 
+            // txtDireccion
+            // 
+            txtDireccion.Location = new Point(4, 317);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(193, 23);
+            txtDireccion.TabIndex = 34;
+            // 
+            // btnModificar
+            // 
+            btnModificar.BackColor = Color.Cyan;
+            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.Image = Properties.Resources.savetheapplication_guardar_2958;
+            btnModificar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnModificar.Location = new Point(12, 378);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(149, 29);
+            btnModificar.TabIndex = 33;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
+            // 
+            // lblTelefono
+            // 
+            lblTelefono.AutoSize = true;
+            lblTelefono.Location = new Point(3, 209);
+            lblTelefono.Name = "lblTelefono";
+            lblTelefono.Size = new Size(55, 15);
+            lblTelefono.TabIndex = 28;
+            lblTelefono.Text = "Telefono:";
+            // 
+            // lblCi
+            // 
+            lblCi.AutoSize = true;
+            lblCi.Location = new Point(4, 253);
+            lblCi.Name = "lblCi";
+            lblCi.Size = new Size(21, 15);
+            lblCi.TabIndex = 32;
+            lblCi.Text = "CI:";
+            // 
+            // lblDireccionEmpresa
+            // 
+            lblDireccionEmpresa.AutoSize = true;
+            lblDireccionEmpresa.Location = new Point(4, 121);
+            lblDireccionEmpresa.Name = "lblDireccionEmpresa";
+            lblDireccionEmpresa.Size = new Size(136, 15);
+            lblDireccionEmpresa.TabIndex = 30;
+            lblDireccionEmpresa.Text = "Direccion de la empresa:";
+            // 
+            // txtDireccionEmpresa
+            // 
+            txtDireccionEmpresa.Location = new Point(4, 139);
+            txtDireccionEmpresa.Name = "txtDireccionEmpresa";
+            txtDireccionEmpresa.Size = new Size(193, 23);
+            txtDireccionEmpresa.TabIndex = 29;
+            // 
+            // txtCI
+            // 
+            txtCI.Location = new Point(3, 271);
+            txtCI.Name = "txtCI";
+            txtCI.Size = new Size(193, 23);
+            txtCI.TabIndex = 31;
+            // 
+            // lblNombreEmpresa
+            // 
+            lblNombreEmpresa.AutoSize = true;
+            lblNombreEmpresa.Location = new Point(4, 77);
+            lblNombreEmpresa.Name = "lblNombreEmpresa";
+            lblNombreEmpresa.Size = new Size(130, 15);
+            lblNombreEmpresa.TabIndex = 28;
+            lblNombreEmpresa.Text = "Nombre de la Empresa:";
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(3, 227);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(193, 23);
+            txtTelefono.TabIndex = 27;
             // 
             // txtNombreEmpresa
             // 
-            txtNombreEmpresa.Location = new Point(3, 276);
+            txtNombreEmpresa.Location = new Point(4, 95);
             txtNombreEmpresa.Name = "txtNombreEmpresa";
             txtNombreEmpresa.Size = new Size(193, 23);
             txtNombreEmpresa.TabIndex = 27;
             // 
-            // label8
+            // lblRUT
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(4, 215);
-            label8.Name = "label8";
-            label8.Size = new Size(31, 15);
-            label8.TabIndex = 26;
-            label8.Text = "RUT:";
+            lblRUT.AutoSize = true;
+            lblRUT.Location = new Point(4, 165);
+            lblRUT.Name = "lblRUT";
+            lblRUT.Size = new Size(31, 15);
+            lblRUT.TabIndex = 26;
+            lblRUT.Text = "RUT:";
             // 
             // txtRUT
             // 
-            txtRUT.Location = new Point(3, 233);
+            txtRUT.Location = new Point(3, 183);
             txtRUT.Name = "txtRUT";
             txtRUT.Size = new Size(193, 23);
             txtRUT.TabIndex = 25;
             // 
-            // label3
+            // lblNombre
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(4, 77);
-            label3.Name = "label3";
-            label3.Size = new Size(54, 15);
-            label3.TabIndex = 24;
-            label3.Text = "Nombre:";
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(4, 77);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(54, 15);
+            lblNombre.TabIndex = 24;
+            lblNombre.Text = "Nombre:";
             // 
             // cbTipoCliente
             // 
@@ -129,6 +226,7 @@
             cbTipoCliente.Name = "cbTipoCliente";
             cbTipoCliente.Size = new Size(190, 23);
             cbTipoCliente.TabIndex = 23;
+            cbTipoCliente.SelectedIndexChanged += cbTipoCliente_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -139,14 +237,14 @@
             label2.TabIndex = 9;
             label2.Text = "Tipo";
             // 
-            // label5
+            // lblApellido
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(4, 121);
-            label5.Name = "label5";
-            label5.Size = new Size(54, 15);
-            label5.TabIndex = 21;
-            label5.Text = "Apellido:";
+            lblApellido.AutoSize = true;
+            lblApellido.Location = new Point(4, 121);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(54, 15);
+            lblApellido.TabIndex = 21;
+            lblApellido.Text = "Apellido:";
             // 
             // BtnEliminar
             // 
@@ -161,6 +259,7 @@
             BtnEliminar.TabIndex = 19;
             BtnEliminar.Text = "Eliminar";
             BtnEliminar.UseVisualStyleBackColor = false;
+            BtnEliminar.Click += BtnEliminar_Click;
             // 
             // BtnGuardar
             // 
@@ -169,21 +268,22 @@
             BtnGuardar.FlatStyle = FlatStyle.Flat;
             BtnGuardar.Image = Properties.Resources.savetheapplication_guardar_2958;
             BtnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnGuardar.Location = new Point(12, 381);
+            BtnGuardar.Location = new Point(12, 346);
             BtnGuardar.Name = "BtnGuardar";
             BtnGuardar.Size = new Size(149, 26);
             BtnGuardar.TabIndex = 18;
             BtnGuardar.Text = "Guardar";
             BtnGuardar.UseVisualStyleBackColor = false;
+            BtnGuardar.Click += BtnGuardar_Click;
             // 
-            // label4
+            // lblCorreoElectronico
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(4, 165);
-            label4.Name = "label4";
-            label4.Size = new Size(36, 15);
-            label4.TabIndex = 17;
-            label4.Text = "Email";
+            lblCorreoElectronico.AutoSize = true;
+            lblCorreoElectronico.Location = new Point(4, 165);
+            lblCorreoElectronico.Name = "lblCorreoElectronico";
+            lblCorreoElectronico.Size = new Size(36, 15);
+            lblCorreoElectronico.TabIndex = 17;
+            lblCorreoElectronico.Text = "Email";
             // 
             // txtNombre
             // 
@@ -306,20 +406,29 @@
         private Label label6;
         private Button BtnEliminar;
         private Button BtnGuardar;
-        private Label label4;
+        private Label lblCorreoElectronico;
         private TextBox txtNombre;
         private TextBox txtCorreoElectronico;
         private TextBox txtApellido;
         private Label label1;
-        private Label label5;
+        private Label lblApellido;
         private ComboBox cbTipoCliente;
         private Label label2;
-        private Label label3;
-        private Label label8;
+        private Label lblNombre;
+        private Label lblRUT;
         private TextBox txtRUT;
         private PictureBox pbBuscar;
-        private Label label9;
+        private Label lblNombreEmpresa;
         private TextBox txtNombreEmpresa;
         private DataGridView dgvClientes;
+        private Label lblDireccionEmpresa;
+        private TextBox txtDireccionEmpresa;
+        private Label lblCi;
+        private TextBox txtCI;
+        private Label lblTelefono;
+        private TextBox txtTelefono;
+        private Button btnModificar;
+        private Label lblDireccion;
+        private TextBox txtDireccion;
     }
 }
