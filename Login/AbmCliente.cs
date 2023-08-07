@@ -191,57 +191,55 @@ namespace Login
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
-        {
-            if (dgvClientes.SelectedRows.Count > 0 || dvgEmpresa.SelectedRows.Count > 0)
+        {           
+
+            DataGridView selectedDgv;
+
+            if (dgvClientes.SelectedRows.Count > 0)
             {
-                int nroCliente;
-                DataGridView selectedDgv;
-
-                if (dgvClientes.SelectedRows.Count > 0)
-                {
-                    selectedDgv = dgvClientes;
-                }
-                else
-                {
-                    selectedDgv = dvgEmpresa;
-                }
-
-                nroCliente = Convert.ToInt32(selectedDgv.SelectedRows[0].Cells["NroCliente"].Value);
-                string tipoCliente = selectedDgv.SelectedRows[0].Cells["TipoCliente"].Value.ToString();
-
-                if (tipoCliente == "Común")
-                {
-                    string nombre = txtNombre.Text;
-                    string apellido = txtApellido.Text;
-                    string correoElectronico = txtCorreoElectronico.Text;
-                    string telefono = txtTelefono.Text;
-                    string ci = txtCI.Text;
-                    string direccion = txtDireccion.Text;
-
-                    userModel.ModificarClienteComun(nroCliente, nombre, apellido, correoElectronico, telefono, ci, direccion);
-                }
-                else if (tipoCliente == "Empresa")
-                {
-                    string rut = txtRUT.Text;
-                    string nombreEmpresa = txtNombreEmpresa.Text;
-                    string correoElectronico = txtCorreoElectronico.Text;
-                    string telefono = txtTelefono.Text;
-                    string ci = txtCI.Text;
-                    string direccionEmpresa = txtDireccionEmpresa.Text;
-
-                    userModel.ModificarClienteEmpresa(nroCliente, rut, nombreEmpresa, correoElectronico, telefono, ci, direccionEmpresa);
-                }
-
-                MessageBox.Show("Cliente modificado correctamente.");
-                CargarDatosClientesComunes();
-                CargarDatosClientesEmpresa();
+                selectedDgv = dgvClientes;
+            }
+            else if (dvgEmpresa.SelectedRows.Count > 0)
+            {
+                selectedDgv = dvgEmpresa;
             }
             else
             {
                 MessageBox.Show("Por favor, seleccione un cliente para modificar.", "Selección Requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            int nroCliente = Convert.ToInt32(selectedDgv.SelectedRows[0].Cells["NroCliente"].Value);
+
+            // Obtener los valores de las celdas directamente del DataGridView
+            string nombre = selectedDgv.SelectedRows[0].Cells["Nombre"].Value.ToString();
+            string apellido = selectedDgv.SelectedRows[0].Cells["Apellido"].Value.ToString();
+            string correoElectronico = selectedDgv.SelectedRows[0].Cells["Mail"].Value.ToString();
+            string telefono = selectedDgv.SelectedRows[0].Cells["Telefono"].Value.ToString();
+            string ci = selectedDgv.SelectedRows[0].Cells["CI"].Value.ToString();
+            string direccion = selectedDgv.SelectedRows[0].Cells["Direccion"].Value.ToString();
+
+            if (selectedDgv == dgvClientes)
+            {
+                
+                
+                userModel.ModificarClienteComun(nroCliente, nombre, apellido, correoElectronico, telefono, ci, direccion);
+            }
+            else if (selectedDgv == dvgEmpresa)
+            {
+                string rut = selectedDgv.SelectedRows[0].Cells["RUT"].Value.ToString();
+                string nombreEmpresa = selectedDgv.SelectedRows[0].Cells["NombreEmpresa"].Value.ToString();
+                string direccionEmpresa = selectedDgv.SelectedRows[0].Cells["DireccionEmpresa"].Value.ToString();
+
+                userModel.ModificarClienteEmpresa(nroCliente, rut, nombreEmpresa);
+            }
+
+            MessageBox.Show("Cliente modificado correctamente.");
+            CargarDatosClientesComunes();
+            CargarDatosClientesEmpresa();
         }
-    }
+
+}
 }
 
 

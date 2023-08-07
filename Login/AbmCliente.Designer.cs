@@ -99,7 +99,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 500);
+            panel1.Size = new Size(200, 646);
             panel1.TabIndex = 0;
             // 
             // lblDireccion
@@ -120,12 +120,13 @@
             // 
             // btnModificar
             // 
+            btnModificar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnModificar.BackColor = Color.Cyan;
             btnModificar.FlatAppearance.BorderSize = 0;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Image = Properties.Resources.savetheapplication_guardar_2958;
             btnModificar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnModificar.Location = new Point(12, 409);
+            btnModificar.Location = new Point(12, 555);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(149, 29);
             btnModificar.TabIndex = 33;
@@ -251,12 +252,13 @@
             // 
             // BtnEliminar
             // 
+            BtnEliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BtnEliminar.BackColor = Color.Red;
             BtnEliminar.FlatAppearance.BorderSize = 0;
             BtnEliminar.FlatStyle = FlatStyle.Flat;
             BtnEliminar.Image = Properties.Resources.seo_social_web_network_internet_262_icon_icons_com_61518;
             BtnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnEliminar.Location = new Point(12, 451);
+            BtnEliminar.Location = new Point(12, 597);
             BtnEliminar.Name = "BtnEliminar";
             BtnEliminar.Size = new Size(149, 25);
             BtnEliminar.TabIndex = 19;
@@ -266,12 +268,13 @@
             // 
             // BtnGuardar
             // 
+            BtnGuardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BtnGuardar.BackColor = Color.Green;
             BtnGuardar.FlatAppearance.BorderSize = 0;
             BtnGuardar.FlatStyle = FlatStyle.Flat;
             BtnGuardar.Image = Properties.Resources.savetheapplication_guardar_2958;
             BtnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnGuardar.Location = new Point(12, 365);
+            BtnGuardar.Location = new Point(12, 511);
             BtnGuardar.Name = "BtnGuardar";
             BtnGuardar.Size = new Size(149, 26);
             BtnGuardar.TabIndex = 18;
@@ -331,13 +334,14 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(200, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(765, 500);
+            panel2.Size = new Size(765, 646);
             panel2.TabIndex = 1;
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label4.AutoSize = true;
-            label4.Location = new Point(423, 59);
+            label4.Location = new Point(0, 412);
             label4.Name = "label4";
             label4.Size = new Size(92, 15);
             label4.TabIndex = 14;
@@ -346,7 +350,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 59);
+            label3.Location = new Point(3, 30);
             label3.Name = "label3";
             label3.Size = new Size(85, 15);
             label3.TabIndex = 13;
@@ -355,10 +359,10 @@
             // dvgEmpresa
             // 
             dvgEmpresa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dvgEmpresa.Location = new Point(423, 95);
+            dvgEmpresa.Location = new Point(6, 430);
             dvgEmpresa.Name = "dvgEmpresa";
             dvgEmpresa.RowTemplate.Height = 25;
-            dvgEmpresa.Size = new Size(339, 343);
+            dvgEmpresa.Size = new Size(538, 204);
             dvgEmpresa.TabIndex = 12;
             // 
             // dgvClientes
@@ -366,11 +370,11 @@
             dgvClientes.AllowUserToAddRows = false;
             dgvClientes.AllowUserToDeleteRows = false;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(6, 95);
+            dgvClientes.Location = new Point(2, 48);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowTemplate.Height = 25;
-            dgvClientes.Size = new Size(411, 343);
+            dgvClientes.Size = new Size(747, 343);
             dgvClientes.TabIndex = 11;
             // 
             // pbBuscar
@@ -404,7 +408,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(6, 9);
+            label6.Location = new Point(0, 0);
             label6.Name = "label6";
             label6.Size = new Size(155, 28);
             label6.TabIndex = 7;
@@ -414,7 +418,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(965, 500);
+            ClientSize = new Size(965, 646);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;

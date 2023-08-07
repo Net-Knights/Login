@@ -149,12 +149,12 @@ namespace Logica
                 SELECT 
                     c.NroCliente,
                     c.Autorizacion,
-                    c.Mail AS 'MailCliente',
-                    c.Telefono AS 'TelefonoCliente',
-                    c.Direccion AS 'DireccionCliente',
-                    co.Ci AS 'CiComun',
-                    co.Nombre AS 'NombreComun',
-                    co.Apellido AS 'ApellidoComun',
+                    c.Mail AS 'Mail',
+                    c.Telefono AS 'Telefono',
+                    c.Direccion AS 'Direccion',
+                    co.Ci AS 'Ci',
+                    co.Nombre AS 'Nombre',
+                    co.Apellido AS 'Apellido',
                     (SELECT l.Rol FROM login l WHERE l.Usuario = c.NroCliente) AS 'Rol'
                 FROM Cliente c
                 LEFT JOIN Comun co ON c.NroCliente = co.NroCliente
@@ -179,7 +179,7 @@ namespace Logica
                 string query = @"
                 SELECT 
                     
-                    e.RUT AS 'RutEmpresa',
+                    e.RUT AS 'RUT',
                     e.NombreEmpresa AS 'NombreEmpresa',
                     
                     (SELECT l.Rol FROM login l WHERE l.Usuario = c.NroCliente) AS 'Rol'
@@ -321,7 +321,7 @@ namespace Logica
                 command.ExecuteNonQuery();
             }
         }
-        public void ModificarClienteEmpresa(int nroCliente, string rut, string nombreEmpresa, string correoElectronico, string telefono, string ci, string direccionEmpresa)
+        public void ModificarClienteEmpresa(int nroCliente, string rut, string nombreEmpresa)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
