@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
+using Persistencia;
 using RegistroUsuarios.Entities;
 //using Persistencia;
 
@@ -19,6 +20,7 @@ namespace Login
     public partial class VentanaPrincipal : Form
     {
         private UserModel userModel;
+        private DatosU datosU;
 
         [STAThread]
         static void Main()
@@ -33,7 +35,7 @@ namespace Login
         public VentanaPrincipal()
         {
             InitializeComponent();
-            userModel = new UserModel();
+            datosU = new DatosU();
             txtPassword.PasswordChar = '*';
 
         }
@@ -57,7 +59,7 @@ namespace Login
                     return;
                 }
 
-               LoginGeneral usuarioLogueado = userModel.IniciarSesion(usuario, contraseña);
+               LoginGeneral usuarioLogueado = datosU.IniciarSesion(usuario, contraseña);
 
                 if (usuarioLogueado != null)
                 {

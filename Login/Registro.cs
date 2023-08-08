@@ -21,12 +21,14 @@ namespace Login
     {
 
         private UserModel userModel;
+        private DatosU datosU;
         private ToolTip toolTip; // Variable para el control ToolTip
 
         public Registro()
         {
             InitializeComponent();
             userModel = new UserModel();
+            datosU = new DatosU();
             txtContraseña.PasswordChar = '*';
             toolTip = new ToolTip();
 
@@ -58,7 +60,7 @@ namespace Login
                     return;
                 }
 
-                userModel.RegistrarCliente(mail, telefono, direccion, ci, nombre, apellido, usuario, contraseña);
+                datosU.RegistrarCliente(mail, telefono, direccion, ci, nombre, apellido, usuario, contraseña);
 
                 MessageBox.Show("Registro exitoso.");
                 LimpiarCampos();

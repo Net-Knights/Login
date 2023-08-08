@@ -9,18 +9,21 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
+using Persistencia;
 
 namespace Login
 {
     public partial class AbmCliente : Form
     {
         private UserModel userModel;
+        private DatosU datosU;
         private DataTable dataTableClientes;
 
         public AbmCliente()
         {
             InitializeComponent();
             userModel = new UserModel();
+            datosU = new DatosU();
             dataTableClientes = new DataTable();
 
             // Configuración inicial del ComboBox y DataGridView
@@ -92,14 +95,14 @@ namespace Login
         }
         private void CargarDatosClientesComunes()
         {
-            DataTable clientesComunes = userModel.ObtenerDatosClientesComunes();
+            DataTable clientesComunes = datosU.ObtenerDatosClientesComunes();
             dgvClientes.DataSource = clientesComunes;
         }
 
         // Método para cargar los datos de clientes empresa en dgvEmpresa
         private void CargarDatosClientesEmpresa()
         {
-            DataTable clientesEmpresa = userModel.ObtenerDatosClientesEmpresa();
+            DataTable clientesEmpresa = datosU.ObtenerDatosClientesEmpresa();
             dvgEmpresa.DataSource = clientesEmpresa;
         }
 
@@ -119,7 +122,7 @@ namespace Login
             if (int.TryParse(txtNroCliente.Text, out int nroCliente))
             {
                 // Buscar cliente por NroCliente y mostrar resultados en el DataGridView
-                DataTable clienteEncontrado = userModel.BuscarClientePorNroCliente(nroCliente);
+                DataTable clienteEncontrado = datosU.BuscarClientePorNroCliente(nroCliente);
                 dgvClientes.DataSource = clienteEncontrado;
             }
             else
@@ -155,7 +158,7 @@ namespace Login
 
 
 
-            userModel.GuardarCliente(tipoCliente, nombre, apellido, correoElectronico, telefono, ci, direccion, rut, nombreEmpresa, direccionEmpresa);
+            datosU.GuardarCliente(tipoCliente, nombre, apellido, correoElectronico, telefono, ci, direccion, rut, nombreEmpresa, direccionEmpresa);
 
             MessageBox.Show("Registro exitoso.");
             CargarDatosClientesComunes();
@@ -169,7 +172,7 @@ namespace Login
                 int nroCliente = Convert.ToInt32(dgvClientes.SelectedRows[0].Cells["NroCliente"].Value);
                 if (MessageBox.Show("¿Está seguro de que desea eliminar el cliente?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    userModel.EliminarCliente(nroCliente);
+                    datosU.EliminarCliente(nroCliente);
                     MessageBox.Show("Cliente eliminado correctamente.");
                     CargarDatosClientesComunes();
                 }
@@ -179,7 +182,7 @@ namespace Login
                 int nroClienteEmpresa = Convert.ToInt32(dvgEmpresa.SelectedRows[0].Cells["NroClienteEmpresa"].Value);
                 if (MessageBox.Show("¿Está seguro de que desea eliminar el cliente?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    userModel.EliminarCliente(nroClienteEmpresa);
+                    datosU.EliminarCliente(nroClienteEmpresa);
                     MessageBox.Show("Cliente eliminado correctamente.");
                     CargarDatosClientesEmpresa();
                 }
@@ -223,7 +226,7 @@ namespace Login
             {
                 
                 
-                userModel.ModificarClienteComun(nroCliente, nombre, apellido, correoElectronico, telefono, ci, direccion);
+                datosU.ModificarClienteComun(nroCliente, nombre, apellido, correoElectronico, telefono, ci, direccion);
             }
             else if (selectedDgv == dvgEmpresa)
             {
@@ -231,7 +234,7 @@ namespace Login
                 string nombreEmpresa = selectedDgv.SelectedRows[0].Cells["NombreEmpresa"].Value.ToString();
                 string direccionEmpresa = selectedDgv.SelectedRows[0].Cells["DireccionEmpresa"].Value.ToString();
 
-                userModel.ModificarClienteEmpresa(nroCliente, rut, nombreEmpresa);
+                datosU.ModificarClienteEmpresa(nroCliente, rut, nombreEmpresa);
             }
 
             MessageBox.Show("Cliente modificado correctamente.");
