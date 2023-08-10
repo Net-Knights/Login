@@ -29,9 +29,15 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            BtnActualizarAutorizacion = new Button();
+            rbNoEmpresa = new RadioButton();
+            label8 = new Label();
+            rbSiEmpresa = new RadioButton();
+            rbNo = new RadioButton();
+            label4 = new Label();
+            rbSi = new RadioButton();
             lblDireccion = new Label();
             txtDireccion = new TextBox();
-            btnModificar = new Button();
             lblTelefono = new Label();
             lblCi = new Label();
             lblDireccionEmpresa = new Label();
@@ -54,9 +60,9 @@
             txtApellido = new TextBox();
             label1 = new Label();
             panel2 = new Panel();
-            label4 = new Label();
+            dgvEmpresa = new DataGridView();
+            label5 = new Label();
             label3 = new Label();
-            dvgEmpresa = new DataGridView();
             dgvClientes = new DataGridView();
             pbBuscar = new PictureBox();
             txtNroCliente = new TextBox();
@@ -64,7 +70,7 @@
             label6 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dvgEmpresa).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpresa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbBuscar).BeginInit();
             SuspendLayout();
@@ -72,9 +78,15 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(BtnActualizarAutorizacion);
+            panel1.Controls.Add(rbNoEmpresa);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(rbSiEmpresa);
+            panel1.Controls.Add(rbNo);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(rbSi);
             panel1.Controls.Add(lblDireccion);
             panel1.Controls.Add(txtDireccion);
-            panel1.Controls.Add(btnModificar);
             panel1.Controls.Add(lblTelefono);
             panel1.Controls.Add(lblCi);
             panel1.Controls.Add(lblDireccionEmpresa);
@@ -102,10 +114,93 @@
             panel1.Size = new Size(200, 646);
             panel1.TabIndex = 0;
             // 
+            // BtnActualizarAutorizacion
+            // 
+            BtnActualizarAutorizacion.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            BtnActualizarAutorizacion.Location = new Point(3, 475);
+            BtnActualizarAutorizacion.Name = "BtnActualizarAutorizacion";
+            BtnActualizarAutorizacion.Size = new Size(128, 25);
+            BtnActualizarAutorizacion.TabIndex = 42;
+            BtnActualizarAutorizacion.Text = "Guardar Autorizacion";
+            BtnActualizarAutorizacion.UseVisualStyleBackColor = true;
+            BtnActualizarAutorizacion.Click += BtnActualizarAutorizacion_Click;
+            // 
+            // rbNoEmpresa
+            // 
+            rbNoEmpresa.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            rbNoEmpresa.AutoSize = true;
+            rbNoEmpresa.Location = new Point(43, 456);
+            rbNoEmpresa.Name = "rbNoEmpresa";
+            rbNoEmpresa.Size = new Size(41, 19);
+            rbNoEmpresa.TabIndex = 41;
+            rbNoEmpresa.TabStop = true;
+            rbNoEmpresa.Text = "No";
+            rbNoEmpresa.UseVisualStyleBackColor = true;
+            rbNoEmpresa.CheckedChanged += rbNoEmpresa_CheckedChanged;
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label8.AutoSize = true;
+            label8.Location = new Point(0, 438);
+            label8.Name = "label8";
+            label8.Size = new Size(125, 15);
+            label8.TabIndex = 40;
+            label8.Text = "Autorizacion Empresa:";
+            // 
+            // rbSiEmpresa
+            // 
+            rbSiEmpresa.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            rbSiEmpresa.AutoSize = true;
+            rbSiEmpresa.Location = new Point(3, 456);
+            rbSiEmpresa.Name = "rbSiEmpresa";
+            rbSiEmpresa.Size = new Size(34, 19);
+            rbSiEmpresa.TabIndex = 39;
+            rbSiEmpresa.TabStop = true;
+            rbSiEmpresa.Text = "Si";
+            rbSiEmpresa.UseVisualStyleBackColor = true;
+            rbSiEmpresa.CheckedChanged += rbSiEmpresa_CheckedChanged;
+            // 
+            // rbNo
+            // 
+            rbNo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            rbNo.AutoSize = true;
+            rbNo.Location = new Point(44, 416);
+            rbNo.Name = "rbNo";
+            rbNo.Size = new Size(41, 19);
+            rbNo.TabIndex = 38;
+            rbNo.TabStop = true;
+            rbNo.Text = "No";
+            rbNo.UseVisualStyleBackColor = true;
+            rbNo.CheckedChanged += rbNo_CheckedChanged;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label4.AutoSize = true;
+            label4.Location = new Point(3, 398);
+            label4.Name = "label4";
+            label4.Size = new Size(120, 15);
+            label4.TabIndex = 37;
+            label4.Text = "Autorizacion Comun:";
+            // 
+            // rbSi
+            // 
+            rbSi.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            rbSi.AutoSize = true;
+            rbSi.Location = new Point(4, 416);
+            rbSi.Name = "rbSi";
+            rbSi.Size = new Size(34, 19);
+            rbSi.TabIndex = 36;
+            rbSi.TabStop = true;
+            rbSi.Text = "Si";
+            rbSi.UseVisualStyleBackColor = true;
+            rbSi.CheckedChanged += rbSi_CheckedChanged;
+            // 
             // lblDireccion
             // 
             lblDireccion.AutoSize = true;
-            lblDireccion.Location = new Point(4, 297);
+            lblDireccion.Location = new Point(3, 343);
             lblDireccion.Name = "lblDireccion";
             lblDireccion.Size = new Size(60, 15);
             lblDireccion.TabIndex = 35;
@@ -113,31 +208,15 @@
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(4, 317);
+            txtDireccion.Location = new Point(0, 361);
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(193, 23);
             txtDireccion.TabIndex = 34;
             // 
-            // btnModificar
-            // 
-            btnModificar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnModificar.BackColor = Color.Cyan;
-            btnModificar.FlatAppearance.BorderSize = 0;
-            btnModificar.FlatStyle = FlatStyle.Flat;
-            btnModificar.Image = Properties.Resources.savetheapplication_guardar_2958;
-            btnModificar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnModificar.Location = new Point(12, 555);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(149, 29);
-            btnModificar.TabIndex = 33;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = false;
-            btnModificar.Click += btnModificar_Click;
-            // 
             // lblTelefono
             // 
             lblTelefono.AutoSize = true;
-            lblTelefono.Location = new Point(3, 209);
+            lblTelefono.Location = new Point(0, 253);
             lblTelefono.Name = "lblTelefono";
             lblTelefono.Size = new Size(55, 15);
             lblTelefono.TabIndex = 28;
@@ -146,7 +225,7 @@
             // lblCi
             // 
             lblCi.AutoSize = true;
-            lblCi.Location = new Point(4, 253);
+            lblCi.Location = new Point(4, 297);
             lblCi.Name = "lblCi";
             lblCi.Size = new Size(21, 15);
             lblCi.TabIndex = 32;
@@ -170,7 +249,7 @@
             // 
             // txtCI
             // 
-            txtCI.Location = new Point(3, 271);
+            txtCI.Location = new Point(0, 317);
             txtCI.Name = "txtCI";
             txtCI.Size = new Size(193, 23);
             txtCI.TabIndex = 31;
@@ -186,7 +265,7 @@
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(3, 227);
+            txtTelefono.Location = new Point(1, 271);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(193, 23);
             txtTelefono.TabIndex = 27;
@@ -201,7 +280,7 @@
             // lblRUT
             // 
             lblRUT.AutoSize = true;
-            lblRUT.Location = new Point(4, 165);
+            lblRUT.Location = new Point(3, 209);
             lblRUT.Name = "lblRUT";
             lblRUT.Size = new Size(31, 15);
             lblRUT.TabIndex = 26;
@@ -209,7 +288,7 @@
             // 
             // txtRUT
             // 
-            txtRUT.Location = new Point(3, 183);
+            txtRUT.Location = new Point(0, 227);
             txtRUT.Name = "txtRUT";
             txtRUT.Size = new Size(193, 23);
             txtRUT.TabIndex = 25;
@@ -274,7 +353,7 @@
             BtnGuardar.FlatStyle = FlatStyle.Flat;
             BtnGuardar.Image = Properties.Resources.savetheapplication_guardar_2958;
             BtnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnGuardar.Location = new Point(12, 511);
+            BtnGuardar.Location = new Point(12, 565);
             BtnGuardar.Name = "BtnGuardar";
             BtnGuardar.Size = new Size(149, 26);
             BtnGuardar.TabIndex = 18;
@@ -300,7 +379,7 @@
             // 
             // txtCorreoElectronico
             // 
-            txtCorreoElectronico.Location = new Point(3, 183);
+            txtCorreoElectronico.Location = new Point(1, 183);
             txtCorreoElectronico.Name = "txtCorreoElectronico";
             txtCorreoElectronico.Size = new Size(193, 23);
             txtCorreoElectronico.TabIndex = 14;
@@ -323,9 +402,9 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(label4);
+            panel2.Controls.Add(dgvEmpresa);
+            panel2.Controls.Add(label5);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(dvgEmpresa);
             panel2.Controls.Add(dgvClientes);
             panel2.Controls.Add(pbBuscar);
             panel2.Controls.Add(txtNroCliente);
@@ -337,15 +416,23 @@
             panel2.Size = new Size(765, 646);
             panel2.TabIndex = 1;
             // 
-            // label4
+            // dgvEmpresa
             // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label4.AutoSize = true;
-            label4.Location = new Point(0, 412);
-            label4.Name = "label4";
-            label4.Size = new Size(92, 15);
-            label4.TabIndex = 14;
-            label4.Text = "Cliente empresa";
+            dgvEmpresa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEmpresa.Location = new Point(0, 361);
+            dgvEmpresa.Name = "dgvEmpresa";
+            dgvEmpresa.RowTemplate.Height = 25;
+            dgvEmpresa.Size = new Size(586, 198);
+            dgvEmpresa.TabIndex = 15;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(0, 343);
+            label5.Name = "label5";
+            label5.Size = new Size(95, 15);
+            label5.TabIndex = 14;
+            label5.Text = "Cliente empresa:";
             // 
             // label3
             // 
@@ -356,15 +443,6 @@
             label3.TabIndex = 13;
             label3.Text = "Cliente comun";
             // 
-            // dvgEmpresa
-            // 
-            dvgEmpresa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dvgEmpresa.Location = new Point(6, 430);
-            dvgEmpresa.Name = "dvgEmpresa";
-            dvgEmpresa.RowTemplate.Height = 25;
-            dvgEmpresa.Size = new Size(538, 204);
-            dvgEmpresa.TabIndex = 12;
-            // 
             // dgvClientes
             // 
             dgvClientes.AllowUserToAddRows = false;
@@ -374,7 +452,7 @@
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowTemplate.Height = 25;
-            dgvClientes.Size = new Size(747, 343);
+            dgvClientes.Size = new Size(747, 292);
             dgvClientes.TabIndex = 11;
             // 
             // pbBuscar
@@ -429,7 +507,7 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dvgEmpresa).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpresa).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbBuscar).EndInit();
             ResumeLayout(false);
@@ -465,11 +543,17 @@
         private TextBox txtCI;
         private Label lblTelefono;
         private TextBox txtTelefono;
-        private Button btnModificar;
         private Label lblDireccion;
         private TextBox txtDireccion;
-        private Label label4;
         private Label label3;
-        private DataGridView dvgEmpresa;
+        private Label label4;
+        private RadioButton rbSi;
+        private RadioButton rbNo;
+        private DataGridView dgvEmpresa;
+        private Label label5;
+        private RadioButton rbNoEmpresa;
+        private Label label8;
+        private RadioButton rbSiEmpresa;
+        private Button BtnActualizarAutorizacion;
     }
 }

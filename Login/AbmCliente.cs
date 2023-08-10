@@ -29,11 +29,11 @@ namespace Login
             // Configuración inicial del ComboBox y DataGridView
             cbTipoCliente.Items.AddRange(new string[] { "Comun", "Empresa" });
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dvgEmpresa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             OcultarCampos();
 
             CargarDatosClientesComunes();
-            CargarDatosClientesEmpresa();
+
         }
         private void OcultarCampos()
         {
@@ -87,23 +87,50 @@ namespace Login
                 lblRUT.Visible = true;
                 lblNombreEmpresa.Visible = true;
                 lblDireccionEmpresa.Visible = true;
+                lblCorreoElectronico.Visible = true;
+                lblTelefono.Visible = true;
 
                 txtRUT.Visible = true;
                 txtNombreEmpresa.Visible = true;
                 txtDireccionEmpresa.Visible = true;
+                txtCorreoElectronico.Visible = true;
+                txtTelefono.Visible = true;
             }
         }
         private void CargarDatosClientesComunes()
         {
             DataTable clientesComunes = datosU.ObtenerDatosClientesComunes();
-            dgvClientes.DataSource = clientesComunes;
+
+            // Filtrar los resultados para mostrar solo los clientes con el rol de "Común"
+            var filteredRows = clientesComunes.AsEnumerable().Where(row => row.Field<string>("Rol") == "Comun");
+
+            // Crear un nuevo DataTable con las columnas deseadas
+            dataTableClientes = new DataTable();
+            dataTableClientes.Columns.Add("NroCliente", typeof(int));
+            dataTableClientes.Columns.Add("Autorizacion", typeof(string));
+            dataTableClientes.Columns.Add("Mail", typeof(string));
+            dataTableClientes.Columns.Add("Telefono", typeof(string));
+            dataTableClientes.Columns.Add("Direccion", typeof(string));
+            dataTableClientes.Columns.Add("Ci", typeof(string));
+            dataTableClientes.Columns.Add("Nombre", typeof(string));
+            dataTableClientes.Columns.Add("Apellido", typeof(string));
+            dataTableClientes.Columns.Add("Rol", typeof(string)); // Agregar columna para el rol
+
+            // Agregar los datos filtrados al DataTable
+            foreach (DataRow row in filteredRows)
+            {
+                dataTableClientes.Rows.Add(row["NroCliente"], row["Autorizacion"], row["Mail"], row["Telefono"], row["Direccion"], row["Ci"], row["Nombre"], row["Apellido"], row["Rol"]);
+            }
+
+            // Asignar el DataTable al DataGridView
+            dgvClientes.DataSource = dataTableClientes;
         }
 
         // Método para cargar los datos de clientes empresa en dgvEmpresa
         private void CargarDatosClientesEmpresa()
         {
             DataTable clientesEmpresa = datosU.ObtenerDatosClientesEmpresa();
-            dvgEmpresa.DataSource = clientesEmpresa;
+            dgvEmpresa.DataSource = clientesEmpresa;
         }
 
 
@@ -112,6 +139,7 @@ namespace Login
             // Cargar todos los datos de las tablas Cliente, Comun, Empresa y login en el DataGridView
             CargarDatosClientesComunes();
             CargarDatosClientesEmpresa();
+
             // Ajustar el diseño del DataGridView, si es necesario
             // Ejemplo:
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -145,6 +173,7 @@ namespace Login
                 MessageBox.Show("Por favor, seleccione un tipo de cliente.", "Selección Requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             string tipoCliente = cbTipoCliente.SelectedItem.ToString();
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
@@ -156,13 +185,19 @@ namespace Login
             string nombreEmpresa = txtNombreEmpresa.Text;
             string direccionEmpresa = txtDireccionEmpresa.Text;
 
+            if (rut.Length > 9)
+            {
+                MessageBox.Show("El RUT de la empresa no puede tener más de 9 dígitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-
-            datosU.GuardarCliente(tipoCliente, nombre, apellido, correoElectronico, telefono, ci, direccion, rut, nombreEmpresa, direccionEmpresa);
+            // Llamar al método de la capa de datosU para guardar el cliente
+            datosU.GuardarCliente(tipoCliente, nombre, apellido, correoElectronico, telefono, ci, tipoCliente == "Empresa" ? direccionEmpresa : direccion, rut, nombreEmpresa, tipoCliente == "Empresa" ? direccionEmpresa : ""); // Si es Empresa, la dirección de la empresa se guarda en la columna Direccion
 
             MessageBox.Show("Registro exitoso.");
             CargarDatosClientesComunes();
             CargarDatosClientesEmpresa();
+
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -177,73 +212,86 @@ namespace Login
                     CargarDatosClientesComunes();
                 }
             }
-            else if (dvgEmpresa.SelectedRows.Count > 0)
-            {
-                int nroClienteEmpresa = Convert.ToInt32(dvgEmpresa.SelectedRows[0].Cells["NroClienteEmpresa"].Value);
-                if (MessageBox.Show("¿Está seguro de que desea eliminar el cliente?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    datosU.EliminarCliente(nroClienteEmpresa);
-                    MessageBox.Show("Cliente eliminado correctamente.");
-                    CargarDatosClientesEmpresa();
-                }
-            }
+
             else
             {
                 MessageBox.Show("Por favor, seleccione un cliente para eliminar.", "Selección Requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {           
-
-            DataGridView selectedDgv;
-
-            if (dgvClientes.SelectedRows.Count > 0)
+        private void rbSi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbSi.Checked)
             {
-                selectedDgv = dgvClientes;
+                ActualizarAutorizacionEnDataGridView(dgvClientes, "Si");
             }
-            else if (dvgEmpresa.SelectedRows.Count > 0)
-            {
-                selectedDgv = dvgEmpresa;
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione un cliente para modificar.", "Selección Requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int nroCliente = Convert.ToInt32(selectedDgv.SelectedRows[0].Cells["NroCliente"].Value);
-
-            // Obtener los valores de las celdas directamente del DataGridView
-            string nombre = selectedDgv.SelectedRows[0].Cells["Nombre"].Value.ToString();
-            string apellido = selectedDgv.SelectedRows[0].Cells["Apellido"].Value.ToString();
-            string correoElectronico = selectedDgv.SelectedRows[0].Cells["Mail"].Value.ToString();
-            string telefono = selectedDgv.SelectedRows[0].Cells["Telefono"].Value.ToString();
-            string ci = selectedDgv.SelectedRows[0].Cells["CI"].Value.ToString();
-            string direccion = selectedDgv.SelectedRows[0].Cells["Direccion"].Value.ToString();
-
-            if (selectedDgv == dgvClientes)
-            {
-                
-                
-                datosU.ModificarClienteComun(nroCliente, nombre, apellido, correoElectronico, telefono, ci, direccion);
-            }
-            else if (selectedDgv == dvgEmpresa)
-            {
-                string rut = selectedDgv.SelectedRows[0].Cells["RUT"].Value.ToString();
-                string nombreEmpresa = selectedDgv.SelectedRows[0].Cells["NombreEmpresa"].Value.ToString();
-                string direccionEmpresa = selectedDgv.SelectedRows[0].Cells["DireccionEmpresa"].Value.ToString();
-
-                datosU.ModificarClienteEmpresa(nroCliente, rut, nombreEmpresa);
-            }
-
-            MessageBox.Show("Cliente modificado correctamente.");
-            CargarDatosClientesComunes();
-            CargarDatosClientesEmpresa();
         }
 
-}
-}
+        private void rbNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbNo.Checked)
+            {
+                ActualizarAutorizacionEnDataGridView(dgvClientes, "No");
+            }
+        }
 
+        private void BtnActualizarAutorizacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ActualizarAutorizacionEnBaseDeDatos();
+                MessageBox.Show("Autorización actualizada correctamente.");
+                CargarDatosClientesComunes();
+                CargarDatosClientesEmpresa();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar la autorización: " + ex.Message);
+            }
+        }
+
+        private void rbSiEmpresa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbSiEmpresa.Checked)
+            {
+                ActualizarAutorizacionEnDataGridView(dgvEmpresa, "Si");
+            }
+        }
+
+        private void rbNoEmpresa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbNoEmpresa.Checked)
+            {
+                ActualizarAutorizacionEnDataGridView(dgvEmpresa, "No");
+            }
+        }
+
+        private void ActualizarAutorizacionEnDataGridView(DataGridView dgv, string autorizacion)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dgv.SelectedRows[0];
+                row.Cells["Autorizacion"].Value = autorizacion;
+            }
+        }
+
+        private void ActualizarAutorizacionEnBaseDeDatos()
+        {
+            foreach (DataGridViewRow row in dgvClientes.Rows)
+            {
+                int nroCliente = Convert.ToInt32(row.Cells["NroCliente"].Value);
+                string autorizacion = Convert.ToString(row.Cells["Autorizacion"].Value);
+                datosU.ActualizarAutorizacionEnBaseDeDatos(nroCliente, autorizacion);
+            }
+
+            foreach (DataGridViewRow row in dgvEmpresa.Rows)
+            {
+                int nroCliente = Convert.ToInt32(row.Cells["NroCliente"].Value);
+                string autorizacion = Convert.ToString(row.Cells["Autorizacion"].Value);
+                datosU.ActualizarAutorizacionEnBaseDeDatos(nroCliente, autorizacion);
+            }
+        }
+    }
+}
 
 
