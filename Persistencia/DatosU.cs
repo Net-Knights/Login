@@ -19,7 +19,7 @@ namespace Persistencia
        
 
       
-
+        // estos es para cliente comun
         public void RegistrarCliente(string mail, string telefono, string direccion, string ci, string nombre, string apellido, string usuario, string contraseña)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -84,7 +84,7 @@ namespace Persistencia
         }
 
 
-
+        //login general
         public LoginGeneral IniciarSesion(string usuario, string contraseña)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -112,7 +112,7 @@ namespace Persistencia
             }
         }
 
-
+        //Abm clientes
         // Método para obtener los datos de clientes comunes
         public DataTable ObtenerDatosClientesComunes()
         {
@@ -287,8 +287,101 @@ namespace Persistencia
         }
 
 
+        //Abm usuarios
+       public List<string> ObtenerRoles()
+        {
+            List<string> roles = new List<string>();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT Roles FROM roles_usuarios;";
+                MySqlCommand command = new MySqlCommand(query, connection);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        roles.Add(reader.GetString("Roles"));
+                    }
+                }
+            }
+
+            return roles;
+        }
 
 
+        public void GuardarUsuario(string usuario, string contraseña, string rol)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "INSERT INTO login (Usuario, Contraseña, Rol) VALUES (@Usuario, @Contraseña, @Rol);";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Usuario", usuario);
+                command.Parameters.AddWithValue("@Contraseña", contraseña);
+                command.Parameters.AddWithValue("@Rol", rol);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+
+
+        public DataTable ObtenerUsuarios()
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT Usuario, Contraseña, Rol FROM login;";
+                MySqlCommand command = new MySqlCommand(query, connection);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                DataTable usuariosTable = new DataTable();
+                adapter.Fill(usuariosTable);
+
+                return usuariosTable;
+            }
+        }
+
+
+
+        public DataTable ObtenerUsuariosPorRol(string rol)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT Usuario, Contraseña, Rol FROM login WHERE Rol = @Rol;";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Rol", rol);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                DataTable usuariosTable = new DataTable();
+                adapter.Fill(usuariosTable);
+
+                return usuariosTable;
+            }
+        }
+
+
+        public void EliminarUsuario(string usuario)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "DELETE FROM login WHERE Usuario = @Usuario;";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Usuario", usuario);
+
+                command.ExecuteNonQuery();
+            }
+        }
 
 
 

@@ -33,19 +33,10 @@
             label13 = new Label();
             button4 = new Button();
             groupBox3 = new GroupBox();
-            textBox11 = new TextBox();
             label11 = new Label();
             textBox10 = new TextBox();
-            label10 = new Label();
-            textBox9 = new TextBox();
             label9 = new Label();
             textBox8 = new TextBox();
-            button3 = new Button();
-            textBox7 = new TextBox();
-            label7 = new Label();
-            label8 = new Label();
-            button2 = new Button();
-            textBox3 = new TextBox();
             groupBox2 = new GroupBox();
             comboBox2 = new ComboBox();
             label5 = new Label();
@@ -56,17 +47,11 @@
             dateTimePicker1 = new DateTimePicker();
             textBox2 = new TextBox();
             label6 = new Label();
-            comboBox1 = new ComboBox();
-            label3 = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            TipoAlimento = new DataGridViewTextBoxColumn();
-            Cocina = new DataGridViewTextBoxColumn();
-            NrCliente = new DataGridViewTextBoxColumn();
-            Fecha = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            Estado = new DataGridViewTextBoxColumn();
             label2 = new Label();
+            dataGridView1 = new DataGridView();
+            textBox11 = new TextBox();
+            button2 = new Button();
             panel1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -86,15 +71,12 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(label13);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(groupBox3);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(textBox3);
             panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(groupBox1);
-            panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(label2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -129,26 +111,14 @@
             groupBox3.Controls.Add(textBox11);
             groupBox3.Controls.Add(label11);
             groupBox3.Controls.Add(textBox10);
-            groupBox3.Controls.Add(label10);
-            groupBox3.Controls.Add(textBox9);
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(textBox8);
-            groupBox3.Controls.Add(button3);
-            groupBox3.Controls.Add(textBox7);
-            groupBox3.Controls.Add(label7);
             groupBox3.Location = new Point(3, 127);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(639, 71);
             groupBox3.TabIndex = 36;
             groupBox3.TabStop = false;
             groupBox3.Text = "Agregar un nuevo pedido";
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(485, 42);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(100, 23);
-            textBox11.TabIndex = 45;
             // 
             // label11
             // 
@@ -167,27 +137,10 @@
             textBox10.Size = new Size(100, 23);
             textBox10.TabIndex = 43;
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(262, 19);
-            label10.Name = "label10";
-            label10.Size = new Size(43, 15);
-            label10.TabIndex = 42;
-            label10.Text = "Precio:";
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(262, 41);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(100, 23);
-            textBox9.TabIndex = 41;
-            textBox9.KeyPress += textBox9_KeyPress;
-            // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(154, 19);
+            label9.Location = new Point(6, 19);
             label9.Name = "label9";
             label9.Size = new Size(83, 15);
             label9.TabIndex = 40;
@@ -195,65 +148,11 @@
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(156, 41);
+            textBox8.Location = new Point(9, 37);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(100, 23);
             textBox8.TabIndex = 39;
             textBox8.KeyPress += textBox8_KeyPress;
-            // 
-            // button3
-            // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Image = Properties.Resources.seo_social_web_network_internet_340_icon_icons_com_61497;
-            button3.Location = new Point(112, 41);
-            button3.Name = "button3";
-            button3.Size = new Size(38, 24);
-            button3.TabIndex = 38;
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(6, 42);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 23);
-            textBox7.TabIndex = 37;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(6, 19);
-            label7.Name = "label7";
-            label7.Size = new Size(102, 15);
-            label7.TabIndex = 36;
-            label7.Text = "Codigo del Menu:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(648, 394);
-            label8.Name = "label8";
-            label8.Size = new Size(77, 15);
-            label8.TabIndex = 35;
-            label8.Text = "Total a pagar:";
-            // 
-            // button2
-            // 
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(648, 454);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 34;
-            button2.Text = "Crear Venta";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(648, 412);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 31;
-            textBox3.Text = "0";
             // 
             // groupBox2
             // 
@@ -316,11 +215,10 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(textBox2);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(3, 31);
             groupBox1.Name = "groupBox1";
@@ -338,7 +236,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(286, 37);
+            textBox2.Location = new Point(218, 37);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(100, 23);
             textBox2.TabIndex = 5;
@@ -347,78 +245,20 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(286, 13);
+            label6.Location = new Point(218, 19);
             label6.Name = "label6";
             label6.Size = new Size(70, 15);
             label6.TabIndex = 4;
             label6.Text = "Nro Cocina:";
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(218, 37);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(57, 23);
-            comboBox1.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(217, 13);
-            label3.Name = "label3";
-            label3.Size = new Size(58, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Cantidad:";
-            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(17, 19);
+            label1.Location = new Point(6, 19);
             label1.Name = "label1";
             label1.Size = new Size(41, 15);
             label1.TabIndex = 1;
             label1.Text = "Fecha:";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { TipoAlimento, Cocina, NrCliente, Fecha, Cantidad, Estado });
-            dataGridView1.Location = new Point(0, 219);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(642, 269);
-            dataGridView1.TabIndex = 25;
-            // 
-            // TipoAlimento
-            // 
-            TipoAlimento.HeaderText = "Tipo Menu";
-            TipoAlimento.Name = "TipoAlimento";
-            // 
-            // Cocina
-            // 
-            Cocina.HeaderText = "NroCocina";
-            Cocina.Name = "Cocina";
-            // 
-            // NrCliente
-            // 
-            NrCliente.HeaderText = "NroCliente";
-            NrCliente.Name = "NrCliente";
-            // 
-            // Fecha
-            // 
-            Fecha.HeaderText = "Fecha";
-            Fecha.Name = "Fecha";
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.Name = "Cantidad";
-            // 
-            // Estado
-            // 
-            Estado.HeaderText = "Estado";
-            Estado.Name = "Estado";
             // 
             // label2
             // 
@@ -429,6 +269,33 @@
             label2.Size = new Size(171, 28);
             label2.TabIndex = 24;
             label2.Text = "Consultar pedidos";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 204);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(664, 282);
+            dataGridView1.TabIndex = 39;
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(485, 42);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(100, 23);
+            textBox11.TabIndex = 45;
+            // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = Properties.Resources.seo_social_web_network_internet_340_icon_icons_com_61497;
+            button2.Location = new Point(336, 39);
+            button2.Name = "button2";
+            button2.Size = new Size(35, 23);
+            button2.TabIndex = 31;
+            button2.UseVisualStyleBackColor = true;
             // 
             // MenudePedidos
             // 
@@ -455,42 +322,27 @@
         #endregion
         private Button button1;
         private Panel panel1;
-        private DataGridView dataGridView1;
         private Label label2;
         private Button BtnBuscar;
         private TextBox textBox5;
         private GroupBox groupBox2;
         private GroupBox groupBox1;
-        private ComboBox comboBox1;
-        private Label label3;
         private Label label1;
-        private Button button2;
-        private TextBox textBox3;
         private ComboBox comboBox2;
         private Label label5;
         private Label label4;
         private TextBox textBox2;
         private Label label6;
-        private DataGridViewTextBoxColumn TipoAlimento;
-        private DataGridViewTextBoxColumn Cocina;
-        private DataGridViewTextBoxColumn NrCliente;
-        private DataGridViewTextBoxColumn Fecha;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn Estado;
         private GroupBox groupBox3;
-        private Label label10;
-        private TextBox textBox9;
         private Label label9;
         private TextBox textBox8;
-        private Button button3;
-        private TextBox textBox7;
-        private Label label7;
-        private Label label8;
-        private TextBox textBox11;
         private Button button4;
         private Label label11;
         private TextBox textBox10;
         private Label label13;
         private DateTimePicker dateTimePicker1;
+        private DataGridView dataGridView1;
+        private TextBox textBox11;
+        private Button button2;
     }
 }

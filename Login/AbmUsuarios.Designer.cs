@@ -29,44 +29,35 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            BtnLimpiar = new Button();
+            cbRoles = new ComboBox();
             BtnEliminar = new Button();
             BtnGuardar = new Button();
             label5 = new Label();
-            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtContraseña = new TextBox();
+            txtNombreUsuario = new TextBox();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
             label6 = new Label();
             label7 = new Label();
-            textBox5 = new TextBox();
+            txtBuscarRol = new TextBox();
             BtnBuscar = new Button();
-            Nombre = new DataGridViewTextBoxColumn();
-            Correo = new DataGridViewTextBoxColumn();
-            Cargo = new DataGridViewTextBoxColumn();
+            dgvUsuarios = new DataGridView();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(BtnLimpiar);
+            panel1.Controls.Add(cbRoles);
             panel1.Controls.Add(BtnEliminar);
             panel1.Controls.Add(BtnGuardar);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtContraseña);
+            panel1.Controls.Add(txtNombreUsuario);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -74,42 +65,39 @@
             panel1.Size = new Size(223, 491);
             panel1.TabIndex = 0;
             // 
-            // BtnLimpiar
+            // cbRoles
             // 
-            BtnLimpiar.BackColor = Color.DarkTurquoise;
-            BtnLimpiar.FlatAppearance.BorderSize = 0;
-            BtnLimpiar.FlatStyle = FlatStyle.Flat;
-            BtnLimpiar.Image = Properties.Resources._3792033_broom_halloween_magic_witch_109010;
-            BtnLimpiar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnLimpiar.Location = new Point(25, 363);
-            BtnLimpiar.Name = "BtnLimpiar";
-            BtnLimpiar.Size = new Size(149, 31);
-            BtnLimpiar.TabIndex = 11;
-            BtnLimpiar.Text = "Modificar";
-            BtnLimpiar.UseVisualStyleBackColor = false;
+            cbRoles.FormattingEnabled = true;
+            cbRoles.Location = new Point(3, 164);
+            cbRoles.Name = "cbRoles";
+            cbRoles.Size = new Size(121, 23);
+            cbRoles.TabIndex = 12;
             // 
             // BtnEliminar
             // 
+            BtnEliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BtnEliminar.BackColor = Color.Red;
             BtnEliminar.FlatAppearance.BorderSize = 0;
             BtnEliminar.FlatStyle = FlatStyle.Flat;
             BtnEliminar.Image = Properties.Resources.seo_social_web_network_internet_262_icon_icons_com_61518;
             BtnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnEliminar.Location = new Point(25, 400);
+            BtnEliminar.Location = new Point(12, 451);
             BtnEliminar.Name = "BtnEliminar";
             BtnEliminar.Size = new Size(149, 28);
             BtnEliminar.TabIndex = 10;
             BtnEliminar.Text = "Eliminar";
             BtnEliminar.UseVisualStyleBackColor = false;
+            BtnEliminar.Click += BtnEliminar_Click;
             // 
             // BtnGuardar
             // 
+            BtnGuardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BtnGuardar.BackColor = Color.Green;
             BtnGuardar.FlatAppearance.BorderSize = 0;
             BtnGuardar.FlatStyle = FlatStyle.Flat;
             BtnGuardar.Image = Properties.Resources.savetheapplication_guardar_2958;
             BtnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnGuardar.Location = new Point(25, 330);
+            BtnGuardar.Location = new Point(12, 418);
             BtnGuardar.Name = "BtnGuardar";
             BtnGuardar.Size = new Size(149, 27);
             BtnGuardar.TabIndex = 9;
@@ -120,69 +108,43 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(3, 205);
+            label5.Location = new Point(3, 132);
             label5.Name = "label5";
             label5.Size = new Size(27, 15);
             label5.TabIndex = 8;
             label5.Text = "Rol:";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(3, 140);
-            label4.Name = "label4";
-            label4.Size = new Size(102, 15);
-            label4.TabIndex = 7;
-            label4.Text = "Nro de empleado:";
-            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(3, 86);
+            label3.Location = new Point(8, 76);
             label3.Name = "label3";
-            label3.Size = new Size(54, 15);
+            label3.Size = new Size(70, 15);
             label3.TabIndex = 6;
-            label3.Text = "Apellido:";
+            label3.Text = "Contraseña:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(8, 32);
             label2.Name = "label2";
-            label2.Size = new Size(54, 15);
+            label2.Size = new Size(97, 15);
             label2.TabIndex = 5;
-            label2.Text = "Nombre:";
+            label2.Text = "Nombre Usuario:";
             // 
-            // textBox4
+            // txtContraseña
             // 
-            textBox4.Location = new Point(3, 233);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(193, 23);
-            textBox4.TabIndex = 4;
-            textBox4.KeyPress += textBox4_KeyPress;
+            txtContraseña.Location = new Point(3, 94);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.Size = new Size(193, 23);
+            txtContraseña.TabIndex = 3;
             // 
-            // textBox3
+            // txtNombreUsuario
             // 
-            textBox3.Location = new Point(3, 104);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(193, 23);
-            textBox3.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(3, 167);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(193, 23);
-            textBox2.TabIndex = 2;
-            textBox2.KeyPress += textBox2_KeyPress;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(3, 50);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(193, 23);
-            textBox1.TabIndex = 1;
-            textBox1.KeyPress += textBox1_KeyPress;
+            txtNombreUsuario.Location = new Point(3, 50);
+            txtNombreUsuario.Name = "txtNombreUsuario";
+            txtNombreUsuario.Size = new Size(193, 23);
+            txtNombreUsuario.TabIndex = 1;
             // 
             // label1
             // 
@@ -192,17 +154,6 @@
             label1.Size = new Size(105, 15);
             label1.TabIndex = 0;
             label1.Text = "Detalle del Usuario";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Correo, Cargo });
-            dataGridView1.Location = new Point(229, 60);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(343, 352);
-            dataGridView1.TabIndex = 1;
             // 
             // label6
             // 
@@ -216,62 +167,58 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(567, 27);
+            label7.Location = new Point(458, 24);
             label7.Name = "label7";
             label7.Size = new Size(45, 15);
             label7.TabIndex = 3;
             label7.Text = "Buscar:";
             // 
-            // textBox5
+            // txtBuscarRol
             // 
-            textBox5.Location = new Point(618, 24);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(128, 23);
-            textBox5.TabIndex = 4;
+            txtBuscarRol.Location = new Point(509, 19);
+            txtBuscarRol.Name = "txtBuscarRol";
+            txtBuscarRol.Size = new Size(128, 23);
+            txtBuscarRol.TabIndex = 4;
             // 
             // BtnBuscar
             // 
             BtnBuscar.FlatAppearance.BorderSize = 0;
             BtnBuscar.FlatStyle = FlatStyle.Flat;
             BtnBuscar.Image = Properties.Resources.seo_social_web_network_internet_340_icon_icons_com_61497;
-            BtnBuscar.Location = new Point(752, 20);
+            BtnBuscar.Location = new Point(643, 17);
             BtnBuscar.Name = "BtnBuscar";
             BtnBuscar.Size = new Size(35, 29);
             BtnBuscar.TabIndex = 5;
             BtnBuscar.UseVisualStyleBackColor = true;
+            BtnBuscar.Click += BtnBuscar_Click;
             // 
-            // Nombre
+            // dgvUsuarios
             // 
-            Nombre.HeaderText = "Nombre empleado";
-            Nombre.Name = "Nombre";
-            // 
-            // Correo
-            // 
-            Correo.HeaderText = "Correo Electronico";
-            Correo.Name = "Correo";
-            // 
-            // Cargo
-            // 
-            Cargo.HeaderText = "Cargo";
-            Cargo.Name = "Cargo";
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.Location = new Point(258, 69);
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.RowTemplate.Height = 25;
+            dgvUsuarios.Size = new Size(392, 314);
+            dgvUsuarios.TabIndex = 6;
             // 
             // AbmUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(815, 491);
+            Controls.Add(dgvUsuarios);
             Controls.Add(BtnBuscar);
-            Controls.Add(textBox5);
+            Controls.Add(txtBuscarRol);
             Controls.Add(label7);
             Controls.Add(label6);
-            Controls.Add(dataGridView1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AbmUsuarios";
             Text = "AbmUsuarios";
+            Load += AbmUsuarios_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -281,23 +228,17 @@
         private Panel panel1;
         private Label label3;
         private Label label2;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtContraseña;
+        private TextBox txtNombreUsuario;
         private Label label1;
-        private Button BtnLimpiar;
         private Button BtnEliminar;
         private Button BtnGuardar;
         private Label label5;
-        private Label label4;
-        private DataGridView dataGridView1;
         private Label label6;
         private Label label7;
-        private TextBox textBox5;
+        private TextBox txtBuscarRol;
         private Button BtnBuscar;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Correo;
-        private DataGridViewTextBoxColumn Cargo;
+        private ComboBox cbRoles;
+        private DataGridView dgvUsuarios;
     }
 }

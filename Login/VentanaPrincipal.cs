@@ -70,6 +70,7 @@ namespace Login
                     switch (usuarioLogueado.Rol.ToLower())
                     {
                         case "administrador":
+                        case "gerencia":
                             MenuPrincipal menuPrincipal = new MenuPrincipal();
                             menuPrincipal.Show();
                             break;
@@ -78,6 +79,12 @@ namespace Login
                             FormularioClienteComun formularioClienteComun = new FormularioClienteComun();
                             formularioClienteComun.Show();
                             break;
+                       
+                        case "jefecocina":
+
+                            break;
+                        case "atencionalpublico":
+                        break;
                         // Agregar más casos para otros roles si es necesario
                         default:
                             // Si el rol no coincide con ningún caso, mostrar un mensaje de error

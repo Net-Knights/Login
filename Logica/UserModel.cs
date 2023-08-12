@@ -11,11 +11,18 @@ using RegistroUsuarios.Entities;
 using System.Text.RegularExpressions;
 using Persistencia;
 
+
 namespace Logica
 {
+    
     public class UserModel
     {
+        private DatosU datosU;
 
+        public UserModel()
+        {
+            datosU = new DatosU();
+        }
         private bool IsValidEmail(string email)
         {
             string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
@@ -42,17 +49,34 @@ namespace Logica
 
             return ""; // Si no hay errores, retorna una cadena vacía
         }
-        private bool IsValidName(string name)
+        public void GuardarUsuario(string usuario, string contraseña, string rol)
         {
-            return Regex.IsMatch(name, @"^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$");
+            try
+            {
+                datosU.GuardarUsuario(usuario, contraseña, rol);
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción según sea necesario
+                throw new Exception("Error al guardar el usuario.", ex);
+            }
         }
-        private bool IsValidCI(string ci)
+
+        public void EliminarUsuario(string usuario)
         {
-            return ci.Length == 8 && int.TryParse(ci, out _);
-        }   
-        
-    
-    
+            try
+            {
+                datosU.EliminarUsuario(usuario);
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción según sea necesario
+                throw new Exception("Error al eliminar el usuario.", ex);
+            }
+        }
+
+
+
     }
 }
 
